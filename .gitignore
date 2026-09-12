@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*.ipk
+*.mo
+/build/
+/.venv/
+.DS_Store
+Thumbs.db

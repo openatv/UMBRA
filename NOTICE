@@ -1,0 +1,26 @@
+New native OpenATV layouts, generator and settings plugin: GPL-2.0-or-later.
+
+Adapted embedded OpenATV Enigma2 XML screen definitions retain their original
+authorship and licensing. See the OpenATV source headers and LICENSES/GPL-2.0-or-later.txt
+for their terms. No Enigma2 receiver Python implementation is copied.
+
+Umbra uses Liberation Sans supplied by OpenATV and includes one shared
+enigma2icons font with additional menu and broadcast-status glyphs. Existing glyphs and
+codepoints are preserved. Google Material Symbols are Apache-2.0; see the
+enigma2iconfont source list and licenses. No per-resolution font copies.
+
+The broadcast status variants include Dolby and HbbTV trademark shapes.
+They are not Google Material assets and no trademark license is granted.
+HbbTV monochrome outline provenance and logo guidelines:
+https://www.hbbtv.org/logo-access/
+https://upload.wikimedia.org/wikipedia/de/3/32/HbbTVLogo.svg
+The shared icon font is maintained in the OpenATV enigma2iconfont project.
+
+MetrixHD screen adaptations, the shared MetrixIcons weather font and PNG assets retain the source authorship: iMaxxx and the
+OpenATV Team. Original terms: "Explicitly, no one is allowed to use any
+version of the Skin with other team Images" and "You can modify and
+redistribute it as long as you keep this license and the original author
+for the skin and all of your modifications". These adaptations are for
+OpenATV only. Bundled assets include the weather icon font, MediaPlayer repeat indicators and small plugin
+images. They are reused without per-resolution duplicates. No third-party
+plugin Python implementation is included or modified.

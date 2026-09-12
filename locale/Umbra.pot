@@ -1,0 +1,592 @@
+# Translations for Umbra.
+# Copyright (C) 2026 OpenATV Team
+# Distributed under the same license as Umbra.
+msgid ""
+msgstr ""
+"Project-Id-Version: Umbra 0.4.25\n"
+"Report-Msgid-Bugs-To: https://github.com/openatv/UMBRA/issues\n"
+"POT-Creation-Date: 2026-09-12 00:00+0000\n"
+"PO-Revision-Date: 2026-09-12 00:00+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:116
+#, python-format
+msgid "%d personal override"
+msgid_plural "%d personal overrides"
+msgstr[0] ""
+msgstr[1] ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:106
+#, python-format
+msgid "%s (RGB)"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:74
+#, python-format
+msgid "%s: expected a text value"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:81
+#, python-format
+msgid "%s: expected six RGB hexadecimal digits"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:79
+#, python-format
+msgid "%s: invalid value %r"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:54
+msgid "Accent"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:39
+msgid "Active only"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:39
+msgid "All, inactive dimmed"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/theme.py:18
+msgid "Amber"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:166
+msgid "Applying Umbra..."
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:42
+msgid "Artwork in details"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:53
+msgid "Background"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/theme.py:25
+msgid "Balanced"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:54
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/theme.py:20
+msgid "Blue"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/theme.py:17
+msgid "Bordeaux"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/theme.py:14
+msgid "Carbon"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:23
+msgid "Channel list"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:46
+msgid "Channel numbers"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:40
+msgid "Classic"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/theme.py:25
+msgid "Clear"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:32
+msgid "Clock in menus"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:25
+msgid "Color palette"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:23
+msgid "Colors"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:43
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:44
+msgid "Columns"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:44
+msgid "Compact"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:188
+#, python-format
+msgid "Could not save Umbra: %s"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:158
+#, python-format
+msgid "Could not save style pack: %s"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:40
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:41
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:42
+msgid "Cover"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:38
+msgid "Current"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/theme.py:20
+msgid "Cyan"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:43
+msgid "Details"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:41
+msgid "EPG artwork"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/theme.py:15
+msgid "Emerald"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:48
+msgid "Encryption"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:37
+msgid "Encryption information"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:44
+msgid "Extended"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:34
+msgid "Extended event description"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:92
+msgid "File too large"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:95
+msgid "From color palette"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:34
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:59
+msgid "From style pack"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:43
+msgid "Full screen"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:43
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:44
+msgid "Gallery"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/theme.py:21
+msgid "Gold"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:28
+msgid "Gradients"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/theme.py:12
+msgid "Graphite"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:54
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/theme.py:20
+msgid "Green"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:51
+msgid "Icon"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:23
+msgid "Infobar"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:40
+msgid "Infobar layout"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:246
+#, python-format
+msgid "Invalid skin baseline %s/%s: %s"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:95
+msgid "Invalid style format or name"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:23
+msgid "Layout"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:105
+msgid "Leave empty for the style value, otherwise enter six RGB hexadecimal digits."
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:43
+msgid "Live TV preview"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:103
+msgid ""
+"Location, provider, units and update interval are configured only in OAWeather. The display stays"
+" hidden without weather data."
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:31
+msgid "Menu width"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/theme.py:13
+msgid "Midnight"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:54
+msgid "Muted text"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:134
+msgid "My Umbra"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:99
+msgid "Native tuner allocation, SNR, AGC and BER; OpenATV reports unavailable values."
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:87
+msgid "OSD resolution"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:32
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:34
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:35
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:36
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:37
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:38
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:39
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:41
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:42
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:45
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:46
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:47
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:48
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:50
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:51
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/theme.py:25
+msgid "Off"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:28
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:32
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:34
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:35
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:37
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:45
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:46
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:47
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:48
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:50
+msgid "On"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:40
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:41
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:42
+msgid "Panorama"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/theme.py:16
+msgid "Petrol"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:49
+msgid "Picon aspect ratio"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:45
+msgid "Picons"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:53
+msgid "Primary text"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:33
+msgid "Progress bar thickness"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:26
+msgid "Progress color"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:47
+msgid "Reception type"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:51
+msgid "Recording indicator"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:54
+msgid "Recording text"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:54
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/theme.py:21
+msgid "Red"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:125
+msgid "Replace all personal overrides with the selected style defaults?"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:146
+msgid "Replace this style pack?"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:75
+msgid "Reset personal overrides to style defaults"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:44
+msgid "Rows"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:73
+msgid "Save style"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:76
+msgid "Save the current appearance as a personal style pack"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:290
+#, python-format
+msgid "Saved style pack is missing: %s"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:54
+msgid "Secondary text"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:87
+msgid "Section"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:53
+msgid "Selection"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:29
+msgid "Selection corners"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:50
+msgid "Show timers"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/theme.py:20
+msgid "Skin color"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:28
+msgid "Solid color"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:29
+msgid "Square"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:31
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:33
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:44
+msgid "Standard"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:39
+msgid "Status icons"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:101
+msgid ""
+"Status, CA system, CAID and provider ID. CA details follow the OpenATV encryption information "
+"setting."
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:72
+msgid "Style defaults"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:86
+msgid "Style defaults and personal overrides are stored separately."
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:299
+msgid "Style names must contain 1 to 80 characters"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:86
+msgid "Style pack"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:134
+msgid "Style pack name"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:156
+#, python-format
+msgid "Style pack saved: %s"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:263
+msgid "Style packs and personal appearance"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:121
+msgid "Style packs not loaded:\n"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:218
+#, python-format
+msgid ""
+"Style saved, but live reload did not finish: %s\n"
+"Restart the GUI?"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:95
+#, python-format
+msgid "Style value: %s"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/theme.py:25
+msgid "Subtle"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:53
+msgid "Surfaces"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:27
+msgid "TV picture behind details"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:51
+msgid "Text color"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:30
+msgid "Text size"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:140
+msgid "The name is too long"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:33
+msgid "Thin"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:207
+msgid "This Enigma2 version does not support live skin reload."
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:36
+msgid "Tuner / SNR / AGC / BER"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:36
+msgid "Tuner and signal information"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:61
+msgid "Umbra Cinema"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:63
+msgid "Umbra Clear"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:64
+msgid "Umbra Gallery"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:60
+msgid "Umbra Graphite"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:62
+msgid "Umbra Petrol"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:235
+msgid "Unknown resolution"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:70
+msgid "Unknown style options"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:88
+msgid "Use WQHD only with a supported framebuffer. Style packs do not change the resolution."
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:35
+msgid "Video and audio information"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:43
+msgid "View"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:38
+msgid "Weather at top left"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/theme.py:21
+msgid "White"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:31
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:33
+msgid "Wide"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:38
+msgid "With daily values"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:38
+msgid "With five-day forecast"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:36
+msgid "With transponder details"
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/plugin.py:97
+msgid "Without active e2MDB metadata, the base layout is retained."
+msgstr ""
+
+#: usr/lib/enigma2/python/Plugins/Extensions/UmbraSettings/styles.py:54
+msgid "Yellow"
+msgstr ""

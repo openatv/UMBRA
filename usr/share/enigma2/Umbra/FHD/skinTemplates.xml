@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='utf-8'?>
+<templates>
+  <template component="serviceList" name="Default" screens="ChannelSelectionDefault,ChannelSelectionPIG,ChannelSelectionFull" fonts="Regular;28,Regular;23,Regular;19">
+    <mode name="services" itemHeight="101" foregroundColor="foreground" foregroundColorSelected="foreground" recordColor="recording" recordColorSelected="recording">
+      <rectangle position="0,0" size="e-24,91" foregroundColor="surface" foregroundColorSelected="selection" foregroundGradient="UmbraRow" foregroundGradientSelected="UmbraSelection" cornerRadius="12" />
+      <panel position="15,5" size="e-54,86" layout="horizontal" spacing="14">
+        <pixmap position="left,0" size="144,75" index="Picon" conditional="config.channelSelection.piconRatio.value == 167" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,0" size="204,75" index="Picon" conditional="config.channelSelection.piconRatio.value == 235" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,0" size="218,75" index="Picon" conditional="config.channelSelection.piconRatio.value == 250" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="36,33" index="MarkerImage" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="36,33" index="FolderImage" alpha="blend" scale="centerScaled" />
+        <text position="left,0" size="50,35" index="Number" font="1" verticalAlignment="center" horizontalAlignment="right" />
+        <panel position="left" size="e,87" layout="stack">
+          <pixmap position="e-138,3" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-102,3" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-66,3" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-30,3" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
+          <text position="0,5" size="e-150,35" index="ServiceName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" fallbackColor="muted" />
+          <text position="0,38" size="e-112,33" index="Title1" font="1" foregroundColor="secondary" wrap="ellipsis" verticalAlignment="center" />
+          <text position="e-105,38" size="105,33" index="Remain" font="2" horizontalAlignment="right" verticalAlignment="center" />
+          <progress position="0,75" size="e,3" index="Progress" foregroundGradient="muted,accent,horizontal" borderWidth="0" cornerRadius="2" />
+        </panel>
+      </panel>
+    </mode>
+    <mode name="bouquets" itemHeight="101" foregroundColor="foreground" foregroundColorSelected="foreground" recordColor="recording" recordColorSelected="recording">
+      <rectangle position="0,0" size="e-24,91" foregroundColor="surface" foregroundColorSelected="selection" foregroundGradient="UmbraRow" foregroundGradientSelected="UmbraSelection" cornerRadius="12" />
+      <panel position="15,5" size="e-54,86" layout="horizontal" spacing="14">
+        <pixmap position="left,0" size="144,75" index="Picon" conditional="config.channelSelection.piconRatio.value == 167" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,0" size="204,75" index="Picon" conditional="config.channelSelection.piconRatio.value == 235" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,0" size="218,75" index="Picon" conditional="config.channelSelection.piconRatio.value == 250" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="36,33" index="MarkerImage" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="36,33" index="FolderImage" alpha="blend" scale="centerScaled" />
+        <text position="left,0" size="50,35" index="Number" font="1" verticalAlignment="center" horizontalAlignment="right" />
+        <panel position="left" size="e,87" layout="stack">
+          <pixmap position="e-138,3" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-102,3" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-66,3" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-30,3" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
+          <text position="0,5" size="e-150,35" index="ServiceName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" fallbackColor="muted" />
+          <text position="0,38" size="e-112,33" index="Title1" font="1" foregroundColor="secondary" wrap="ellipsis" verticalAlignment="center" />
+          <text position="e-105,38" size="105,33" index="Remain" font="2" horizontalAlignment="right" verticalAlignment="center" />
+          <progress position="0,75" size="e,3" index="Progress" foregroundGradient="muted,accent,horizontal" borderWidth="0" cornerRadius="2" />
+        </panel>
+      </panel>
+    </mode>
+    <mode name="other" itemHeight="60" foregroundColor="foreground" foregroundColorSelected="foreground" recordColor="recording" recordColorSelected="recording">
+      <rectangle position="0,0" size="e-24,50" foregroundColor="surface" foregroundColorSelected="selection" foregroundGradient="UmbraRow" foregroundGradientSelected="UmbraSelection" cornerRadius="12" />
+      <panel position="15,5" size="e-54,44" layout="horizontal" spacing="14">
+        <pixmap position="left,3" size="52,39" index="FolderImage" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="52,39" index="MarkerImage" alpha="blend" scale="centerScaled" />
+        <text position="left,0" size="e,44" index="EntryName" font="0" verticalAlignment="center" wrap="ellipsis" />
+      </panel>
+    </mode>
+  </template>
+  <template component="serviceList" name="Compact" screens="ChannelSelectionDefault,ChannelSelectionPIG,ChannelSelectionFull" fonts="Regular;28,Regular;23,Regular;19">
+    <mode name="services" itemHeight="60" foregroundColor="foreground" foregroundColorSelected="foreground" recordColor="recording" recordColorSelected="recording">
+      <rectangle position="0,0" size="e-24,50" foregroundColor="surface" foregroundColorSelected="selection" foregroundGradient="UmbraRow" foregroundGradientSelected="UmbraSelection" cornerRadius="12" />
+      <panel position="15,5" size="e-54,44" layout="horizontal" spacing="14">
+        <pixmap position="left,0" size="80,42" index="Picon" conditional="config.channelSelection.piconRatio.value == 167" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,0" size="112,42" index="Picon" conditional="config.channelSelection.piconRatio.value == 235" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,0" size="120,42" index="Picon" conditional="config.channelSelection.piconRatio.value == 250" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="36,33" index="MarkerImage" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="36,33" index="FolderImage" alpha="blend" scale="centerScaled" />
+        <text position="left,0" size="50,35" index="Number" font="1" verticalAlignment="center" horizontalAlignment="right" />
+        <panel position="left" size="e,45" layout="stack">
+          <pixmap position="e-138,3" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-102,3" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-66,3" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-30,3" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
+          <text position="0,5" size="e-150,35" index="ServiceName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" fallbackColor="muted" />
+        </panel>
+      </panel>
+    </mode>
+    <mode name="bouquets" itemHeight="60" foregroundColor="foreground" foregroundColorSelected="foreground" recordColor="recording" recordColorSelected="recording">
+      <rectangle position="0,0" size="e-24,50" foregroundColor="surface" foregroundColorSelected="selection" foregroundGradient="UmbraRow" foregroundGradientSelected="UmbraSelection" cornerRadius="12" />
+      <panel position="15,5" size="e-54,44" layout="horizontal" spacing="14">
+        <pixmap position="left,0" size="80,42" index="Picon" conditional="config.channelSelection.piconRatio.value == 167" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,0" size="112,42" index="Picon" conditional="config.channelSelection.piconRatio.value == 235" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,0" size="120,42" index="Picon" conditional="config.channelSelection.piconRatio.value == 250" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="36,33" index="MarkerImage" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="36,33" index="FolderImage" alpha="blend" scale="centerScaled" />
+        <text position="left,0" size="50,35" index="Number" font="1" verticalAlignment="center" horizontalAlignment="right" />
+        <panel position="left" size="e,45" layout="stack">
+          <pixmap position="e-138,3" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-102,3" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-66,3" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-30,3" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
+          <text position="0,5" size="e-150,35" index="ServiceName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" fallbackColor="muted" />
+        </panel>
+      </panel>
+    </mode>
+    <mode name="other" itemHeight="60" foregroundColor="foreground" foregroundColorSelected="foreground" recordColor="recording" recordColorSelected="recording">
+      <rectangle position="0,0" size="e-24,50" foregroundColor="surface" foregroundColorSelected="selection" foregroundGradient="UmbraRow" foregroundGradientSelected="UmbraSelection" cornerRadius="12" />
+      <panel position="15,5" size="e-54,44" layout="horizontal" spacing="14">
+        <pixmap position="left,3" size="52,39" index="FolderImage" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="52,39" index="MarkerImage" alpha="blend" scale="centerScaled" />
+        <text position="left,0" size="e,44" index="EntryName" font="0" verticalAlignment="center" wrap="ellipsis" />
+      </panel>
+    </mode>
+  </template>
+  <template component="serviceList" name="Extended" screens="ChannelSelectionDefault,ChannelSelectionPIG,ChannelSelectionFull" fonts="Regular;28,Regular;23,Regular;19">
+    <mode name="services" itemHeight="140" foregroundColor="foreground" foregroundColorSelected="foreground" recordColor="recording" recordColorSelected="recording">
+      <rectangle position="0,0" size="e-24,130" foregroundColor="surface" foregroundColorSelected="selection" foregroundGradient="UmbraRow" foregroundGradientSelected="UmbraSelection" cornerRadius="12" />
+      <panel position="15,5" size="e-54,125" layout="horizontal" spacing="14">
+        <pixmap position="left,0" size="135,75" index="ImageOrPicon1" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="36,33" index="MarkerImage" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="36,33" index="FolderImage" alpha="blend" scale="centerScaled" />
+        <text position="left,0" size="50,35" index="Number" font="1" verticalAlignment="center" horizontalAlignment="right" />
+        <panel position="left" size="e,127" layout="stack">
+          <pixmap position="e-138,3" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-102,3" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-66,3" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-30,3" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
+          <text position="0,5" size="e-150,35" index="ServiceName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" fallbackColor="muted" />
+          <text position="0,38" size="e-112,33" index="Title1" font="1" foregroundColor="secondary" wrap="ellipsis" verticalAlignment="center" />
+          <text position="e-105,38" size="105,33" index="Remain" font="2" horizontalAlignment="right" verticalAlignment="center" />
+          <progress position="0,114" size="e,3" index="Progress" foregroundGradient="muted,accent,horizontal" borderWidth="0" cornerRadius="2" />
+          <text position="0,75" size="72,29" index="StartTimeP" font="2" foregroundColor="muted" wrap="noWrap" />
+          <text position="87,75" size="e-87,29" index="TitleP" font="2" foregroundColor="secondary" wrap="ellipsis" />
+        </panel>
+      </panel>
+    </mode>
+    <mode name="bouquets" itemHeight="140" foregroundColor="foreground" foregroundColorSelected="foreground" recordColor="recording" recordColorSelected="recording">
+      <rectangle position="0,0" size="e-24,130" foregroundColor="surface" foregroundColorSelected="selection" foregroundGradient="UmbraRow" foregroundGradientSelected="UmbraSelection" cornerRadius="12" />
+      <panel position="15,5" size="e-54,125" layout="horizontal" spacing="14">
+        <pixmap position="left,0" size="135,75" index="ImageOrPicon1" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="36,33" index="MarkerImage" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="36,33" index="FolderImage" alpha="blend" scale="centerScaled" />
+        <text position="left,0" size="50,35" index="Number" font="1" verticalAlignment="center" horizontalAlignment="right" />
+        <panel position="left" size="e,127" layout="stack">
+          <pixmap position="e-138,3" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-102,3" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-66,3" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-30,3" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
+          <text position="0,5" size="e-150,35" index="ServiceName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" fallbackColor="muted" />
+          <text position="0,38" size="e-112,33" index="Title1" font="1" foregroundColor="secondary" wrap="ellipsis" verticalAlignment="center" />
+          <text position="e-105,38" size="105,33" index="Remain" font="2" horizontalAlignment="right" verticalAlignment="center" />
+          <progress position="0,114" size="e,3" index="Progress" foregroundGradient="muted,accent,horizontal" borderWidth="0" cornerRadius="2" />
+          <text position="0,75" size="72,29" index="StartTimeP" font="2" foregroundColor="muted" wrap="noWrap" />
+          <text position="87,75" size="e-87,29" index="TitleP" font="2" foregroundColor="secondary" wrap="ellipsis" />
+        </panel>
+      </panel>
+    </mode>
+    <mode name="other" itemHeight="60" foregroundColor="foreground" foregroundColorSelected="foreground" recordColor="recording" recordColorSelected="recording">
+      <rectangle position="0,0" size="e-24,50" foregroundColor="surface" foregroundColorSelected="selection" foregroundGradient="UmbraRow" foregroundGradientSelected="UmbraSelection" cornerRadius="12" />
+      <panel position="15,5" size="e-54,44" layout="horizontal" spacing="14">
+        <pixmap position="left,3" size="52,39" index="FolderImage" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="52,39" index="MarkerImage" alpha="blend" scale="centerScaled" />
+        <text position="left,0" size="e,44" index="EntryName" font="0" verticalAlignment="center" wrap="ellipsis" />
+      </panel>
+    </mode>
+  </template>
+  <template component="serviceList" name="Gallery" screens="ChannelSelectionGrid" fonts="Regular;23,Regular;23,Regular;19" itemSpacing="0,0">
+    <mode name="services" itemHeight="101" foregroundColor="foreground" foregroundColorSelected="foreground" recordColor="recording" recordColorSelected="recording">
+      <rectangle position="0,0" size="e-24,91" foregroundColor="surface" foregroundColorSelected="selection" foregroundGradient="UmbraRow" foregroundGradientSelected="UmbraSelection" cornerRadius="12" />
+      <panel position="15,5" size="e-54,86" layout="horizontal" spacing="14">
+        <pixmap position="left,0" size="144,75" index="Picon" conditional="config.channelSelection.piconRatio.value == 167" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,0" size="204,75" index="Picon" conditional="config.channelSelection.piconRatio.value == 235" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,0" size="218,75" index="Picon" conditional="config.channelSelection.piconRatio.value == 250" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="36,33" index="MarkerImage" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="36,33" index="FolderImage" alpha="blend" scale="centerScaled" />
+        <text position="left,0" size="50,35" index="Number" font="1" verticalAlignment="center" horizontalAlignment="right" />
+        <panel position="left" size="e,87" layout="stack">
+          <pixmap position="e-138,3" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-102,3" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-66,3" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-30,3" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
+          <text position="0,5" size="e-150,35" index="ServiceName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" fallbackColor="muted" />
+          <text position="0,38" size="e-112,33" index="Title1" font="1" foregroundColor="secondary" wrap="ellipsis" verticalAlignment="center" />
+          <text position="e-105,38" size="105,33" index="Remain" font="2" horizontalAlignment="right" verticalAlignment="center" />
+          <progress position="0,75" size="e,3" index="Progress" foregroundGradient="muted,accent,horizontal" borderWidth="0" cornerRadius="2" />
+        </panel>
+      </panel>
+    </mode>
+    <mode name="bouquets" orientation="grid" itemWidth="307" itemHeight="285" foregroundColor="foreground" foregroundColorSelected="foreground" recordColor="recording" recordColorSelected="recording">
+      <rectangle position="0,0" size="297,273" foregroundColor="surface" foregroundColorSelected="selection" foregroundGradient="UmbraRow" foregroundGradientSelected="UmbraSelection" cornerRadius="12" />
+      <pixmap position="10,12" size="277,126" index="ImageOrPicon1" alpha="blend" scale="centerScaled" />
+      <text position="10,153" size="42,36" index="Number" font="2" wrap="noWrap" verticalAlignment="center" />
+      <text position="57,153" size="230,36" index="ServiceName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" />
+      <text position="57,153" size="230,36" index="MarkerName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" />
+      <text position="57,153" size="230,36" index="FolderName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" />
+      <progress position="10,144" size="277,4" index="Progress" foregroundGradient="muted,accent,horizontal" borderWidth="0" />
+      <text position="10,195" size="277,36" index="Title1" font="1" wrap="ellipsis" foregroundColor="foreground" />
+      <text position="10,234" size="60,30" index="StartTime2" font="2" wrap="noWrap" foregroundColor="accent" />
+      <text position="77,234" size="210,30" index="Title2" font="2" wrap="ellipsis" foregroundColor="secondary" />
+    </mode>
+    <mode name="other" itemHeight="60" foregroundColor="foreground" foregroundColorSelected="foreground" recordColor="recording" recordColorSelected="recording">
+      <rectangle position="0,0" size="e-24,50" foregroundColor="surface" foregroundColorSelected="selection" foregroundGradient="UmbraRow" foregroundGradientSelected="UmbraSelection" cornerRadius="12" />
+      <panel position="15,5" size="e-54,44" layout="horizontal" spacing="14">
+        <pixmap position="left,3" size="52,39" index="FolderImage" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="52,39" index="MarkerImage" alpha="blend" scale="centerScaled" />
+        <text position="left,0" size="e,44" index="EntryName" font="0" verticalAlignment="center" wrap="ellipsis" />
+      </panel>
+    </mode>
+  </template>
+  <template component="serviceList" name="Columns" screens="ChannelSelectionColumns" fonts="Regular;23,Regular;23,Regular;19" itemSpacing="0,0">
+    <mode name="services" itemHeight="101" foregroundColor="foreground" foregroundColorSelected="foreground" recordColor="recording" recordColorSelected="recording">
+      <rectangle position="0,0" size="e-24,91" foregroundColor="surface" foregroundColorSelected="selection" foregroundGradient="UmbraRow" foregroundGradientSelected="UmbraSelection" cornerRadius="12" />
+      <panel position="15,5" size="e-54,86" layout="horizontal" spacing="14">
+        <pixmap position="left,0" size="144,75" index="Picon" conditional="config.channelSelection.piconRatio.value == 167" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,0" size="204,75" index="Picon" conditional="config.channelSelection.piconRatio.value == 235" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,0" size="218,75" index="Picon" conditional="config.channelSelection.piconRatio.value == 250" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="36,33" index="MarkerImage" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="36,33" index="FolderImage" alpha="blend" scale="centerScaled" />
+        <text position="left,0" size="50,35" index="Number" font="1" verticalAlignment="center" horizontalAlignment="right" />
+        <panel position="left" size="e,87" layout="stack">
+          <pixmap position="e-138,3" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-102,3" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-66,3" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-30,3" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
+          <text position="0,5" size="e-150,35" index="ServiceName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" fallbackColor="muted" />
+          <text position="0,38" size="e-112,33" index="Title1" font="1" foregroundColor="secondary" wrap="ellipsis" verticalAlignment="center" />
+          <text position="e-105,38" size="105,33" index="Remain" font="2" horizontalAlignment="right" verticalAlignment="center" />
+          <progress position="0,75" size="e,3" index="Progress" foregroundGradient="muted,accent,horizontal" borderWidth="0" cornerRadius="2" />
+        </panel>
+      </panel>
+    </mode>
+    <mode name="bouquets" orientation="horizontal" itemWidth="307" itemHeight="855" foregroundColor="foreground" foregroundColorSelected="foreground" recordColor="recording" recordColorSelected="recording">
+      <rectangle position="0,0" size="297,843" foregroundColor="surface" foregroundColorSelected="selection" foregroundGradient="UmbraRow" foregroundGradientSelected="UmbraSelection" cornerRadius="12" />
+      <pixmap position="10,12" size="277,166" index="ImageOrPicon1" alpha="blend" scale="centerScaled" />
+      <text position="10,198" size="42,36" index="Number" font="2" wrap="noWrap" verticalAlignment="center" />
+      <text position="57,198" size="230,36" index="ServiceName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" />
+      <text position="57,198" size="230,36" index="MarkerName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" />
+      <text position="57,198" size="230,36" index="FolderName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" />
+      <progress position="10,246" size="277,4" index="Progress" foregroundGradient="muted,accent,horizontal" borderWidth="0" />
+      <text position="10,273" size="277,78" index="Title1" font="1" wrap="wrap" foregroundColor="foreground" />
+      <text position="10,360" size="277,72" index="ShortDescription1" font="2" wrap="wrap" foregroundColor="secondary" />
+      <text position="10,441" size="277,153" index="ExtendedDescription1" font="2" wrap="wrap" foregroundColor="secondary" />
+      <text position="10,609" size="60,30" index="StartTime2" font="2" wrap="noWrap" foregroundColor="accent" />
+      <text position="77,609" size="210,30" index="Title2" font="2" wrap="ellipsis" foregroundColor="secondary" />
+      <text position="10,640" size="60,30" index="StartTime3" font="2" wrap="noWrap" foregroundColor="accent" />
+      <text position="77,640" size="210,30" index="Title3" font="2" wrap="ellipsis" foregroundColor="secondary" />
+      <text position="10,672" size="60,30" index="StartTime4" font="2" wrap="noWrap" foregroundColor="accent" />
+      <text position="77,672" size="210,30" index="Title4" font="2" wrap="ellipsis" foregroundColor="secondary" />
+      <text position="10,704" size="60,30" index="StartTime5" font="2" wrap="noWrap" foregroundColor="accent" />
+      <text position="77,704" size="210,30" index="Title5" font="2" wrap="ellipsis" foregroundColor="secondary" />
+      <text position="10,735" size="60,30" index="StartTime6" font="2" wrap="noWrap" foregroundColor="accent" />
+      <text position="77,735" size="210,30" index="Title6" font="2" wrap="ellipsis" foregroundColor="secondary" />
+      <text position="10,777" size="277,30" text="Primetime" font="2" translate="1" foregroundColor="accent" />
+      <text position="10,810" size="60,30" index="StartTimeP" font="2" wrap="noWrap" foregroundColor="accent" />
+      <text position="77,810" size="210,30" index="TitleP" font="2" wrap="ellipsis" foregroundColor="secondary" />
+    </mode>
+    <mode name="other" itemHeight="60" foregroundColor="foreground" foregroundColorSelected="foreground" recordColor="recording" recordColorSelected="recording">
+      <rectangle position="0,0" size="e-24,50" foregroundColor="surface" foregroundColorSelected="selection" foregroundGradient="UmbraRow" foregroundGradientSelected="UmbraSelection" cornerRadius="12" />
+      <panel position="15,5" size="e-54,44" layout="horizontal" spacing="14">
+        <pixmap position="left,3" size="52,39" index="FolderImage" alpha="blend" scale="centerScaled" />
+        <pixmap position="left,3" size="52,39" index="MarkerImage" alpha="blend" scale="centerScaled" />
+        <text position="left,0" size="e,44" index="EntryName" font="0" verticalAlignment="center" wrap="ellipsis" />
+      </panel>
+    </mode>
+  </template>
+</templates>

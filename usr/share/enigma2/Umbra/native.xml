@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<skin>
+  <screen name="Extension" position="center,center" size="250,200" title="Extension" resolution="1280,720" backgroundColor="background">
+    <widget source="menu" render="Listbox" zPosition="1" transparent="1" position="0,0" size="250,200" scrollbarMode="showOnDemand">
+      <convert type="StringList" />
+    </widget>
+  </screen>
+  <screen name="DVDPlayer" flags="wfNoBorder" position="0,380" size="720,160" title="Info bar" backgroundColor="background" resolution="1280,720">
+    <ePixmap position="0,0" zPosition="-2" size="720,160" pixmap="skin_default/info-bg_mp.png" alphatest="off" />
+    <ePixmap position="29,40" zPosition="0" size="665,104" pixmap="skin_default/screws_mp.png" alphatest="on" transparent="1" />
+    <ePixmap position="48,70" zPosition="0" size="108,13" pixmap="skin_default/icons/mp_buttons.png" alphatest="on" />
+    <ePixmap pixmap="skin_default/icons/icon_event.png" position="207,78" zPosition="1" size="15,10" alphatest="on" />
+    <widget source="session.CurrentService" render="Label" position="230,73" size="300,22" font="Regular;20" backgroundColor="#263c59" shadowColor="#1d354c" shadowOffset="-1,-1" transparent="1" noWrap="1">
+      <convert type="ServiceName">Name</convert>
+    </widget>
+    <widget name="chapterLabel" position="230,96" size="360,22" font="Regular;20" foregroundColor="#c3c3c9" backgroundColor="#263c59" transparent="1" />
+    <ePixmap pixmap="skin_default/icons/icon_dolby.png" position="540,60" zPosition="1" size="26,16" alphatest="on" />
+    <widget name="audioLabel" position="570,60" size="130,22" font="Regular;18" backgroundColor="#263c59" shadowColor="#1d354c" shadowOffset="-1,-1" transparent="1" />
+    <widget source="session.CurrentService" render="Pixmap" pixmap="skin_default/icons/icon_txt.png" position="540,83" zPosition="1" size="26,16" alphatest="on">
+      <convert type="ServiceInfo">HasTelext</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget name="subtitleLabel" position="570,83" size="130,22" font="Regular;18" backgroundColor="#263c59" shadowColor="#1d354c" shadowOffset="-1,-1" transparent="1" />
+    <widget name="anglePix" pixmap="skin_default/icons/icon_view.png" position="540,106" size="26,16" alphatest="on" />
+    <widget name="angleLabel" position="570,106" size="130,22" font="Regular;18" backgroundColor="#263c59" shadowColor="#1d354c" shadowOffset="-1,-1" transparent="1" />
+    <widget source="session.CurrentService" render="Label" position="205,129" size="100,20" font="Regular;18" halign="center" valign="center" backgroundColor="#06224f" shadowColor="#1d354c" shadowOffset="-1,-1" transparent="1">
+      <convert type="ServicePosition">Position,ShowHours</convert>
+    </widget>
+    <widget source="session.CurrentService" render="PositionGauge" position="300,133" size="270,10" zPosition="2" pointer="skin_default/position_pointer.png:540,0" transparent="1">
+      <convert type="ServicePosition">Gauge</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" position="576,129" size="100,20" font="Regular;18" halign="center" valign="center" backgroundColor="#06224f" shadowColor="#1d354c" shadowOffset="-1,-1" transparent="1">
+      <convert type="ServicePosition">Remaining,Negate,ShowHours</convert>
+    </widget>
+  </screen>
+  <screen name="SeekBar" position="center,10" size="800,50" flags="wfNoBorder" resolution="1280,720" backgroundColor="background">
+    <widget name="target" position="10,10" size="100,20" font="Regular;20" horizontalAlignment="right" transparent="1" verticalAlignment="center" />
+    <widget source="session.CurrentService" render="PositionGauge" position="120,10" size="e-240,20" foregroundColor="#000000CF" transparent="1">
+      <convert type="ServicePosition">Gauge</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Progress" position="120,18" size="e-240,4" backgroundColor="#000000CF" borderWidth="0" foregroundColor="#0000CF00" zPosition="+1">
+      <convert type="ServicePosition">Position</convert>
+    </widget>
+    <widget name="cursor" position="0,0" size="8,18" pixmap="sliders/position_arrow.png" alphatest="blend" zPosition="+2" />
+    <widget name="length" position="e-110,10" size="100,20" font="Regular;20" transparent="1" verticalAlignment="center" />
+  </screen>
+  <screen name="H9SDswap" position="center,center" size="750,900" flags="wfNoBorder" backgroundColor="background" resolution="1280,720">
+    <eLabel name="b" position="0,0" size="750,700" backgroundColor="#00ffffff" zPosition="-2" />
+    <eLabel name="a" position="1,1" size="748,698" backgroundColor="#00000000" zPosition="-1" />
+    <widget source="Title" render="Label" position="60,10" foregroundColor="#00ffffff" size="480,50" halign="left" font="Regular; 28" backgroundColor="#00000000" />
+    <eLabel name="line" position="1,60" size="748,1" backgroundColor="#00ffffff" zPosition="1" />
+    <eLabel name="line2" position="1,250" size="748,4" backgroundColor="#00ffffff" zPosition="1" />
+    <widget name="config" position="2,280" size="730,380" halign="center" font="Regular; 22" backgroundColor="#00000000" foregroundColor="#00e5b243" />
+    <widget source="labe14" render="Label" position="2,80" size="730,30" halign="center" font="Regular; 22" backgroundColor="#00000000" foregroundColor="#00ffffff" />
+    <widget source="labe15" render="Label" position="2,130" size="730,60" halign="center" font="Regular; 22" backgroundColor="#00000000" foregroundColor="#00ffffff" />
+    <widget source="key_red" render="Label" position="30,200" size="150,30" noWrap="1" zPosition="1" valign="center" font="Regular; 20" halign="left" backgroundColor="#00000000" foregroundColor="#00ffffff" />
+    <widget source="key_green" render="Label" position="230,200" size="150,30" noWrap="1" zPosition="1" valign="center" font="Regular; 20" halign="left" backgroundColor="#00000000" foregroundColor="#00ffffff" />
+    <widget source="key_yellow" render="Label" position="430,200" size="150,30" noWrap="1" zPosition="1" valign="center" font="Regular; 20" halign="left" backgroundColor="#00000000" foregroundColor="#00ffffff" />
+    <ePixmap pixmap="skin_default/buttons/red.png" position="30,200" size="40,40" alphatest="on" />
+    <ePixmap pixmap="skin_default/buttons/green.png" position="230,200" size="40,40" alphatest="on" />
+    <ePixmap pixmap="skin_default/buttons/yellow.png" position="430,200" size="40,40" alphatest="on" />
+  </screen>
+  <screen name="WizardInstallSmallBox" position="center,center" size="520,185" resolution="1280,720" backgroundColor="background">
+    <widget source="Title" render="Label" position="65,8" size="520,0" font="Regular;22" transparent="1" />
+    <widget source="status" render="Label" position="75,10" size="435,55" font="Regular;22" transparent="1" />
+  </screen>
+</skin>

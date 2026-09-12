@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<skin>
+  <colors>
+    <color name="background" value="#0028343b" />
+    <color name="surface" value="#0013191c" />
+    <color name="selection" value="#0041535c" />
+    <color name="muted" value="#00768b94" />
+    <color name="accent" value="#00607d8a" />
+    <color name="foreground" value="#00f4f5f6" />
+    <color name="secondary" value="#00c1c8cc" />
+    <color name="transparent" value="#ff000000" />
+    <color name="overlay" value="#1813191c" />
+    <color name="disabled" value="#00777c80" />
+    <color name="recording" value="#00ffe59a" />
+    <color name="red" value="#00e64b50" />
+    <color name="green" value="#006eaf58" />
+    <color name="yellow" value="#00d9b853" />
+    <color name="blue" value="#00588eda" />
+    <color name="black" value="#00000000" />
+    <color name="white" value="#00ffffff" />
+    <color name="rowShade" value="#00222d33" />
+    <color name="selectionShade" value="#0034434b" />
+    <color name="channelShadeStrong" value="#2413191c" />
+    <color name="channelShadeLight" value="#4813191c" />
+    <color name="key_red" value="#00e64b50" />
+    <color name="key_green" value="#006eaf58" />
+    <color name="key_yellow" value="#00d9b853" />
+    <color name="key_blue" value="#00588eda" />
+    <color name="key_text" value="#00f4f5f6" />
+    <color name="key_back" value="#0013191c" />
+    <color name="UmbraScreen" value="surface,background,surface,vertical" />
+    <color name="UmbraPanel" value="background,surface,vertical" />
+    <color name="UmbraMenuTile" value="background,surface,vertical" />
+    <color name="UmbraMenuTileSelected" value="selection,background,surface,vertical" />
+    <color name="UmbraRow" value="background,rowShade,vertical" />
+    <color name="UmbraSelection" value="selection,background,vertical" />
+    <color name="UmbraListSelection" value="selection,selectionShade,vertical" />
+    <color name="UmbraFade" value="transparent,surface,vertical" />
+    <color name="UmbraInfoFade" value="transparent,overlay,vertical" />
+    <color name="UmbraInfoShade" value="overlay,surface,vertical" />
+    <color name="UmbraProgress" value="muted,accent,horizontal" />
+    <color name="UmbraVolume" value="muted,accent,vertical" />
+    <color name="UmbraChannelShade" value="channelShadeStrong,channelShadeLight,horizontal" />
+  </colors>
+</skin>
