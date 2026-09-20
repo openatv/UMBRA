@@ -34,7 +34,7 @@ OPTIONS = {
     "eventDescription": (N_("Extended event description"), "infobar", "on", {"on": N_("On"), "off": N_("Off")}),
     "technicalInfo": (N_("Video and audio information"), "infobar", "on", {"on": N_("On"), "off": N_("Off")}),
     "tunerInfo": (N_("Tuner and signal information"), "infobar", "off", {"off": N_("Off"), "signal": N_("Tuner / SNR / AGC / BER"), "details": N_("With transponder details")}),
-    "cryptoInfo": (N_("Encryption information"), "infobar", "off", {"off": N_("Off"), "on": N_("On")}),
+    "cryptoInfo": (N_("Encryption / ECM information"), "infobar", "off", {"off": N_("Off"), "on": N_("On")}),
     "weatherInfo": (N_("Weather at top left"), "infobar", "off", {"off": N_("Off"), "current": N_("Current"), "details": N_("With daily values"), "forecast": N_("With five-day forecast")}),
     "serviceIcons": (N_("Status icons"), "infobar", "all", {"all": N_("All, inactive dimmed"), "active": N_("Active only"), "off": N_("Off")}),
     "infobarLayout": (N_("Infobar layout"), "infobar", "classic", {"classic": N_("Classic"), "cover": N_("Cover"), "backdrop": N_("Panorama")}),

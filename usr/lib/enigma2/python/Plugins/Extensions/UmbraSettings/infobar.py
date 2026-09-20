@@ -94,13 +94,17 @@ def add_diagnostics(root, icons):
                   foregroundColor="secondary"), "TransponderInfo")
 
     panel = node(root, "screen", name="UmbraCryptoInfo")
-    for text, inverse in (("Verschluesselt", ""), ("Frei empfangbar", "Invert")):
-        widget = label(panel, 0, 0, 220, 28, text=text, source="session.CurrentService", font=16, noWrap="1")
-        widget.set("render", "FixedLabel")
-        convert(convert(widget, "ServiceInfo", "IsCrypted"), "ConditionalShowHide", inverse)
-    for token, x, w in (("CryptoSpecial", 240, 400), ("CryptoBar", 664, 568)):
+    # CA name already indicates encryption/FTA; the status strip keeps its lock
+    # icon. Reuse the width for ECM details instead of adding a second row.
+    for token, x, w in (("CryptoSpecial", 0, 300), ("CryptoBar", 982, 250)):
         convert(label(panel, x, 0, w, 28, source="session.CurrentService", font=16, noWrap="1",
                       foregroundColor="secondary"), "PliExtraInfo", token)
+    convert(label(panel, 310, 0, 658, 28, source="session.CurrentService", font=16, noWrap="1",
+                  foregroundColor="secondary"), "UmbraEcmInfo", "Summary")
+    hint = label(panel, 0, 0, 1232, 28, source="global.CurrentTime", font=16, noWrap="1",
+                 text="Crypto information is disabled in the OpenATV OSD settings.", foregroundColor="muted")
+    hint.set("render", "FixedLabel")
+    convert(convert(hint, "ConfigEntryTest", "config.usage.show_cryptoinfo,0"), "ConditionalShowHide")
 
 
 def apply_diagnostics(root, options, width):

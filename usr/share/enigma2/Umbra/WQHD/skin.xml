@@ -1125,19 +1125,18 @@ install(self)</applet>
     </widget>
   </screen>
   <screen name="UmbraCryptoInfo">
-    <widget position="0,0" size="440,56" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" source="session.CurrentService" render="FixedLabel" text="Verschluesselt">
-      <convert type="ServiceInfo">IsCrypted</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget position="0,0" size="440,56" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" source="session.CurrentService" render="FixedLabel" text="Frei empfangbar">
-      <convert type="ServiceInfo">IsCrypted</convert>
-      <convert type="ConditionalShowHide">Invert</convert>
-    </widget>
-    <widget position="480,0" size="800,56" font="Regular;32" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="session.CurrentService" render="Label">
+    <widget position="0,0" size="600,56" font="Regular;32" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="session.CurrentService" render="Label">
       <convert type="PliExtraInfo">CryptoSpecial</convert>
     </widget>
-    <widget position="1328,0" size="1136,56" font="Regular;32" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="session.CurrentService" render="Label">
+    <widget position="1964,0" size="500,56" font="Regular;32" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="session.CurrentService" render="Label">
       <convert type="PliExtraInfo">CryptoBar</convert>
+    </widget>
+    <widget position="620,0" size="1316,56" font="Regular;32" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="session.CurrentService" render="Label">
+      <convert type="UmbraEcmInfo">Summary</convert>
+    </widget>
+    <widget position="0,0" size="2464,56" font="Regular;32" foregroundColor="muted" transparent="1" alphatest="blend" valign="center" noWrap="1" source="global.CurrentTime" render="FixedLabel" text="Crypto information is disabled in the OpenATV OSD settings.">
+      <convert type="ConfigEntryTest">config.usage.show_cryptoinfo,0</convert>
+      <convert type="ConditionalShowHide" />
     </widget>
   </screen>
   <screen position="0,1220" size="2560,220" name="RdsInfoDisplay" flags="wfNoBorder" backgroundColor="transparent" zPosition="-8" resolution="2560,1440">

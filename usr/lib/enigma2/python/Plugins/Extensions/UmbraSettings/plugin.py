@@ -98,7 +98,7 @@ class UmbraSettings(Setup):
             if key == "tunerInfo":
                 description += ". " + _("Native tuner allocation, SNR, AGC and BER; OpenATV reports unavailable values.")
             if key == "cryptoInfo":
-                description += ". " + _("Status, CA system, CAID and provider ID. CA details follow the OpenATV encryption information setting.")
+                description += ". " + _("CA system, CAID, provider ID and ECM details (reader/source, protocol, time and PID, when available). Requires encryption information in the OpenATV OSD settings. Hide server names is respected. Not shown in Infobar Lite.")
             if key == "weatherInfo":
                 description += ". " + _("Location, provider, units and update interval are configured only in OAWeather. The display stays hidden without weather data.")
             if choices is None:

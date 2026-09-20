@@ -89,6 +89,18 @@ screen and matching list template: **Umbra Galerie + Gallery** or
 Applying a style currently takes about 20 seconds on the receiver and
 can show the busy spinner. Normal GUI startup does not run this style generation.
 
+### ECM and Softcam Information
+
+In **Umbra > Infobar**, enable **Encryption / ECM information**. Also enable
+encryption information in OpenATV's OSD settings. The classic, cover and panorama
+infobars then show CA information plus reader/source, protocol, ECM time and PID,
+where supplied by the softcam. The compact **Infobar Lite** remains unchanged.
+
+Umbra uses OpenATV's existing ECM reader; it does not install or configure a
+softcam. Free-to-air services and missing ECM data do not show a previous ECM
+result. OpenATV's **Hide server names** setting also hides reader/source names in
+this row. The feature remains off in the supplied style packs.
+
 ## Previews
 
 ### Full Width List
