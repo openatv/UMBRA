@@ -259,7 +259,78 @@ def refresh_plugin_icon(session=None, **kwargs):
             descriptor.iconString = plugin_icon()
 
 
+def initialize_umbra():
+    """Discard foreign list templates before E2 recreates its channel dialog."""
+    resolution = skin_resolution(config.skin.primary_skin.value, None)
+    if resolution is None:
+        return False
+    from skin import componentTemplates, domScreens, reloadSkinTemplates
+    reloadSkinTemplates(clear=True)
+    screen_choices = [("", _("Legacy mode"))]
+    for name, (element, path) in domScreens.items():
+        if element.get("base") == "ChannelSelection":
+            screen_choices.append((name, _(element.get("label", name))))
+    templates = {name: componentTemplates.get("serviceList", name)
+                 for name in componentTemplates.names("serviceList") or []}
+    screen_names = {name for name, title in screen_choices}
+
+    def compatible(screen, rows):
+        template = templates.get(rows)
+        if screen not in screen_names or template is None:
+            return False
+        allowed = [name.strip() for name in template.get("screens", "").split(",") if name.strip()]
+        return not screen or not allowed or screen in allowed
+
+    options = native_layout(resolve(PACKS.get(cfg.style.value, PACKS["graphite"]),
+                                    {key: getattr(cfg, key).value for key in OPTIONS}))
+    preferred = (options["channelScreen"], options["channelRows"])
+    current = (config.channelSelection.screenStyle.value, config.channelSelection.widgetStyle.value)
+    # The first activation must not adopt another skin's globally saved layout.
+    selected = current if cfg.nativeSnapshot.value and compatible(*current) else preferred
+    if not compatible(*selected):
+        selected = ("ChannelSelectionDefault", "Default")
+    if not compatible(*selected):
+        raise ValueError("Umbra channel templates are missing or incompatible")
+    changed = False
+    for setting, choices, value in (
+            (config.channelSelection.screenStyle, screen_choices, selected[0]),
+            (config.channelSelection.widgetStyle, [(name, _(name)) for name in templates], selected[1])):
+        before = setting.value
+        setting.setChoices(choices, default=value)
+        setting.value = value
+        if before != value:
+            setting.save()
+            changed = True
+    if cfg.resolution.value != resolution:
+        cfg.resolution.value = resolution
+        cfg.resolution.save()
+        changed = True
+    snapshot = json.dumps(native_values(), sort_keys=True)
+    if cfg.nativeSnapshot.value != snapshot:
+        cfg.nativeSnapshot.value = snapshot
+        cfg.nativeSnapshot.save()
+        changed = True
+    if changed:
+        configfile.save()
+    print(f"[Umbra] Activated {resolution}: {selected[0] or 'Legacy'} / {selected[1]}")
+    return True
+
+
+def skin_changed(session=None, **kwargs):
+    try:
+        initialize_umbra()
+    except Exception as error:
+        print(f"[Umbra] Skin activation failed: {error}")
+    refresh_plugin_icon(session=session)
+
+
+def autostart(reason, **kwargs):
+    if reason == 0:
+        skin_changed()
+
+
 def Plugins(**kwargs):
     return [PluginDescriptor(name="Umbra", description=_("Style packs and personal appearance"), where=PluginDescriptor.WHERE_PLUGINMENU,
                              icon=plugin_icon(), needsRestart=False, fnc=main),
-            PluginDescriptor(where=PluginDescriptor.WHERE_SKINCHANGE, needsRestart=False, fnc=refresh_plugin_icon)]
+            PluginDescriptor(where=PluginDescriptor.WHERE_SKINCHANGE, needsRestart=False, fnc=skin_changed),
+            PluginDescriptor(where=PluginDescriptor.WHERE_AUTOSTART, needsRestart=False, fnc=autostart)]
