@@ -4,10 +4,11 @@ Adapted embedded OpenATV Enigma2 XML screen definitions retain their original
 authorship and licensing. See the OpenATV source headers and LICENSES/GPL-2.0-or-later.txt
 for their terms. No Enigma2 receiver Python implementation is copied.
 
-Umbra uses Liberation Sans supplied by OpenATV and includes one shared
-enigma2icons font with additional menu and broadcast-status glyphs. Existing glyphs and
+Umbra uses Liberation Sans and enigma2icons supplied by OpenATV's enigma2-fonts
+package. No private copy of enigma2icons is included. Existing glyphs and
 codepoints are preserved. Google Material Symbols are Apache-2.0; see the
-enigma2iconfont source list and licenses. No per-resolution font copies.
+enigma2iconfont source list and licenses. The separate, small MetrixIcons
+weather font is bundled unchanged to preserve plugin codepoint compatibility.
 
 The broadcast status variants include Dolby and HbbTV trademark shapes.
 They are not Google Material assets and no trademark license is granted.

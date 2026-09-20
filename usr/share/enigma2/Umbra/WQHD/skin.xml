@@ -7,7 +7,7 @@
     <font filename="/usr/share/fonts/LiberationSans-Regular.ttf" name="Regular" scale="100" />
     <font filename="/usr/share/fonts/LiberationSans-Bold.ttf" name="Bold" scale="100" />
     <font filename="/usr/share/fonts/lcd.ttf" name="LCD" scale="100" />
-    <font filename="/usr/share/enigma2/Umbra/fonts/enigma2icons.ttf" name="enigma2icons" scale="100" />
+    <font filename="/usr/share/fonts/enigma2icons.ttf" name="enigma2icons" scale="100" />
     <font filename="/usr/share/enigma2/Umbra/fonts/MetrixIcons.ttf" name="UmbraWeatherIcons" scale="100" />
     <alias name="Body" font="Regular" size="35" height="58" />
     <alias name="ChoiceList" font="Regular" size="35" height="58" />
@@ -18,6 +18,9 @@
     <alias name="PlayList" font="Regular" size="34" height="58" />
     <alias name="VirtualKeyboard" font="Regular" size="56" height="120" />
     <alias name="VirtualKeyboardIcons" font="enigma2icons" size="56" />
+    <alias name="ChoiceListIcons" font="enigma2icons" size="38" />
+    <alias name="FileListIcons" font="enigma2icons" size="38" />
+    <alias name="MovieListIcons" font="enigma2icons" size="32" />
   </fonts>
   <parameters>
     <parameter name="SelectionListDescr" value="76,5,1660,48" />
@@ -43,6 +46,61 @@
     <parameter name="TMDbListName" value="24,4,1516,64" />
     <parameter name="PicturePlayerThumb" value="40,464,48,416,56,36" />
     <parameter name="ChoicelistVerticalAlignment" value="*center" />
+    <parameter name="ChoiceListNative" value="1" />
+    <parameter name="ChoiceListIcon_red" value="59922,red,red" />
+    <parameter name="ChoiceListIcon_green" value="59922,green,green" />
+    <parameter name="ChoiceListIcon_yellow" value="59922,yellow,yellow" />
+    <parameter name="ChoiceListIcon_blue" value="59922,blue,blue" />
+    <parameter name="ChoiceListIcon_text" value="60028,foreground,foreground" />
+    <parameter name="ChoiceListIcon_info" value="59658,foreground,foreground" />
+    <parameter name="ChoiceListIcon_help" value="59727,foreground,foreground" />
+    <parameter name="ChoiceListIcon_menu" value="59665,foreground,foreground" />
+    <parameter name="ChoiceListIcon_exit" value="59666,foreground,foreground" />
+    <parameter name="ChoiceListIcon_ok" value="59668,foreground,foreground" />
+    <parameter name="ChoiceListIcon_expandable" value="59967,foreground,foreground" />
+    <parameter name="ChoiceListIcon_expanded" value="59969,foreground,foreground" />
+    <parameter name="ChoiceListIcon_verticalline" value="61441,foreground,foreground" />
+    <parameter name="FileListNativeIcons" value="1" />
+    <parameter name="FileListIcon_lock_off" value="59679,secondary,secondary" />
+    <parameter name="FileListIcon_lock_on" value="59675,accent,accent" />
+    <parameter name="FileListIcon_link_arrow" value="60020,blue,blue" />
+    <parameter name="FileListIcon_link_error" value="60021,red,red" />
+    <parameter name="FileListIcon_storage" value="59982,secondary,secondary" />
+    <parameter name="FileListIcon_parent" value="59966,yellow,yellow" />
+    <parameter name="FileListIcon_current" value="59830,yellow,yellow" />
+    <parameter name="FileListIcon_directory" value="59828,yellow,yellow" />
+    <parameter name="FileListIcon_file" value="59824,foreground,foreground" />
+    <parameter name="FileListIcon_music" value="59942,green,green" />
+    <parameter name="FileListIcon_picture" value="59806,blue,blue" />
+    <parameter name="FileListIcon_movie" value="59765,accent,accent" />
+    <parameter name="FileListIcon_iso" value="59930,secondary,secondary" />
+    <parameter name="FileListIcon_playlist" value="59928,green,green" />
+    <parameter name="FileListIcon_7z" value="59911,yellow,yellow" />
+    <parameter name="FileListIcon_tar" value="59837,yellow,yellow" />
+    <parameter name="FileListIcon_rar" value="59911,yellow,yellow" />
+    <parameter name="FileListIcon_zip" value="59911,yellow,yellow" />
+    <parameter name="FileListIcon_cfg" value="59667,secondary,secondary" />
+    <parameter name="FileListIcon_html" value="59995,blue,blue" />
+    <parameter name="FileListIcon_ipk" value="60012,green,green" />
+    <parameter name="FileListIcon_log" value="59716,secondary,secondary" />
+    <parameter name="FileListIcon_lst" value="59829,secondary,secondary" />
+    <parameter name="FileListIcon_py" value="60032,yellow,yellow" />
+    <parameter name="FileListIcon_pyc" value="60032,secondary,secondary" />
+    <parameter name="FileListIcon_sh" value="60016,green,green" />
+    <parameter name="FileListIcon_txt" value="59824,foreground,foreground" />
+    <parameter name="FileListIcon_xml" value="60032,blue,blue" />
+    <parameter name="MovieListNativeIcons" value="1" />
+    <parameter name="MovieListIcon_folder" value="59828,yellow,yellow" />
+    <parameter name="MovieListIcon_trash" value="60010,secondary,secondary" />
+    <parameter name="MovieListIcon_record" value="60038,red,red" />
+    <parameter name="MovieListIcon_play" value="59918,green,green" />
+    <parameter name="MovieListIcon_play_record" value="60039,red,red" />
+    <parameter name="MovieListIcon_unwatched" value="60033,green,green" />
+    <parameter name="MovieListIcon_part_0_4" value="60033,accent,accent" />
+    <parameter name="MovieListIcon_part_1_4" value="60034,accent,accent" />
+    <parameter name="MovieListIcon_part_2_4" value="60035,accent,accent" />
+    <parameter name="MovieListIcon_part_3_4" value="60036,accent,accent" />
+    <parameter name="MovieListIcon_part_4_4" value="60037,accent,accent" />
     <parameter name="ProgrammlistenUpdaterListFont" value="*Regular,44" />
     <parameter name="TMDbListFont" value="*Regular,44,72" />
     <parameter name="VirtualKeyboardNative" value="1" />
@@ -293,6 +351,17 @@
     <widget position="680,1262" size="300,50" font="Regular;34" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" name="size" />
     <widget position="1024,1262" size="644,50" font="Regular;34" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" halign="right" source="spacefree" render="Label" />
   </screen>
+  <screen name="UmbraPart_20e2ca6b3c">
+    <eLabel position="0,0" size="1680,132" backgroundColor="UmbraPanel" zPosition="-1" />
+    <eLabel position="40,38" size="60,60" text="" font="enigma2icons;52" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
+    <widget position="132,28" size="1040,76" font="Regular;50" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="1220,36" size="408,60" font="Regular;40" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
+      <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
+    </widget>
+    <widget position="40,168" size="106,106" name="icon" pixmaps="icons/input_question.png,icons/input_info.png,icons/input_warning.png,icons/input_error.png,icons/input_message.png" iconFont="enigma2icons;96" iconGlyphs="59727,59658,59659,59657,59876" iconColors="accent,accent,yellow,red,foreground" halign="center" valign="center" foregroundColor="foreground" alphatest="blend" conditional="icon" scale="1" transparent="1" />
+    <widget position="184,168" size="1448,368" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" name="text" />
+    <widget position="40,572" size="1600,336" name="list" conditional="list" enableWrapAround="1" font="Regular;46" itemHeight="84" padding="28,0" verticalAlignment="center" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" />
+  </screen>
   <screen name="UmbraPart_0ae336f91b">
     <eLabel position="0,0" size="1920,132" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="40,38" size="60,60" text="" font="enigma2icons;52" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
@@ -300,17 +369,6 @@
     <widget position="1460,36" size="408,60" font="Regular;40" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
-  </screen>
-  <screen name="UmbraPart_47664eed1f">
-    <eLabel position="0,0" size="1680,132" backgroundColor="UmbraPanel" zPosition="-1" />
-    <eLabel position="40,38" size="60,60" text="" font="enigma2icons;52" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="132,28" size="1040,76" font="Regular;50" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
-    <widget position="1220,36" size="408,60" font="Regular;40" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
-      <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
-    </widget>
-    <widget position="40,168" size="106,106" name="icon" pixmaps="icons/input_question.png,icons/input_info.png,icons/input_warning.png,icons/input_error.png,icons/input_message.png" alphatest="blend" conditional="icon" scale="1" transparent="1" />
-    <widget position="184,168" size="1448,368" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" name="text" />
-    <widget position="40,572" size="1600,336" name="list" conditional="list" enableWrapAround="1" font="Regular;46" itemHeight="84" padding="28,0" verticalAlignment="center" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" />
   </screen>
   <screen name="UmbraPart_b1701121de">
     <widget position="1808,180" size="572,344" name="logo" conditional="logo" alphatest="blend" scale="centerScaled" />
@@ -2229,22 +2287,22 @@ install(self)</applet>
 install(self)</applet>
   </screen>
   <screen position="440,240" size="1680,960" name="MessageBox" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
-    <panel name="UmbraPart_47664eed1f" />
+    <panel name="UmbraPart_20e2ca6b3c" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.message_layout import fit
 fit(self)</applet>
   </screen>
   <screen position="440,240" size="1680,960" name="MessageBoxModal" flags="wfNoBorder,wfModalFull" backgroundColor="UmbraScreen" zPosition="99" resolution="2560,1440">
-    <panel name="UmbraPart_47664eed1f" />
+    <panel name="UmbraPart_20e2ca6b3c" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.message_layout import fit
 fit(self)</applet>
   </screen>
   <screen position="440,240" size="1680,960" name="MessageBoxExt" flags="wfNoBorder" backgroundColor="UmbraScreen" zPosition="10" resolution="2560,1440">
-    <panel name="UmbraPart_47664eed1f" />
+    <panel name="UmbraPart_20e2ca6b3c" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.message_layout import fit
 fit(self)</applet>
   </screen>
   <screen position="440,240" size="1680,960" name="MessageBoxSimple" flags="wfNoBorder" backgroundColor="UmbraScreen" zPosition="10" resolution="2560,1440">
-    <panel name="UmbraPart_47664eed1f" />
+    <panel name="UmbraPart_20e2ca6b3c" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.message_layout import fit
 fit(self)</applet>
   </screen>

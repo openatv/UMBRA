@@ -31,7 +31,7 @@ for installation and everyday use.
 ## Requirements
 
 Use a current **OpenATV 8.0 or later** image containing the native keyboard,
-EPG controls and skin reload APIs. This package does not patch Enigma2 or other
+EPG controls, native dialog/list icon support and skin reload APIs. This package does not patch Enigma2 or other
 plugins and is not intended for other image teams.
 
 The package depends on Enigma2, its system fonts, OAWeather
@@ -42,6 +42,10 @@ settings or network client. Umbra only controls whether and how weather is shown
 Weather remains off in Umbra's default style packs. e2MDB and
 the plugins whose screens are styled are optional and are not installed by
 Umbra. A MetrixHD installation is not required at runtime.
+
+UI symbols use the image's `enigma2icons.ttf`; Umbra does not install a second
+copy. Only the small Metrix weather font is bundled, with its original glyph
+numbers preserved. File and movie list symbols use shape and colour together.
 
 WQHD requires a receiver and framebuffer explicitly supporting a 2560 x 1440
 OSD. A 4K HDMI output alone does not establish that support.
