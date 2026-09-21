@@ -852,6 +852,9 @@
   <screen name="UmbraPart_554ee2b732">
     <widget name="HelpWindow" position="0,0" size="0,0" zPosition="1" transparent="1" alphatest="blend" />
   </screen>
+  <screen name="UmbraPart_1bc39543aa">
+    <widget position="54,909" size="1812,75" font="Regular;30" foregroundColor="secondary" transparent="1" alphatest="blend" valign="top" source="summary_description" render="Label" />
+  </screen>
   <screen name="UmbraPart_d994cb2ee5">
     <widget name="cover" position="1299,210" size="480,720" alphatest="blend" conditional="cover" scale="centerScaled" />
     <widget name="data" position="0,0" size="0,0" font="Regular;32" conditional="data" foregroundColor="foreground" backgroundColor="surface" transparent="1" />
@@ -2684,6 +2687,73 @@ install(self)</applet>
     <widget position="36,414" size="1080,520" name="bouquetlist" font="Regular;29" itemHeight="52" zPosition="5" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="12" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarRadius="3" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" />
     <widget position="54,429" size="1812,75" font="Regular;36" foregroundColor="foreground" transparent="0" alphatest="blend" valign="center" backgroundColor="surface" zPosition="6" name="lab1" />
     <widget position="54,354" size="150,60" font="Regular;36" foregroundColor="foreground" transparent="0" alphatest="blend" valign="center" backgroundColor="surface" zPosition="6" name="number" />
+    <panel name="UmbraKeys" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen position="0,0" size="1920,1080" name="BackupSelection" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="1920,1080">
+    <panel name="UmbraMenuHeader" />
+    <widget position="36,135" size="1848,752" name="checkList" itemHeight="47" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="12" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarRadius="3" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" />
+    <panel name="UmbraPart_1bc39543aa" />
+    <panel name="UmbraKeys" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen position="0,0" size="1920,1080" name="RestoreMenu" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="1920,1080">
+    <panel name="UmbraMenuHeader" />
+    <widget position="36,135" size="1848,715" name="filelist" itemHeight="55" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="12" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarRadius="3" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" font="Regular;29" padding="21,0" verticalAlignment="center" />
+    <panel name="UmbraPart_1bc39543aa" />
+    <panel name="UmbraKeys" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen position="0,0" size="1920,1080" name="PackageFeedSelection" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="1920,1080">
+    <panel name="UmbraMenuHeader" />
+    <widget position="36,135" size="1848,770" name="feeds" itemHeight="55" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="12" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarRadius="3" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" font="Regular;29" padding="21,0" verticalAlignment="center" />
+    <panel name="UmbraKeys" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen position="0,0" size="1920,1080" name="IpkgInstaller" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="1920,1080">
+    <panel name="UmbraMenuHeader" />
+    <widget position="36,135" size="1848,752" name="list" itemHeight="47" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="12" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarRadius="3" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" />
+    <widget position="54,909" size="1812,75" font="Regular;30" foregroundColor="secondary" transparent="1" alphatest="blend" valign="top" source="introduction" render="Label" />
+    <panel name="UmbraKeys" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen position="0,0" size="1920,1080" name="SoftwareManagerInfo" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="1920,1080">
+    <panel name="UmbraMenuHeader" />
+    <widget position="36,135" size="1848,715" source="list" render="Listbox" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="12" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarRadius="3" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
+      <template name="Default" fonts="Regular;29" itemHeight="55">
+        <text position="21,5" size="1806,44" index="0" font="0" verticalAlignment="center" wrap="ellipsis" />
+      </template>
+    </widget>
+    <widget position="54,909" size="1812,75" font="Regular;30" foregroundColor="secondary" transparent="1" alphatest="blend" valign="top" source="introduction" render="Label" />
+    <panel name="UmbraKeys" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen position="0,0" size="1920,1080" name="RestorePlugins" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="1920,1080">
+    <panel name="UmbraMenuHeader" />
+    <widget position="36,135" size="1848,715" source="menu" render="Listbox" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="12" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="6" scrollbarRadius="3" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
+      <template name="Default" fonts="Regular;29" itemHeight="55">
+        <pixmap position="18,9" size="42,36" index="1" alpha="blend" scale="centerScaled" />
+        <text position="81,5" size="1740,44" index="0" font="0" verticalAlignment="center" wrap="ellipsis" />
+      </template>
+    </widget>
+    <panel name="UmbraPart_1bc39543aa" />
+    <panel name="UmbraKeys" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen position="0,0" size="1920,1080" name="Opkg" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="1920,1080">
+    <panel name="UmbraMenuHeader" />
+    <widget position="54,150" size="1812,135" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" name="status" />
+    <widget position="54,327" size="1812,12" name="activityslider" borderWidth="0" cornerRadius="6" backgroundColor="selection" foregroundColor="UmbraProgress" />
+    <widget position="54,390" size="1812,168" font="Regular;33" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" name="package" />
+    <widget position="54,627" size="1812,15" name="slider" borderWidth="0" cornerRadius="8" backgroundColor="selection" foregroundColor="UmbraProgress" />
+    <widget position="54,135" size="1812,837" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollbarMode="showOnDemand" name="log" />
     <panel name="UmbraKeys" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
