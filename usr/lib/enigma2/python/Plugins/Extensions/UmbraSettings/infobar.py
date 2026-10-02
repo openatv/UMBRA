@@ -83,8 +83,10 @@ def add_diagnostics(root, icons):
     dab = label(panel, 240, 0, 60, 28, text="DAB+", source="session.CurrentService", font=16, noWrap="1")
     dab.set("render", "FixedLabel")
     convert(convert(dab, "ServiceInfo", "IsDAB"), "ConditionalShowHide")
-    for title, token, x, w in (("SNR", "SNRdB", 474, 116), (None, "SNR", 654, 100),
-                               ("AGC", "AGC", 798, 100), ("BER", "BER", 1012, 158)):
+    # Native E2 reports IP: DASH/HLS for DVB-I, otherwise the configured SNR unit.
+    convert(label(panel, 474, 0, 280, 28, source="session.FrontendStatus", font=16, noWrap="1"),
+            "FrontendInfo", "SNRStream")
+    for title, token, x, w in (("AGC", "AGC", 798, 100), ("BER", "BER", 1012, 158)):
         if title:
             label(panel, x, 0, 50, 28, text=title, font=16, foregroundColor="muted")
         convert(label(panel, x + (54 if title else 0), 0, w, 28, source="session.FrontendStatus", font=16, noWrap="1"), "FrontendInfo", token)

@@ -22,6 +22,9 @@ for installation and everyday use.
 - Channel lists with details, live-TV preview, gallery and column views.
 - Native menus, compact dialogs, EPG layouts, recording/timer screens and
   adaptations for plugin screens covered by the MetrixHD reference.
+- First-run and language-selection layouts, Auto DiSEqC, signal finder and
+  cable-scan screens, plus compact Wi-Fi connection and image-download dialogs.
+- OpenATV user-manual and optional Remote Support screens, with native QR codes.
 - Shared UI and monochrome weather icon fonts and one spinner set. Required raster assets are shared
   between resolutions; no runtime SVG conversion is added.
 - Native OpenATV panels and templates reuse repeated screen elements.
@@ -33,6 +36,12 @@ for installation and everyday use.
 Use a current **OpenATV 8.0 or later** image containing the native keyboard,
 EPG controls, native dialog/list icon support and skin reload APIs. This package does not patch Enigma2 or other
 plugins and is not intended for other image teams.
+
+The current layouts also use OpenATV's `FrontendInfo/SNRStream` converter for
+DVB-I/IP (DASH/HLS) and signal information, and the current network-list fields.
+The enlarged, centred wizard remote requires `ShowRemoteControl` support for
+`remoteControlScale="fit"`. These Enigma2 updates must be supplied by the image;
+they are not installed or patched by Umbra.
 
 The package depends on Enigma2, its system fonts, OAWeather
 (`enigma2-plugin-extensions-oaweather`) and the OEA weather helper.
