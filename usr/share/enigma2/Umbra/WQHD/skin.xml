@@ -1089,11 +1089,11 @@ prime_picons(self)</applet>
     <widget position="444,1354" size="452,54" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" source="session.CurrentService" render="Label">
       <convert type="VAudioInfo">AudioCodec</convert>
     </widget>
-    <widget position="916,1354" size="360,54" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" source="session.Event_Now" render="Label">
-      <convert type="EventName">Genre</convert>
+    <widget position="916,1354" size="360,54" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="session.Event_Now" render="Label">
+      <convert type="EventInfo">Genre</convert>
     </widget>
-    <widget position="1296,1354" size="84,54" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="session.Event_Now" render="Label">
-      <convert type="EventName">RatingCode</convert>
+    <widget position="1296,1354" size="84,54" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" halign="right" source="session.Event_Now" render="Label">
+      <convert type="EventInfo">RatingCode</convert>
     </widget>
     <panel name="UmbraServiceStatus" />
     <widget position="2484,1364" size="28,28" source="session.RecordState" render="FixedLabel" text="" backgroundColor="red" cornerRadius="16">
@@ -1722,6 +1722,8 @@ install(self)</applet>
         <text position="284,112" size="2140,45" index="4" font="1" wrap="ellipsis" foregroundColor="secondary" />
       </template>
     </widget>
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.plugin_dialog_layout import history_labels
+history_labels(self)</applet>
     <panel name="UmbraKeys" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>

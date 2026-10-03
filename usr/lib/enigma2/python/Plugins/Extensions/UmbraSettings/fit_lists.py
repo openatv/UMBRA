@@ -32,8 +32,13 @@ class ListFitter:
             return
         self.busy = True
         try:
-            for component, instance, width, limit, _ in self.bindings:
-                if component.instance is not instance:
+            for binding in self.bindings[:]:
+                component, instance, width, limit, callbacks = binding
+                # GUIComponent.destroy() clears the renderer's entire __dict__.
+                if getattr(component, "instance", None) is not instance:
+                    if self.fit in callbacks:
+                        callbacks.remove(self.fit)
+                    self.bindings.remove(binding)
                     continue
                 height = fitted_height(limit, instance.getItemHeight())
                 if instance.getOrientation() == eListbox.orHorizontal:

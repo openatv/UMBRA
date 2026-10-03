@@ -443,11 +443,11 @@ prime_picons(self)</applet>
     <widget position="222,677" size="226,27" font="Regular;16" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" source="session.CurrentService" render="Label">
       <convert type="VAudioInfo">AudioCodec</convert>
     </widget>
-    <widget position="458,677" size="180,27" font="Regular;16" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" source="session.Event_Now" render="Label">
-      <convert type="EventName">Genre</convert>
+    <widget position="458,677" size="180,27" font="Regular;16" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="session.Event_Now" render="Label">
+      <convert type="EventInfo">Genre</convert>
     </widget>
-    <widget position="648,677" size="42,27" font="Regular;16" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="session.Event_Now" render="Label">
-      <convert type="EventName">RatingCode</convert>
+    <widget position="648,677" size="42,27" font="Regular;16" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" halign="right" source="session.Event_Now" render="Label">
+      <convert type="EventInfo">RatingCode</convert>
     </widget>
     <panel name="UmbraServiceStatus" />
     <widget position="1242,682" size="14,14" source="session.RecordState" render="FixedLabel" text="" backgroundColor="red" cornerRadius="8">
@@ -1258,6 +1258,8 @@ install(self)</applet>
         <text position="142,66" size="1070,26" index="4" font="1" wrap="ellipsis" foregroundColor="secondary" />
       </template>
     </widget>
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.plugin_dialog_layout import history_labels
+history_labels(self)</applet>
     <panel name="UmbraKeys" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>

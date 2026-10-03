@@ -1,4 +1,25 @@
-"""Bounded Umbra geometry for the two plugin-driven Metrix layout applets."""
+"""Umbra-only dialog geometry and display-text preparation."""
+
+
+def history_labels(screen):
+    """Keep EPG line breaks out of the single-line History Zap text fields."""
+    source = screen['menu']
+    rows = []
+    changed = False
+    for entry in source.list:
+        row = list(entry)
+        for index in (2, 3, 4):
+            if index < len(row) and isinstance(row[index], str):
+                text = ' '.join(row[index].replace('\x8a', ' ').replace('\ue08a', ' ').split())
+                changed |= text != row[index]
+                row[index] = text
+        # Native History Zap uses an empty string for missing picons; MultiContent expects None.
+        if len(row) > 6 and row[6] == '':
+            row[6] = None
+            changed = True
+        rows.append(tuple(row) if isinstance(entry, tuple) else row)
+    if changed:
+        source.updateList(rows)
 
 
 def config_split(screen):
