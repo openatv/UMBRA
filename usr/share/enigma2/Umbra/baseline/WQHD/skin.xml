@@ -1633,7 +1633,7 @@ install(self)</applet>
   <screen position="0,0" size="2560,1440" name="NetworkOverview" flags="wfNoBorder" backgroundColor="UmbraScreen" title="Network Overview" resolution="2560,1440">
     <panel name="UmbraMenuHeader" />
     <widget source="adapterList" render="Listbox" position="48,180" size="2464,480" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
-      <template name="Default" colors="green,red,secondary,green,red,secondary" fonts="Regular;34,enigma2icons;61,Regular;35,Regular;29,enigma2icons;32" itemHeight="80">
+      <template name="Default" colors="green,red,secondary,green,red,secondary" fonts="Regular;34,enigma2icons;61,Regular;35,Regular;29,enigma2icons;32,Regular;26" itemHeight="80">
         <rowtemplate>
           <text index="AdapterName" position="0,0" size="500,80" font="0" foregroundColor="secondary" padding="10,0" verticalAlignment="center" wrap="ellipsis" />
           <text index="StatusText" position="540,0" size="340,80" font="0" foregroundColor="secondary" padding="10,0" verticalAlignment="center" wrap="ellipsis" />
@@ -1656,11 +1656,11 @@ install(self)</applet>
         </rowtemplate>
       </template>
     </widget>
-    <widget source="savedLabel" render="Label" position="48,730" size="2464,60" foregroundColor="secondary" padding="20,0" verticalAlignment="center" widgetBorderColor="gray" widgetBorderWidth="2">
+    <widget source="savedLabel" render="Label" position="48,730" size="2464,60" foregroundColor="secondary" padding="20,0" verticalAlignment="center" widgetBorderColor="gray" widgetBorderWidth="2" font="Regular;40">
       <convert type="ConditionalShowHide" />
     </widget>
     <widget source="savedList" render="Listbox" position="48,810" size="2464,392" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
-      <template name="Default" colors="green,red,secondary,green,red,secondary" fonts="Regular;34,Regular;32" itemHeight="56">
+      <template name="Default" colors="green,red,secondary,green,red,secondary" fonts="Regular;34,Regular;32,enigma2icons;40" itemHeight="56">
         <rowtemplate>
           <text index="SSID" position="0,0" size="500,56" font="0" foregroundColor="secondary" padding="10,0" verticalAlignment="center" wrap="ellipsis" />
           <text index="StatusText" position="500,0" size="200,56" font="0" foregroundColor="secondary" padding="10,0" verticalAlignment="center" wrap="ellipsis" />
@@ -1671,7 +1671,7 @@ install(self)</applet>
         </rowtemplate>
         <rowtemplate>
           <text index="SSID" position="0,0" size="500,56" font="1" padding="10,0" verticalAlignment="center" wrap="ellipsis" />
-          <text index="StatusGlyph" position="500,0" size="200,56" font="2" foregroundColor="+StatusColor" foregroundColorSelected="+StatusColorSelected" padding="10,0" verticalAlignment="center" wrap="ellipsis" />
+          <text index="StatusGlyph" position="500,0" size="200,56" font="2" foregroundColor="+StatusColor" foregroundColorSelected="+StatusColorSelected" padding="10,0" verticalAlignment="center" />
           <text index="BSSID" position="700,0" size="420,56" font="1" padding="10,0" verticalAlignment="center" wrap="ellipsis" />
           <text index="Frequency" position="1120,0" size="280,56" font="1" padding="10,0" verticalAlignment="center" wrap="ellipsis" />
           <text index="Channel" position="1400,0" size="240,56" font="1" padding="10,0" verticalAlignment="center" wrap="ellipsis" />
