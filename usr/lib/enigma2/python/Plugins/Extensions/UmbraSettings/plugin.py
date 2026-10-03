@@ -259,6 +259,27 @@ def refresh_plugin_icon(session=None, **kwargs):
             descriptor.iconString = plugin_icon()
 
 
+def umbra_active():
+    return skin_resolution(config.skin.primary_skin.value, None) is not None
+
+
+def menu_descriptor():
+    return PluginDescriptor(name="Umbra", description=_("Style packs and personal appearance"), where=PluginDescriptor.WHERE_PLUGINMENU,
+                            icon=plugin_icon(), needsRestart=False, fnc=main)
+
+
+def refresh_plugin_visibility(session=None, **kwargs):
+    from Components.PluginComponent import plugins
+    entries = [entry for entry in plugins.getPlugins(PluginDescriptor.WHERE_PLUGINMENU) if entry.function == main]
+    if umbra_active():
+        if not entries:
+            plugins.addPlugin(menu_descriptor(), path=str(Path(__file__).parent))
+        refresh_plugin_icon(session=session)
+    else:
+        for entry in entries:
+            plugins.removePlugin(entry)
+
+
 def initialize_umbra():
     """Discard foreign list templates before E2 recreates its channel dialog."""
     resolution = skin_resolution(config.skin.primary_skin.value, None)
@@ -321,7 +342,7 @@ def skin_changed(session=None, **kwargs):
         initialize_umbra()
     except Exception as error:
         print(f"[Umbra] Skin activation failed: {error}")
-    refresh_plugin_icon(session=session)
+    refresh_plugin_visibility(session=session)
 
 
 def autostart(reason, **kwargs):
@@ -330,7 +351,9 @@ def autostart(reason, **kwargs):
 
 
 def Plugins(**kwargs):
-    return [PluginDescriptor(name="Umbra", description=_("Style packs and personal appearance"), where=PluginDescriptor.WHERE_PLUGINMENU,
-                             icon=plugin_icon(), needsRestart=False, fnc=main),
-            PluginDescriptor(where=PluginDescriptor.WHERE_SKINCHANGE, needsRestart=False, fnc=skin_changed),
-            PluginDescriptor(where=PluginDescriptor.WHERE_AUTOSTART, needsRestart=False, fnc=autostart)]
+    # Add the menu before AUTOSTART runs, so the first plugin scan cannot add it twice.
+    entries = [menu_descriptor()] if umbra_active() else []
+    # Keep the hooks under other skins so a live switch can add the menu again.
+    entries.extend((PluginDescriptor(where=PluginDescriptor.WHERE_SKINCHANGE, needsRestart=False, fnc=skin_changed),
+                    PluginDescriptor(where=PluginDescriptor.WHERE_AUTOSTART, needsRestart=False, fnc=autostart)))
+    return entries

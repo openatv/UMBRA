@@ -69,11 +69,13 @@ opkg update
 opkg install enigma2-plugin-skins-umbra
 ```
 
-Installation alone does not activate Umbra or restart the GUI. Open **Umbra**
-under **Plugins**, choose a style and supported OSD resolution, then save.
-The native skin selector also offers the root FHD skin and the resolution
-directories. The settings plugin follows the receiver language; English source
-texts and a German translation are included.
+Installation alone does not activate Umbra or restart the GUI. Activate Umbra
+in OpenATV's skin selector, which offers the root FHD skin and the resolution
+directories. Then open **Umbra** under **Plugins** to choose a style and supported
+OSD resolution. The plugin entry is only shown while Umbra is active; switching
+skins with live reload adds or removes it without a GUI restart. Saved Umbra
+settings are retained when using another skin. The settings plugin follows the
+receiver language; English source texts and a German translation are included.
 
 Settings use the native OpenATV live reload where available. After updating
 plugin Python code, restart the GUI once to load the new code. Before removing
