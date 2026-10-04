@@ -2604,7 +2604,7 @@ install(self)</applet>
     <widget position="54,123" size="1812,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" source="Event" render="Label">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget position="54,186" size="1812,111" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" source="Event" render="Label">
+    <widget position="54,186" size="1812,108" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=3000,repeat=-1" source="Event" render="Label">
       <convert type="EventName">FullDescription</convert>
     </widget>
     <widget position="36,322" size="297,60" name="now_button" backgroundColor="surface" />
