@@ -1,4 +1,4 @@
-"""Umbra's optional ECM row, using OpenATV's shared ECM reader/cache."""
+"""Umbra ECM summary and CryptoBar colors, using OpenATV's native data."""
 
 import re
 
@@ -8,6 +8,27 @@ from Components.Converter.Poll import Poll
 from Components.Element import cached
 from Components.config import config
 from Tools.GetEcmInfo import GetEcmInfo
+
+
+def crypto_bar_colors(text):
+    from skin import colors
+
+    # Both native APIs emit these defaults but accept different parameter types.
+    # Color the output only; never change their shared skin.parameters contract.
+    roles = {0x0000FF00: "accent", 0x00FFFF00: "foreground",
+             0x007F7F7F: "muted", 0x00FFFFFF: "foreground"}
+
+    def replace(match):
+        role = roles.get(int(match[1], 16))
+        try:
+            value = colors[role].argb()
+            if type(value) is int and 0 <= value <= 0xFFFFFFFF:
+                return r"\c%08x" % value
+        except (KeyError, AttributeError, TypeError, ValueError):
+            pass
+        return match[0]
+
+    return re.sub(r"\\c([0-9a-fA-F]{8})", replace, text or "")
 
 
 def ecm_time(value):
@@ -53,14 +74,18 @@ class UmbraEcmInfo(Poll, Converter):
     def __init__(self, type):
         Converter.__init__(self, type)
         Poll.__init__(self)
-        self.ecm = GetEcmInfo()
-        self.poll_interval = 1000
-        self.poll_enabled = True
+        self.colorize = type == "CryptoBarColors"
+        if not self.colorize:
+            self.ecm = GetEcmInfo()
+            self.poll_interval = 1000
+            self.poll_enabled = True
 
     @cached
     def getText(self):
         if config.usage.show_cryptoinfo.value < 1:
             return ""
+        if self.colorize:
+            return crypto_bar_colors(self.source.text)
         service = self.source.service
         info = service and service.info()
         if not info or info.getInfo(iServiceInformation.sIsCrypted) != 1:

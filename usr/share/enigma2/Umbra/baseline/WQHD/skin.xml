@@ -105,7 +105,6 @@
     <parameter name="TMDbListFont" value="*Regular,44,72" />
     <parameter name="VirtualKeyboardNative" value="1" />
     <parameter name="EPGNativeControls" value="1" />
-    <parameter name="PliExtraInfoColors" value="*accent,*foreground,*muted,*foreground" />
     <parameter name="VirtualKeyboardNativeColors" value="surface,selection,accent,foreground,red,green,yellow,blue" />
     <parameter name="VirtualKeyboardNativeIcons" value="59865,60010,59972,59666,59923,59921,59968,59995,59967,60017,60018,60019,60011" />
   </parameters>
@@ -555,6 +554,7 @@ install(self)</applet>
     </widget>
     <widget position="1964,0" size="500,56" font="Regular;32" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="session.CurrentService" render="Label">
       <convert type="PliExtraInfo">CryptoBar</convert>
+      <convert type="UmbraEcmInfo">CryptoBarColors</convert>
     </widget>
     <widget position="620,0" size="1316,56" font="Regular;32" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="session.CurrentService" render="Label">
       <convert type="UmbraEcmInfo">Summary</convert>

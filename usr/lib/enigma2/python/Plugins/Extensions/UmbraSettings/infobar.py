@@ -99,8 +99,10 @@ def add_diagnostics(root, icons):
     # CA name already indicates encryption/FTA; the status strip keeps its lock
     # icon. Reuse the width for ECM details instead of adding a second row.
     for token, x, w in (("CryptoSpecial", 0, 300), ("CryptoBar", 982, 250)):
-        convert(label(panel, x, 0, w, 28, source="session.CurrentService", font=16, noWrap="1",
-                      foregroundColor="secondary"), "PliExtraInfo", token)
+        widget = convert(label(panel, x, 0, w, 28, source="session.CurrentService", font=16, noWrap="1",
+                               foregroundColor="secondary"), "PliExtraInfo", token)
+        if token == "CryptoBar":
+            convert(widget, "UmbraEcmInfo", "CryptoBarColors")
     convert(label(panel, 310, 0, 658, 28, source="session.CurrentService", font=16, noWrap="1",
                   foregroundColor="secondary"), "UmbraEcmInfo", "Summary")
     hint = label(panel, 0, 0, 1232, 28, source="global.CurrentTime", font=16, noWrap="1",
