@@ -18,6 +18,7 @@
     "weatherInfo": "off",
     "serviceIcons": "all",
     "infobarLayout": "classic",
+    "infobarPiconBackground": "on",
     "epgArtwork": "none",
     "channelArtwork": "none",
     "channelScreen": "ChannelSelectionDefault",

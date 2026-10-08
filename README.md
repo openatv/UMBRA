@@ -19,6 +19,9 @@ for installation and everyday use.
   overrides for colours, text size, gradients, transparency and layouts.
 - Classic, cover and panorama infobars, active/inactive status icons, optional
   tuner/signal information, encryption information and weather forecasts.
+- Optional transparent picon background, without modifying the picon files.
+- EMC playback infobar with cover, progress, duration, remaining time and
+  audio/subtitle/chapter information supplied by EMC.
 - Channel lists with details, live-TV preview, gallery and column views.
 - Native menus, compact dialogs, EPG layouts, recording/timer screens and
   adaptations for plugin screens covered by the MetrixHD reference.
@@ -87,6 +90,13 @@ Style values and personal overrides are stored separately. An option set to
 **From style pack** follows its style pack. **Style defaults** resets overrides
 after confirmation; **Save style** exports the effective settings as a JSON pack
 under `/etc/enigma2/umbra/styles/`.
+
+Under **Infobar**, set **Picon background** to **Transparent** to hide Umbra's
+coloured picon tile. Backgrounds baked into a picon image remain unchanged.
+
+For the Umbra EMC layout, disable **Use original EMC skin** in EMC's settings.
+Keeping it enabled intentionally uses EMC's own layout instead. Cover loading,
+preview playback, automatic hiding and playback actions remain controlled by EMC.
 
 Resolution is a receiver setting; weather configuration belongs to OAWeather,
 not to portable style packs. Saved settings survive package updates. Only the selected resolution

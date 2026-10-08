@@ -4,7 +4,7 @@ from enigma import ePoint, eSize, getDesktop
 
 
 def geometry(measured, rows, row_height, scale=1):
-    top, gap, margin, limit = (round(n * scale) for n in (84, 18, 24, 480))
+    top, gap, margin, limit = (round(n * scale) for n in (84, 18, 24, 648))
     icon_height = round(53 * scale)
     minimum_rows = min(rows, 2)
     text_limit = limit - top - margin - (gap + minimum_rows * row_height if rows else 0)

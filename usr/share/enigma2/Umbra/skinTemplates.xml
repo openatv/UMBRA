@@ -11,10 +11,10 @@
         <pixmap position="left,3" size="36,33" index="FolderImage" alpha="blend" scale="centerScaled" />
         <text position="left,0" size="50,35" index="Number" font="1" verticalAlignment="center" horizontalAlignment="right" />
         <panel position="left" size="e,87" layout="stack">
-          <pixmap position="e-138,3" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-102,3" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-66,3" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-30,3" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-138,9" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-102,9" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-66,9" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-30,9" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
           <text position="0,5" size="e-150,35" index="ServiceName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" fallbackColor="muted" />
           <text position="0,38" size="e-112,33" index="Title1" font="1" foregroundColor="secondary" wrap="ellipsis" verticalAlignment="center" />
           <text position="e-105,38" size="105,33" index="Remain" font="2" horizontalAlignment="right" verticalAlignment="center" />
@@ -32,10 +32,10 @@
         <pixmap position="left,3" size="36,33" index="FolderImage" alpha="blend" scale="centerScaled" />
         <text position="left,0" size="50,35" index="Number" font="1" verticalAlignment="center" horizontalAlignment="right" />
         <panel position="left" size="e,87" layout="stack">
-          <pixmap position="e-138,3" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-102,3" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-66,3" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-30,3" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-138,9" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-102,9" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-66,9" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-30,9" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
           <text position="0,5" size="e-150,35" index="ServiceName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" fallbackColor="muted" />
           <text position="0,38" size="e-112,33" index="Title1" font="1" foregroundColor="secondary" wrap="ellipsis" verticalAlignment="center" />
           <text position="e-105,38" size="105,33" index="Remain" font="2" horizontalAlignment="right" verticalAlignment="center" />
@@ -63,10 +63,10 @@
         <pixmap position="left,3" size="36,33" index="FolderImage" alpha="blend" scale="centerScaled" />
         <text position="left,0" size="50,35" index="Number" font="1" verticalAlignment="center" horizontalAlignment="right" />
         <panel position="left" size="e,45" layout="stack">
-          <pixmap position="e-138,3" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-102,3" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-66,3" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-30,3" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-138,7" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-102,7" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-66,7" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-30,7" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
           <text position="0,5" size="e-150,35" index="ServiceName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" fallbackColor="muted" />
         </panel>
       </panel>
@@ -81,10 +81,10 @@
         <pixmap position="left,3" size="36,33" index="FolderImage" alpha="blend" scale="centerScaled" />
         <text position="left,0" size="50,35" index="Number" font="1" verticalAlignment="center" horizontalAlignment="right" />
         <panel position="left" size="e,45" layout="stack">
-          <pixmap position="e-138,3" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-102,3" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-66,3" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-30,3" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-138,7" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-102,7" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-66,7" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-30,7" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
           <text position="0,5" size="e-150,35" index="ServiceName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" fallbackColor="muted" />
         </panel>
       </panel>
@@ -107,10 +107,10 @@
         <pixmap position="left,3" size="36,33" index="FolderImage" alpha="blend" scale="centerScaled" />
         <text position="left,0" size="50,35" index="Number" font="1" verticalAlignment="center" horizontalAlignment="right" />
         <panel position="left" size="e,127" layout="stack">
-          <pixmap position="e-138,3" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-102,3" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-66,3" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-30,3" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-138,9" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-102,9" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-66,9" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-30,9" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
           <text position="0,5" size="e-150,35" index="ServiceName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" fallbackColor="muted" />
           <text position="0,38" size="e-112,33" index="Title1" font="1" foregroundColor="secondary" wrap="ellipsis" verticalAlignment="center" />
           <text position="e-105,38" size="105,33" index="Remain" font="2" horizontalAlignment="right" verticalAlignment="center" />
@@ -128,10 +128,10 @@
         <pixmap position="left,3" size="36,33" index="FolderImage" alpha="blend" scale="centerScaled" />
         <text position="left,0" size="50,35" index="Number" font="1" verticalAlignment="center" horizontalAlignment="right" />
         <panel position="left" size="e,127" layout="stack">
-          <pixmap position="e-138,3" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-102,3" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-66,3" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-30,3" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-138,9" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-102,9" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-66,9" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-30,9" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
           <text position="0,5" size="e-150,35" index="ServiceName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" fallbackColor="muted" />
           <text position="0,38" size="e-112,33" index="Title1" font="1" foregroundColor="secondary" wrap="ellipsis" verticalAlignment="center" />
           <text position="e-105,38" size="105,33" index="Remain" font="2" horizontalAlignment="right" verticalAlignment="center" />
@@ -161,10 +161,10 @@
         <pixmap position="left,3" size="36,33" index="FolderImage" alpha="blend" scale="centerScaled" />
         <text position="left,0" size="50,35" index="Number" font="1" verticalAlignment="center" horizontalAlignment="right" />
         <panel position="left" size="e,87" layout="stack">
-          <pixmap position="e-138,3" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-102,3" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-66,3" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-30,3" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-138,9" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-102,9" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-66,9" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-30,9" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
           <text position="0,5" size="e-150,35" index="ServiceName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" fallbackColor="muted" />
           <text position="0,38" size="e-112,33" index="Title1" font="1" foregroundColor="secondary" wrap="ellipsis" verticalAlignment="center" />
           <text position="e-105,38" size="105,33" index="Remain" font="2" horizontalAlignment="right" verticalAlignment="center" />
@@ -204,10 +204,10 @@
         <pixmap position="left,3" size="36,33" index="FolderImage" alpha="blend" scale="centerScaled" />
         <text position="left,0" size="50,35" index="Number" font="1" verticalAlignment="center" horizontalAlignment="right" />
         <panel position="left" size="e,87" layout="stack">
-          <pixmap position="e-138,3" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-102,3" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-66,3" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
-          <pixmap position="e-30,3" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-138,9" size="28,26" index="CryptoImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-102,9" size="28,26" index="ServiceTypeImage" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-66,9" size="28,26" index="RecordingIndicator" alpha="blend" scale="centerScaled" />
+          <pixmap position="e-30,9" size="28,26" index="IsInBouquetImage" alpha="blend" scale="centerScaled" />
           <text position="0,5" size="e-150,35" index="ServiceName" font="0" wrap="ellipsis" verticalAlignment="center" pseudoColor="blue" streamColor="yellow" serviceNotAvailColor="disabled" fallbackColor="muted" />
           <text position="0,38" size="e-112,33" index="Title1" font="1" foregroundColor="secondary" wrap="ellipsis" verticalAlignment="center" />
           <text position="e-105,38" size="105,33" index="Remain" font="2" horizontalAlignment="right" verticalAlignment="center" />

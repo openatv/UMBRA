@@ -60,7 +60,7 @@ class ListFitter:
             component, width, limit, callbacks = binding
             # GUIComponent.destroy() clears the renderer's entire __dict__.
             instance = getattr(component, "instance", None)
-            if not isinstance(instance, eListbox):
+            if not isinstance(instance, eListbox) or instance.selectionChanged.get() is not callbacks:
                 _detach(callbacks, self.fit)
                 self.bindings.remove(binding)
                 continue

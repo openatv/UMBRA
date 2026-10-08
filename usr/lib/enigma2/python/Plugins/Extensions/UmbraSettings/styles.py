@@ -38,6 +38,7 @@ OPTIONS = {
     "weatherInfo": (N_("Weather at top left"), "infobar", "off", {"off": N_("Off"), "current": N_("Current"), "details": N_("With daily values"), "forecast": N_("With five-day forecast")}),
     "serviceIcons": (N_("Status icons"), "infobar", "all", {"all": N_("All, inactive dimmed"), "active": N_("Active only"), "off": N_("Off")}),
     "infobarLayout": (N_("Infobar layout"), "infobar", "classic", {"classic": N_("Classic"), "cover": N_("Cover"), "backdrop": N_("Panorama")}),
+    "infobarPiconBackground": (N_("Picon background"), "infobar", "on", {"on": N_("Style color"), "off": N_("Transparent")}),
     "epgArtwork": (N_("EPG artwork"), "infobar", "none", {"none": N_("Off"), "cover": N_("Cover"), "backdrop": N_("Panorama")}),
     "channelArtwork": (N_("Artwork in details"), "channels", "none", {"none": N_("Off"), "cover": N_("Cover"), "backdrop": N_("Panorama")}),
     "channelScreen": (N_("View"), "channels", "ChannelSelectionDefault", {"ChannelSelectionDefault": N_("Details"), "ChannelSelectionPIG": N_("Live TV preview"), "ChannelSelectionFull": N_("Full screen"), "ChannelSelectionGrid": N_("Gallery"), "ChannelSelectionColumns": N_("Columns")}),
@@ -209,6 +210,10 @@ def apply_layout(root, options, width):
             if mode == "off" or mode == "active" and element.tag == "eLabel":
                 element.set("size", "0,0")
     for infobar in infobars:
+        if options.get("infobarPiconBackground", "on") == "off":
+            for element in list(infobar):
+                if element.tag == "eLabel" and element.get("backgroundColor") == "selection":
+                    infobar.remove(element)
         for element in infobar.iter("widget"):
             types = [(c.get("type"), (c.text or "").strip()) for c in element.findall("convert")]
             if options["eventDescription"] == "off" and ("EventName", "ExtendedDescription") in types or options["technicalInfo"] == "off" and any(t in ("VAudioInfo", "ServiceInfo") and v in ("AudioCodec", "VideoInfo") for t, v in types):
