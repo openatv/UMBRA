@@ -1,6 +1,6 @@
 """Optional native diagnostic panels, shared by all Infobar media variants."""
 
-import xml.etree.ElementTree as ET
+from xml.etree.ElementTree import SubElement
 
 
 def add_lite_infobar(root):
@@ -112,35 +112,38 @@ def add_diagnostics(root, icons):
 
 
 def apply_diagnostics(root, options, width):
-    rows = []
-    if options.get("tunerInfo", "off") != "off":
-        rows.append("UmbraTunerSignals")
-    if options.get("tunerInfo") == "details":
-        rows.append("UmbraTunerTransponder")
-    if options.get("cryptoInfo", "off") == "on":
-        rows.append("UmbraCryptoInfo")
-    if not rows:
-        return root
-    factor = width / 1280
-    shift = round(len(rows) * 32 * factor)
-    for page in root.findall("screen"):
-        if page.get("name") not in ("InfoBar", "UmbraBase_InfoBar", "UmbraMedia_InfoBar"):
-            continue
-        # Media branch selectors have no widgets: adjust the selected branches only.
-        if not page.findall("widget"):
-            continue
-        for widget in page:
-            position = widget.get("position", "").split(",")
-            if len(position) != 2 or not all(value.lstrip("-").isdigit() for value in position):
-                continue
-            x, y = map(int, position)
-            if round(414 * factor) <= y < round(674 * factor):
-                widget.set("position", f"{x},{y - shift}")
-                if widget.get("backgroundColor") == "UmbraInfoShade":
-                    w, h = map(int, widget.get("size").split(","))
-                    widget.set("size", f"{w},{h + shift}")
-        for i, name in enumerate(rows):
-            ET.SubElement(page, "panel", name=name,
-                          position=f"{round(24 * factor)},{round((673 - len(rows) * 32 + i * 32) * factor)}",
-                          size=f"{round(1232 * factor)},{round(28 * factor)}")
-    return root
+	rows = []
+	if options.get("tunerInfo", "off") != "off":
+		rows.append("UmbraTunerSignals")
+	if options.get("cryptoInfo", "off") == "on":
+		rows.append("UmbraCryptoInfo")
+	if not rows:
+		return root
+	factor = width / 1280
+	shift = round(len(rows) * 32 * factor)
+	for page in root.findall("screen"):
+		if page.get("name") not in ("InfoBar", "UmbraBase_InfoBar", "UmbraMedia_InfoBar"):
+			continue
+		# Media branch selectors have no widgets: adjust the selected branches only.
+		if not page.findall("widget"):
+			continue
+		for widget in page:
+			position = widget.get("position", "").split(",")
+			if len(position) != 2 or not all(x.lstrip("-").isdigit() for x in position):
+				continue
+			x, y = map(int, position)
+			if round(414 * factor) <= y < round(674 * factor):
+				widget.set("position", f"{x},{y - shift}")
+				if widget.get("backgroundColor") == "UmbraInfoShade":
+					widgetWidth, widgetHeight = map(int, widget.get("size").split(","))
+					widget.set("size", f"{widgetWidth},{widgetHeight + shift}")
+		for index, name in enumerate(rows):
+			SubElement(page, "panel", name=name, position=f"{round(24 * factor)},{round((673 - len(rows) * 32 + index * 32) * factor)}", size=f"{round(1232 * factor)},{round(28 * factor)}")
+		if options.get("tunerInfo") == "details":
+			# The optional technical readout uses the genre/rating slot, not another full row.
+			for widget in list(page.findall("widget")):
+				if any(x.get("type") == "EventInfo" and x.text in ("Genre", "RatingCode") for x in widget.findall("convert")):
+					page.remove(widget)
+			widget = SubElement(page, "widget", source="session.CurrentService", render="Label", position=f"{round(458 * factor)},{round(677 * factor)}", size=f"{round(240 * factor)},{round(27 * factor)}", font=f"Regular;{round(15 * factor)}", foregroundColor="secondary", transparent="1", noWrap="1", valign="center", scrollText="direction=left,startDelay=3000,stepDelay=80,stepSize=1,endDelay=3000,repeat=0")
+			SubElement(widget, "convert", type="TransponderInfo")
+	return root

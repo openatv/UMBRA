@@ -4,19 +4,19 @@ Shared by builder and receiver; packs are validated JSON data, never Python.
 Resolution is deliberately a receiver setting, not part of a transferable pack.
 """
 
-from copy import deepcopy
 import ast
+from copy import deepcopy
 import json
 from pathlib import Path
 import re
 import xml.etree.ElementTree as ET
 
-from .theme import ACCENTS, PALETTES, TV_VISIBILITY, GRADIENTS, RESOLUTIONS, atomic_write, colors
 from .compact import compact_screens
-from .media import apply_media
+from .i18n import N_, _
 from .infobar import apply_diagnostics
+from .media import apply_media
+from .theme import ACCENTS, GRADIENTS, PALETTES, RESOLUTIONS, TV_VISIBILITY, atomic_write, colors
 from .weather import apply_weather
-from .i18n import _, N_
 
 
 INHERIT = "inherit"
@@ -41,7 +41,7 @@ OPTIONS = {
     "infobarPiconBackground": (N_("Picon background"), "infobar", "on", {"on": N_("Style color"), "off": N_("Transparent")}),
     "epgArtwork": (N_("EPG artwork"), "infobar", "none", {"none": N_("Off"), "cover": N_("Cover"), "backdrop": N_("Panorama")}),
     "channelArtwork": (N_("Artwork in details"), "channels", "none", {"none": N_("Off"), "cover": N_("Cover"), "backdrop": N_("Panorama")}),
-    "channelScreen": (N_("View"), "channels", "ChannelSelectionDefault", {"ChannelSelectionDefault": N_("Details"), "ChannelSelectionPIG": N_("Live TV preview"), "ChannelSelectionFull": N_("Full screen"), "ChannelSelectionGrid": N_("Gallery"), "ChannelSelectionColumns": N_("Columns")}),
+	"channelScreen": (N_("View"), "channels", "ChannelSelectionDefault", {"legacy": N_("Legacy mode"), "ChannelSelectionDefault": N_("Details"), "ChannelSelectionPIG": N_("Live TV preview"), "ChannelSelectionFull": N_("Full screen"), "ChannelSelectionGrid": N_("Gallery"), "ChannelSelectionColumns": N_("Columns")}),
     "channelRows": (N_("Rows"), "channels", "Default", {"Default": N_("Standard"), "Compact": N_("Compact"), "Extended": N_("Extended"), "Gallery": N_("Gallery"), "Columns": N_("Columns")}),
     "showPicon": (N_("Picons"), "channels", "on", {"on": N_("On"), "off": N_("Off")}),
     "showNumber": (N_("Channel numbers"), "channels", "on", {"on": N_("On"), "off": N_("Off")}),
@@ -214,10 +214,12 @@ def apply_layout(root, options, width):
             for element in list(infobar):
                 if element.tag == "eLabel" and element.get("backgroundColor") == "selection":
                     infobar.remove(element)
-        for element in infobar.iter("widget"):
+        for element in list(infobar.findall("widget")):
             types = [(c.get("type"), (c.text or "").strip()) for c in element.findall("convert")]
-            if options["eventDescription"] == "off" and ("EventName", "ExtendedDescription") in types or options["technicalInfo"] == "off" and any(t in ("VAudioInfo", "ServiceInfo") and v in ("AudioCodec", "VideoInfo") for t, v in types):
-                element.set("size", "0,0")
+            if options["eventDescription"] == "off" and any(x in types for x in (("EventName", "ExtendedDescription"), ("EventInfo", "ExtendedDescription"))):
+                infobar.remove(element)
+            elif options["technicalInfo"] == "off" and any(t in ("VAudioInfo", "ServiceInfo") and v in ("AudioCodec", "VideoInfo") for t, v in types):
+                infobar.remove(element)
     menu = result.find("screen[@name='Menu']")
     if menu is not None and options["menuWidth"] != "470":
         extra = round((int(options["menuWidth"]) - 470) * factor)

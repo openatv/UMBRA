@@ -1,5 +1,5 @@
+from json import dumps, loads
 from pathlib import Path
-import json
 
 from Components.ActionMap import HelpableActionMap
 from Components.config import ConfigSelection, ConfigSubsection, ConfigText, config, configfile, getConfigListEntry
@@ -9,10 +9,10 @@ from Screens.InputBox import InputBox
 from Screens.MessageBox import MessageBox
 from Screens.Setup import Setup
 
+from .i18n import _, ngettext
+from .media import MEDIA_OPTIONS, media_available
 from .styles import GROUPS, INHERIT, OPTIONS, export_pack, load_packs, native_layout, prepare_skin, reconcile_native, resolve, skin_resolution
 from .theme import RESOLUTIONS
-from .media import MEDIA_OPTIONS, media_available
-from .i18n import _, ngettext
 
 
 STYLE_DIR = Path("/etc/enigma2/umbra/styles")
@@ -45,6 +45,8 @@ def native_values():
         setting = getattr(config.channelSelection, name, None)
         if setting is not None:
             values[key] = ("on" if setting.value else "off") if isinstance(setting.value, bool) else str(setting.value)
+            if key == "channelScreen" and not values[key]:
+                values[key] = "legacy"
     return values
 
 
@@ -60,7 +62,7 @@ class UmbraSettings(Setup):
         cfg.resolution.value = skin_resolution(config.skin.primary_skin.value, cfg.resolution.value)
         self.original = {key: getattr(cfg, key).value for key in (*OPTIONS, "style", "section", "resolution")}
         try:
-            previous = json.loads(cfg.nativeSnapshot.value) if cfg.nativeSnapshot.value else {}
+            previous = loads(cfg.nativeSnapshot.value) if cfg.nativeSnapshot.value else {}
             if not isinstance(previous, dict):
                 previous = {}
         except ValueError:
@@ -93,6 +95,8 @@ class UmbraSettings(Setup):
                 continue
             value = pack["options"][key]
             description = _("Style value: %s") % (_(choices[value]) if choices else value or _("From color palette"))
+            if getattr(cfg, key).value not in (INHERIT, ""):
+                description += ". " + _("Your personal override takes priority over the style value.")
             if key in MEDIA_OPTIONS:
                 description += ". " + _("Without active e2MDB metadata, the base layout is retained.")
             if key == "tunerInfo":
@@ -193,8 +197,10 @@ class UmbraSettings(Setup):
             setting = getattr(config.channelSelection, native_name, None)
             if setting is not None:
                 setting.value = options[key] == "on" if options[key] in ("on", "off") else int(options[key]) if isinstance(setting.value, int) else options[key]
+                if key == "channelScreen" and options[key] == "legacy":
+                    setting.value = ""
                 setting.save()
-        cfg.nativeSnapshot.value = json.dumps(native_values(), sort_keys=True)
+        cfg.nativeSnapshot.value = dumps(native_values(), sort_keys=True)
         cfg.nativeSnapshot.save()
         config.skin.primary_skin.value = f"Umbra/{selected}/skin.xml"
         config.skin.primary_skin.save()
@@ -304,15 +310,30 @@ def initialize_umbra():
 
     options = native_layout(resolve(PACKS.get(cfg.style.value, PACKS["graphite"]),
                                     {key: getattr(cfg, key).value for key in OPTIONS}))
-    preferred = (options["channelScreen"], options["channelRows"])
+    preferred = ("" if options["channelScreen"] == "legacy" else options["channelScreen"], options["channelRows"])
     current = (config.channelSelection.screenStyle.value, config.channelSelection.widgetStyle.value)
+    changed = False
+    if cfg.nativeSnapshot.value and compatible(*current):
+        try:
+            previous = loads(cfg.nativeSnapshot.value)
+        except ValueError:
+            previous = {}
+        if not isinstance(previous, dict):
+            previous = {}
+        # Reconcile before replacing the snapshot, including an externally selected legacy list.
+        overrides = {x: getattr(cfg, x).value for x in OPTIONS}
+        for key, value in reconcile_native(overrides, native_values(), previous, options).items():
+            setting = getattr(cfg, key)
+            if setting.value != value:
+                setting.value = value
+                setting.save()
+                changed = True
     # The first activation must not adopt another skin's globally saved layout.
     selected = current if cfg.nativeSnapshot.value and compatible(*current) else preferred
     if not compatible(*selected):
         selected = ("ChannelSelectionDefault", "Default")
     if not compatible(*selected):
         raise ValueError("Umbra channel templates are missing or incompatible")
-    changed = False
     for setting, choices, value in (
             (config.channelSelection.screenStyle, screen_choices, selected[0]),
             (config.channelSelection.widgetStyle, [(name, _(name)) for name in templates], selected[1])):
@@ -326,7 +347,7 @@ def initialize_umbra():
         cfg.resolution.value = resolution
         cfg.resolution.save()
         changed = True
-    snapshot = json.dumps(native_values(), sort_keys=True)
+    snapshot = dumps(native_values(), sort_keys=True)
     if cfg.nativeSnapshot.value != snapshot:
         cfg.nativeSnapshot.value = snapshot
         cfg.nativeSnapshot.save()
