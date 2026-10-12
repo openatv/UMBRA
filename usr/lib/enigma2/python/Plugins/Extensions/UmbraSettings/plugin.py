@@ -334,13 +334,15 @@ def initialize_umbra():
         selected = ("ChannelSelectionDefault", "Default")
     if not compatible(*selected):
         raise ValueError("Umbra channel templates are missing or incompatible")
-    for setting, choices, value in (
-            (config.channelSelection.screenStyle, screen_choices, selected[0]),
-            (config.channelSelection.widgetStyle, [(name, _(name)) for name in templates], selected[1])):
+    # Keep native defaults: saving a selected value as its own default omits it from settings.
+    for setting, choices, value, default in (
+            (config.channelSelection.screenStyle, screen_choices, selected[0], ""),
+            (config.channelSelection.widgetStyle, [(name, _(name)) for name in templates], selected[1], next(iter(templates)))):
         before = setting.value
-        setting.setChoices(choices, default=value)
+        previousDefault = setting.default
+        setting.setChoices(choices, default=default)
         setting.value = value
-        if before != value:
+        if before != value or previousDefault != default:
             setting.save()
             changed = True
     if cfg.resolution.value != resolution:
@@ -358,8 +360,21 @@ def initialize_umbra():
     return True
 
 
+def syncResolution():
+	resolution = skin_resolution(config.skin.primary_skin.value, None)
+	if resolution is None or not cfg.nativeSnapshot.value or resolution == cfg.resolution.value:
+		return False
+	options = native_layout(resolve(PACKS.get(cfg.style.value, PACKS["graphite"]), {x: getattr(cfg, x).value for x in OPTIONS}))
+	prepare_skin(Path("/usr/share/enigma2/Umbra"), options, resolution)
+	# Skin globals must be loaded only after the selected resolution has been regenerated.
+	from skin import reloadSkins
+	reloadSkins()
+	return True
+
+
 def skin_changed(session=None, **kwargs):
     try:
+        syncResolution()
         initialize_umbra()
     except Exception as error:
         print(f"[Umbra] Skin activation failed: {error}")

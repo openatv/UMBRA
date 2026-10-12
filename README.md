@@ -18,7 +18,8 @@ for installation and everyday use.
 - Graphite, Cinema, Petrol, Clear and Gallery style packs, with individual
   overrides for colours, text size, gradients, transparency and layouts.
 - Classic, cover and panorama infobars, active/inactive status icons, optional
-  tuner/signal information, encryption information and weather forecasts.
+  tuner/signal information, encryption information, compact CPU/RAM/temperature
+  information and weather forecasts.
 - Optional transparent picon background, without modifying the picon files.
 - EMC playback infobar with cover, progress, duration, remaining time and
   audio/subtitle/chapter information supplied by EMC.
@@ -28,6 +29,8 @@ for installation and everyday use.
 - First-run and language-selection layouts, Auto DiSEqC, signal finder and
   cable-scan screens, plus compact Wi-Fi connection and image-download dialogs.
 - OpenATV user-manual and optional Remote Support screens, with native QR codes.
+- WeatherPlugin, Bitrate, BitrateViewer and Crash Reporter layouts, plus the
+  Dream AmlFRQ CPU Frequency Setup screen on supported hardware.
 - Shared UI and monochrome weather icon fonts and one spinner set. Required raster assets are shared
   between resolutions; no runtime SVG conversion is added.
 - Native OpenATV panels and templates reuse repeated screen elements.
@@ -94,6 +97,11 @@ under `/etc/enigma2/umbra/styles/`.
 Under **Infobar**, set **Picon background** to **Transparent** to hide Umbra's
 coloured picon tile. Backgrounds baked into a picon image remain unchanged.
 
+**CPU / RAM / temperature** adds a compact readout beside the service name in
+the normal infobar, without an extra window or additional height. It is off in
+all supplied style packs. Values update every two seconds while the infobar is
+visible; temperature is omitted when the receiver exposes no supported sensor.
+
 For the Umbra EMC layout, disable **Use original EMC skin** in EMC's settings.
 Keeping it enabled intentionally uses EMC's own layout instead. Cover loading,
 preview playback, automatic hiding and playback actions remain controlled by EMC.
@@ -101,7 +109,8 @@ preview playback, automatic hiding and playback actions remain controlled by EMC
 Resolution is a receiver setting; weather configuration belongs to OAWeather,
 not to portable style packs. Saved settings survive package updates. Only the selected resolution
 is regenerated when applying a style; the package contains static defaults and
-baselines for all three resolutions.
+baselines for all three resolutions. Switching Umbra resolutions in OpenATV's
+skin selector reapplies saved Umbra values to the newly selected resolution.
 
 When changing channel views in OpenATV's own channel-list menu, select both the
 screen and matching list template: **Umbra Galerie + Gallery** or

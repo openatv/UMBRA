@@ -15,6 +15,7 @@
     "technicalInfo": "off",
     "tunerInfo": "off",
     "cryptoInfo": "off",
+    "systemInfo": "off",
     "weatherInfo": "off",
     "serviceIcons": "all",
     "infobarLayout": "classic",

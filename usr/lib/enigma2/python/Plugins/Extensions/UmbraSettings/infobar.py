@@ -112,12 +112,18 @@ def add_diagnostics(root, icons):
 
 
 def apply_diagnostics(root, options, width):
+	if root.find("screen[@name='InfoBar']") is None:
+		return root
 	rows = []
 	if options.get("tunerInfo", "off") != "off":
 		rows.append("UmbraTunerSignals")
 	if options.get("cryptoInfo", "off") == "on":
 		rows.append("UmbraCryptoInfo")
-	if not rows:
+	enabled = options.get("systemInfo", "off") == "on"
+	page = root.find("screen[@name='InfoBar']")
+	if page is not None:
+		SubElement(page, "applet", type="onLayoutFinish").text = f"from Plugins.Extensions.UmbraSettings.system_info import install\ninstall(self, {enabled!r})"
+	if not rows and not enabled:
 		return root
 	factor = width / 1280
 	shift = round(len(rows) * 32 * factor)
@@ -139,11 +145,20 @@ def apply_diagnostics(root, options, width):
 					widget.set("size", f"{widgetWidth},{widgetHeight + shift}")
 		for index, name in enumerate(rows):
 			SubElement(page, "panel", name=name, position=f"{round(24 * factor)},{round((673 - len(rows) * 32 + index * 32) * factor)}", size=f"{round(1232 * factor)},{round(28 * factor)}")
+		if enabled:
+			for widget in page.findall("widget"):
+				if any(x.get("type") == "ServiceName" and x.text == "Name" for x in widget.findall("convert")):
+					x = int(widget.get("position").split(",")[0])
+					height = widget.get("size").split(",")[1]
+					widget.set("size", f"{round(600 * factor) - x},{height}")
+					widget.set("noWrap", "1")
+					widget.set("scrollText", "direction=left,startDelay=3000,stepDelay=80,stepSize=1,endDelay=3000,repeat=0")
+			SubElement(page, "eLabel", name="UmbraSystemInfo", text="CPU --   RAM --", position=f"{round(618 * factor)},{round(477 * factor) - shift}", size=f"{round(280 * factor)},{round(28 * factor)}", font=f"Regular;{round(16 * factor)}", foregroundColor="secondary", transparent="1", noWrap="1", valign="center", halign="right")
 		if options.get("tunerInfo") == "details":
-			# The optional technical readout uses the genre/rating slot, not another full row.
+			# The optional technical readout replaces only the genre; the rating stays beside HD/4K.
 			for widget in list(page.findall("widget")):
-				if any(x.get("type") == "EventInfo" and x.text in ("Genre", "RatingCode") for x in widget.findall("convert")):
+				if any(x.get("type") == "EventInfo" and x.text == "Genre" for x in widget.findall("convert")):
 					page.remove(widget)
-			widget = SubElement(page, "widget", source="session.CurrentService", render="Label", position=f"{round(458 * factor)},{round(677 * factor)}", size=f"{round(240 * factor)},{round(27 * factor)}", font=f"Regular;{round(15 * factor)}", foregroundColor="secondary", transparent="1", noWrap="1", valign="center", scrollText="direction=left,startDelay=3000,stepDelay=80,stepSize=1,endDelay=3000,repeat=0")
+			widget = SubElement(page, "widget", source="session.CurrentService", render="Label", position=f"{round(458 * factor)},{round(677 * factor)}", size=f"{round(180 * factor)},{round(27 * factor)}", font=f"Regular;{round(15 * factor)}", foregroundColor="secondary", transparent="1", noWrap="1", valign="center", scrollText="direction=left,startDelay=3000,stepDelay=80,stepSize=1,endDelay=3000,repeat=0")
 			SubElement(widget, "convert", type="TransponderInfo")
 	return root
