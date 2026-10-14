@@ -563,16 +563,6 @@
   <screen name="UmbraPart_85fa6a67ec">
     <widget name="list" position="48,180" size="1620,1020" enableWrapAround="1" itemHeight="60" font="Regular;40" scrollbarMode="showOnDemand" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" zPosition="1" transparent="1" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" />
   </screen>
-  <screen name="UmbraPart_d65fe02c34">
-    <eLabel position="0,1430" size="640,10" backgroundColor="red" zPosition="-1" />
-    <widget position="16,1352" size="608,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" conditional="key_red" source="key_red" render="Label">
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <eLabel position="640,1430" size="640,10" backgroundColor="green" zPosition="-1" />
-    <widget position="656,1352" size="608,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" conditional="key_green" source="key_green" render="Label">
-      <convert type="ConditionalShowHide" />
-    </widget>
-  </screen>
   <screen name="UmbraPart_6dd66ca45d">
     <widget name="text" position="48,160" foregroundColor="foreground" size="1620,60" noWrap="1" valign="bottom" font="Regular;40" backgroundColor="surface" transparent="1" />
     <widget name="progress" position="48,228" foregroundColor="foreground" size="1620,60" noWrap="1" valign="bottom" font="Regular;40" backgroundColor="surface" transparent="1" />
@@ -620,18 +610,17 @@
   <screen name="UmbraPart_a15d8e8663">
     <widget position="48,180" size="2464,1005" name="config" font="Regular;37" valueFont="Regular;34" headerFont="Bold;37" itemHeight="67" padding="28,0" enableWrapAround="1" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" />
   </screen>
-  <screen name="UmbraPart_67f5498502">
-    <widget position="72,872" size="2416,60" font="Regular;36" foregroundColor="muted" transparent="1" alphatest="blend" valign="center" name="footnote" />
-    <eLabel position="48,1080" size="2464,222" backgroundColor="UmbraPanel" cornerRadius="16" zPosition="-1" />
-    <widget position="84,1102" size="2392,176" font="Regular;42" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" name="description" />
-    <widget position="48,948" size="0,0" name="HelpWindow" conditional="HelpWindow" />
-    <widget position="0,0" size="0,0" name="Image" conditional="Image" />
-  </screen>
-  <screen name="UmbraPart_e401955c3a">
-    <widget name="description" position="1728,760" size="784,440" font="Regular;40" conditional="description" foregroundColor="foreground" halign="center" backgroundColor="surface" valign="center" transparent="1" />
+  <screen name="UmbraPart_e7b7aa55bd">
+    <eLabel position="0,1430" size="640,10" backgroundColor="red" zPosition="-1" />
+    <widget position="16,1352" size="608,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" conditional="key_red" source="key_red" render="Label">
+      <convert type="ConditionalShowHide" />
+    </widget>
   </screen>
   <screen name="UmbraPart_38420dbbf3">
     <widget source="title" render="Label" position="132,28" size="1868,76" valign="bottom" font="Regular;50" foregroundColor="foreground" backgroundColor="surface" transparent="1" />
+  </screen>
+  <screen name="UmbraPart_e401955c3a">
+    <widget name="description" position="1728,760" size="784,440" font="Regular;40" conditional="description" foregroundColor="foreground" halign="center" backgroundColor="surface" valign="center" transparent="1" />
   </screen>
   <screen name="UmbraPart_cfd339494a">
     <widget name="nodelist" position="48,180" size="1620,1020" font="Console;32" itemHeight="60" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" transparent="1" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" />
@@ -656,6 +645,12 @@
     <widget position="60,280" size="1660,60" font="Regular;38" foregroundColor="muted" transparent="1" alphatest="blend" valign="center" name="datetime" />
     <widget position="2120,280" size="370,60" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" name="duration" />
     <widget position="60,404" size="2440,848" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" name="epg_description" />
+  </screen>
+  <screen name="UmbraPart_2124321432">
+    <eLabel position="48,1080" size="2464,222" backgroundColor="UmbraPanel" cornerRadius="16" zPosition="-1" />
+    <widget position="84,1102" size="2392,176" font="Regular;42" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" name="description" />
+    <widget position="48,948" size="0,0" name="HelpWindow" conditional="HelpWindow" />
+    <widget position="0,0" size="0,0" name="Image" conditional="Image" />
   </screen>
   <screen name="UmbraPart_3f6ad71bc0">
     <widget position="48,180" size="2464,1032" source="list" render="Listbox" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
@@ -762,16 +757,6 @@
   <screen name="UmbraPart_41cdc77f88">
     <widget position="72,1240" size="2416,68" font="Regular;36" foregroundColor="accent" transparent="1" alphatest="blend" valign="center" conditional="key_ok" noWrap="1" source="key_ok" render="Label" />
   </screen>
-  <screen name="UmbraPart_cf36084b4b">
-    <eLabel position="0,1430" size="640,10" backgroundColor="red" zPosition="-1" />
-    <widget position="16,1352" size="608,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" conditional="key_red" source="key_red" render="Label">
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <eLabel position="1280,1430" size="640,10" backgroundColor="yellow" zPosition="-1" />
-    <widget position="1296,1352" size="608,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" conditional="key_yellow" source="key_yellow" render="Label">
-      <convert type="ConditionalShowHide" />
-    </widget>
-  </screen>
   <screen name="UmbraPart_902f5ed971">
     <widget position="48,360" size="1800,770" name="bouquetlist" font="Regular;37" itemHeight="70" zPosition="5" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" />
     <widget position="72,400" size="1760,100" font="Regular;48" foregroundColor="foreground" transparent="0" alphatest="blend" valign="center" backgroundColor="surface" zPosition="6" name="lab1" />
@@ -780,6 +765,12 @@
     <eLabel position="48,300" size="1620,2" backgroundColor="secondary" zPosition="-1" />
     <widget source="list" render="Listbox" position="48,340" size="1620,900" font="Regular;40" itemHeight="60" scrollbarMode="showOnDemand" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" transparent="1" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
       <convert type="StringList" />
+    </widget>
+  </screen>
+  <screen name="UmbraPart_4b6bbc877d">
+    <eLabel position="1280,1430" size="640,10" backgroundColor="yellow" zPosition="-1" />
+    <widget position="1296,1352" size="608,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" conditional="key_yellow" source="key_yellow" render="Label">
+      <convert type="ConditionalShowHide" />
     </widget>
   </screen>
   <screen name="UmbraPart_c52cd7b1d0">
@@ -791,6 +782,12 @@
     <widget position="48,414" size="1824,104" font="Regular;52" foregroundColor="foreground" transparent="0" alphatest="blend" valign="center" backgroundColor="surface" padding="24,0" name="input" />
     <widget position="48,562" size="1824,80" font="Regular;40" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" name="service" />
     <widget position="48,676" size="1824,68" font="Regular;40" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" name="tries" />
+  </screen>
+  <screen name="UmbraPart_da6455ea3a">
+    <eLabel position="640,1430" size="640,10" backgroundColor="green" zPosition="-1" />
+    <widget position="656,1352" size="608,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" conditional="key_green" source="key_green" render="Label">
+      <convert type="ConditionalShowHide" />
+    </widget>
   </screen>
   <screen name="UmbraPart_2051cf0844">
     <eLabel position="0,0" size="1680,132" backgroundColor="UmbraPanel" zPosition="-1" />
@@ -912,6 +909,9 @@
     <widget position="48,948" size="0,0" name="HelpWindow" conditional="HelpWindow" />
     <eLabel position="48,1080" size="2464,222" backgroundColor="UmbraPanel" cornerRadius="16" zPosition="-1" />
   </screen>
+  <screen name="UmbraPart_1792681849">
+    <widget position="72,872" size="2416,60" font="Regular;36" foregroundColor="muted" transparent="1" alphatest="blend" valign="center" name="footnote" />
+  </screen>
   <screen name="UmbraPart_024c5350d0">
     <widget position="96,160" size="1432,88" font="Regular;44" foregroundColor="foreground" transparent="0" alphatest="blend" valign="center" backgroundColor="surface" zPosition="6" name="lab1" />
     <widget position="2040,20" size="160,60" font="Regular;44" foregroundColor="foreground" transparent="0" alphatest="blend" valign="center" halign="right" backgroundColor="surface" zPosition="6" name="number" />
@@ -927,14 +927,8 @@
     <widget name="status" position="48,830" size="1620,400" font="Regular;36" backgroundColor="surface" foregroundColor="foreground" transparent="1" />
     <widget name="statusbar" position="1728,810" size="784,380" font="Regular;40" foregroundColor="foreground" halign="center" backgroundColor="surface" valign="center" transparent="1" />
   </screen>
-  <screen name="UmbraPart_554ee2b732">
-    <widget name="HelpWindow" position="0,0" size="0,0" zPosition="1" transparent="1" alphatest="blend" />
-  </screen>
   <screen name="UmbraPart_30726da1ec">
     <widget position="72,1212" size="2416,100" font="Regular;40" foregroundColor="secondary" transparent="1" alphatest="blend" valign="top" source="summary_description" render="Label" />
-  </screen>
-  <screen name="UmbraPart_eb48490d72">
-    <eLabel position="1280,1430" size="640,10" backgroundColor="yellow" zPosition="-1" />
   </screen>
   <screen name="UmbraPart_3585a554f2">
     <eLabel position="640,1430" size="640,10" backgroundColor="green" zPosition="-1" />
@@ -968,7 +962,7 @@
     <widget position="12,1352" size="616,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" conditional="key_red" halign="center" noWrap="1" name="key_red" />
     <panel name="UmbraPart_3585a554f2" />
     <widget position="652,1352" size="616,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" conditional="key_green" halign="center" noWrap="1" name="key_green" />
-    <panel name="UmbraPart_eb48490d72" />
+    <eLabel position="1280,1430" size="640,10" backgroundColor="yellow" zPosition="-1" />
     <widget position="1292,1352" size="616,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" conditional="key_yellow" halign="center" noWrap="1" name="key_yellow" />
     <eLabel position="1920,1430" size="640,10" backgroundColor="blue" zPosition="-1" />
     <widget position="1932,1352" size="616,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" conditional="key_blue" halign="center" noWrap="1" name="key_blue" />
@@ -1362,7 +1356,11 @@ install(self)</applet>
   <screen position="0,0" size="2560,1440" name="Setup" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
     <panel name="UmbraHeader" />
     <panel name="UmbraPart_f51362ef22" />
-    <panel name="UmbraPart_67f5498502" />
+    <panel name="UmbraPart_1792681849" />
+    <eLabel position="48,984" size="2464,336" backgroundColor="UmbraPanel" cornerRadius="16" zPosition="-1" />
+    <widget position="84,1008" size="2392,288" font="Regular;42" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" name="description" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=3000,repeat=-1" />
+    <widget position="48,948" size="0,0" name="HelpWindow" conditional="HelpWindow" />
+    <widget position="0,0" size="0,0" name="Image" conditional="Image" />
     <panel name="UmbraKeys" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
@@ -1765,10 +1763,7 @@ install(self)</applet>
     <panel name="UmbraHeader" />
     <widget position="48,180" size="2464,201" name="config" font="Regular;37" valueFont="Regular;34" headerFont="Bold;37" itemHeight="67" padding="28,0" enableWrapAround="1" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" />
     <widget position="72,444" size="2416,60" font="Regular;36" foregroundColor="muted" transparent="1" alphatest="blend" valign="center" name="footnote" />
-    <eLabel position="48,1080" size="2464,222" backgroundColor="UmbraPanel" cornerRadius="16" zPosition="-1" />
-    <widget position="84,1102" size="2392,176" font="Regular;42" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" name="description" />
-    <widget position="48,948" size="0,0" name="HelpWindow" conditional="HelpWindow" />
-    <widget position="0,0" size="0,0" name="Image" conditional="Image" />
+    <panel name="UmbraPart_2124321432" />
     <panel name="UmbraKeys" />
     <widget position="84,540" size="2392,496" font="Regular;40" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollbarMode="showOnDemand" name="info" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
@@ -1777,7 +1772,8 @@ install(self)</applet>
   <screen position="0,0" size="2560,1440" name="AutocamSetup" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
     <panel name="UmbraHeader" />
     <panel name="UmbraPart_f51362ef22" />
-    <panel name="UmbraPart_67f5498502" />
+    <panel name="UmbraPart_1792681849" />
+    <panel name="UmbraPart_2124321432" />
     <panel name="UmbraKeys" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
@@ -1785,7 +1781,8 @@ install(self)</applet>
   <screen position="0,0" size="2560,1440" name="CardserverSetup" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
     <panel name="UmbraHeader" />
     <panel name="UmbraPart_f51362ef22" />
-    <panel name="UmbraPart_67f5498502" />
+    <panel name="UmbraPart_1792681849" />
+    <panel name="UmbraPart_2124321432" />
     <panel name="UmbraKeys" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
@@ -1793,7 +1790,8 @@ install(self)</applet>
   <screen position="0,0" size="2560,1440" name="StreamRelaySetup" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
     <panel name="UmbraHeader" />
     <panel name="UmbraPart_f51362ef22" />
-    <panel name="UmbraPart_67f5498502" />
+    <panel name="UmbraPart_1792681849" />
+    <panel name="UmbraPart_2124321432" />
     <panel name="UmbraKeys" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
@@ -1852,16 +1850,9 @@ install(self)</applet>
     <panel name="UmbraMenuHeader" />
     <widget name="heading" position="380,180" size="1800,50" font="Regular;40" transparent="1" verticalAlignment="center" foregroundColor="foreground" />
     <widget name="detailtext" position="380,250" size="1800,1030" font="Regular;40" transparent="1" verticalAlignment="top" foregroundColor="foreground" />
-    <panel name="UmbraPart_cf36084b4b" />
+    <panel name="UmbraPart_e7b7aa55bd" />
+    <panel name="UmbraPart_4b6bbc877d" />
     <panel name="UmbraPart_45edcf4023" />
-    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
-install(self)</applet>
-  </screen>
-  <screen position="0,0" size="2560,1440" name="ImageBackup" flags="wfNoBorder" backgroundColor="UmbraScreen" title="Image Backup" resolution="2560,1440">
-    <panel name="UmbraMenuHeader" />
-    <widget source="description" render="Label" position="480,180" size="1600,100" font="Regular;40" verticalAlignment="center" foregroundColor="foreground" transparent="1" />
-    <widget name="config" position="480,300" size="1600,672" font="Regular;40" itemHeight="56" foregroundColor="foreground" transparent="1" />
-    <panel name="UmbraPart_d65fe02c34" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
   </screen>
@@ -1879,7 +1870,8 @@ install(self)</applet>
     <widget name="Image" position="330,180" size="0,0" conditional="Image" />
     <widget name="name" position="330,180" size="1900,50" font="Regular;40" halign="center" transparent="1" valign="center" foregroundColor="foreground" />
     <widget name="picture" position="330,250" size="1900,950" alphatest="blend" scaleFlags="scaleCenter" transparent="1" />
-    <panel name="UmbraPart_cf36084b4b" />
+    <panel name="UmbraPart_e7b7aa55bd" />
+    <panel name="UmbraPart_4b6bbc877d" />
     <panel name="UmbraPart_45edcf4023" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
@@ -1911,32 +1903,16 @@ install(self)</applet>
   <screen position="0,0" size="2560,1440" name="KexecInit" flags="wfNoBorder" backgroundColor="UmbraScreen" title="Kexec MultiBoot Manager" resolution="2560,1440">
     <panel name="UmbraMenuHeader" />
     <widget name="description" position="380,180" size="1800,1100" font="Regular;40" foregroundColor="foreground" transparent="1" />
-    <panel name="UmbraPart_d65fe02c34" />
+    <panel name="UmbraPart_e7b7aa55bd" />
+    <panel name="UmbraPart_da6455ea3a" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
   </screen>
   <screen position="0,0" size="2560,1440" name="ChkrootInit" flags="wfNoBorder" backgroundColor="UmbraScreen" title="Chkroot MultiBoot Manager" resolution="2560,1440">
     <panel name="UmbraMenuHeader" />
     <widget name="description" position="380,180" size="1800,1100" font="Regular;40" foregroundColor="foreground" transparent="1" />
-    <panel name="UmbraPart_d65fe02c34" />
-    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
-install(self)</applet>
-  </screen>
-  <screen position="0,0" size="2560,1440" name="NetworkMountsOverview" flags="wfNoBorder" backgroundColor="UmbraScreen" title="Network Mounts Overview" resolution="2560,1440">
-    <panel name="UmbraMenuHeader" />
-    <widget source="mountList" render="Listbox" position="330,200" size="1900,560" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
-      <templates>
-        <template name="Default" fonts="Regular;35,Regular;27" itemHeight="80">
-          <mode name="default">
-            <text index="ShareName" position="0,0" size="1100,43" font="0" padding="10,0" verticalAlignment="center" />
-            <text index="Description" position="40,43" size="1060,37" font="1" padding="10,0" foregroundColor="secondary" verticalAlignment="center" />
-            <text index="Mounted" position="1100,0" size="300,80" font="0" padding="10,0" verticalAlignment="center" />
-            <text index="Active" position="1400,0" size="300,80" font="0" horizontalAlignment="right" padding="10,0" verticalAlignment="center" />
-          </mode>
-        </template>
-      </templates>
-    </widget>
-    <panel name="UmbraPart_26ee7daeef" />
+    <panel name="UmbraPart_e7b7aa55bd" />
+    <panel name="UmbraPart_da6455ea3a" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
   </screen>
@@ -2052,17 +2028,15 @@ install(self)</applet>
         </mode>
       </template>
     </widget>
-    <panel name="UmbraPart_d65fe02c34" />
+    <panel name="UmbraPart_e7b7aa55bd" />
+    <panel name="UmbraPart_da6455ea3a" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
   </screen>
   <screen position="0,0" size="2560,1440" name="PackageActionLog" flags="wfNoBorder" backgroundColor="UmbraScreen" title="Plugin Action Log" resolution="2560,1440">
     <panel name="UmbraMenuHeader" />
     <widget name="log" position="330,180" size="1900,1080" font="Regular;40" foregroundColor="foreground" transparent="1" />
-    <eLabel position="0,1430" size="640,10" backgroundColor="red" zPosition="-1" />
-    <widget position="16,1352" size="608,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" conditional="key_red" source="key_red" render="Label">
-      <convert type="ConditionalShowHide" />
-    </widget>
+    <panel name="UmbraPart_e7b7aa55bd" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
   </screen>
@@ -2203,7 +2177,7 @@ install(self)</applet>
     <panel name="UmbraMenuHeader" />
     <widget position="48,180" size="1504,670" name="config" font="Regular;37" valueFont="Regular;34" headerFont="Bold;37" itemHeight="67" padding="28,0" enableWrapAround="1" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" />
     <widget position="1600,180" size="912,608" name="preview" alphatest="blend" scale="1" />
-    <widget position="72,872" size="2416,60" font="Regular;36" foregroundColor="muted" transparent="1" alphatest="blend" valign="center" name="footnote" />
+    <panel name="UmbraPart_1792681849" />
     <widget position="72,1156" size="2416,140" font="Regular;42" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" name="description" />
     <widget position="48,948" size="0,0" name="HelpWindow" conditional="HelpWindow" />
     <widget position="0,0" size="0,0" name="Image" conditional="Image" />
@@ -2258,10 +2232,7 @@ install(self)</applet>
     <widget position="1820,180" size="600,80" font="Regular;42" foregroundColor="green" transparent="1" alphatest="blend" valign="center" name="labrun" />
     <widget position="72,1180" size="2416,80" font="Regular;42" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" name="key" />
     <panel name="UmbraPart_c40c3bfbb5" />
-    <panel name="UmbraPart_eb48490d72" />
-    <widget position="1296,1352" size="608,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" conditional="key_yellow" source="key_yellow" render="Label">
-      <convert type="ConditionalShowHide" />
-    </widget>
+    <panel name="UmbraPart_4b6bbc877d" />
     <eLabel position="1920,1430" size="640,10" backgroundColor="blue" zPosition="-1" />
     <widget position="1936,1352" size="608,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" conditional="key_blue" name="key_blue" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
@@ -2278,7 +2249,7 @@ install(self)</applet>
   <screen position="0,0" size="2560,1440" name="Swap" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
     <panel name="UmbraMenuHeader" />
     <panel name="UmbraPart_c40c3bfbb5" />
-    <panel name="UmbraPart_eb48490d72" />
+    <eLabel position="1280,1430" size="640,10" backgroundColor="yellow" zPosition="-1" />
     <widget position="1296,1352" size="608,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" conditional="key_yellow" name="key_yellow" />
     <widget name="autostart_off" position="240,240" zPosition="1" pixmap="skin_default/icons/lock_off.png" size="128,80" alphatest="on" />
     <widget name="autostart_on" position="240,240" zPosition="2" pixmap="skin_default/icons/lock_on.png" size="128,80" alphatest="on" />
@@ -2797,6 +2768,140 @@ install(self)</applet>
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
   </screen>
+  <screen position="0,0" size="2560,1440" name="ImageBackup" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
+    <panel name="UmbraMenuHeader" />
+    <widget position="72,180" size="2416,156" font="Regular;44" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=3000,repeat=-1" source="description" render="Label" />
+    <widget position="48,372" size="2464,804" name="config" font="Regular;35" itemHeight="67" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" />
+    <panel name="UmbraKeys" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen position="0,0" size="2560,1440" name="NetworkMountsOverview" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
+    <panel name="UmbraMenuHeader" />
+    <widget position="48,180" size="2464,1056" source="mountList" render="Listbox" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
+      <template name="Default" fonts="Regular;37,Regular;32" itemHeight="96">
+        <text position="28,0" size="1548,51" index="ShareName" font="0" verticalAlignment="center" wrap="ellipsis" foregroundColor="foreground" />
+        <text position="28,51" size="1548,45" index="Description" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
+        <text position="1604,0" size="396,96" index="Mounted" font="0" verticalAlignment="center" wrap="ellipsis" foregroundColor="foreground" />
+        <text position="2028,0" size="388,96" index="Active" font="0" verticalAlignment="center" wrap="ellipsis" foregroundColor="foreground" />
+      </template>
+    </widget>
+    <panel name="UmbraKeys" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen position="0,0" size="2560,1440" name="VideoEnhancementSetup" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
+    <panel name="UmbraMenuHeader" />
+    <widget position="48,180" size="2464,737" name="config" font="Regular;37" valueFont="Regular;34" headerFont="Bold;37" itemHeight="67" padding="28,0" enableWrapAround="1" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" />
+    <widget position="72,960" size="2416,56" font="Regular;36" foregroundColor="muted" transparent="1" alphatest="blend" valign="center" conditional="footnote" name="footnote" />
+    <widget position="72,1048" size="2416,252" font="Regular;44" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" conditional="description" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=3000,repeat=-1" name="description" />
+    <widget position="72,1048" size="2416,252" font="Regular;44" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" conditional="introduction" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=3000,repeat=-1" source="introduction" render="Label" />
+    <widget position="0,0" size="0,0" name="HelpWindow" conditional="HelpWindow" />
+    <panel name="UmbraKeys" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen position="0,0" size="2560,1440" name="OSDCalibration" flags="wfNoBorder" backgroundColor="#00000000" resolution="2560,1440">
+    <eRectangle position="0,0" size="2560,1440" backgroundColor="#ff000000" borderColor="#00ff0000" borderWidth="2" zPosition="0" />
+    <eRectangle position="32,32" size="2496,1376" backgroundColor="#ff000000" borderColor="#0000ff00" borderWidth="2" zPosition="0" />
+    <eRectangle position="64,64" size="2432,1312" backgroundColor="#ff000000" borderColor="#00ffff00" borderWidth="2" zPosition="0" />
+    <eRectangle position="96,96" size="2368,1248" backgroundColor="#ff000000" borderColor="#000000ff" borderWidth="2" zPosition="0" />
+    <widget position="128,128" size="2304,224" font="Regular;42" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=3000,repeat=-1" name="text" zPosition="4" />
+    <widget position="128,384" size="2304,536" name="config" font="Regular;37" valueFont="Regular;34" headerFont="Bold;37" itemHeight="67" padding="28,0" enableWrapAround="1" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" zPosition="4" />
+    <widget position="128,992" size="2304,52" font="Regular;36" foregroundColor="muted" transparent="1" alphatest="blend" valign="center" name="footnote" zPosition="4" />
+    <widget position="128,1064" size="2304,216" font="Regular;42" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=3000,repeat=-1" name="description" zPosition="4" />
+    <eLabel position="128,1340" size="540,6" backgroundColor="red" zPosition="4" />
+    <widget position="128,1276" size="540,60" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" source="key_red" render="Label" zPosition="4" />
+    <eLabel position="696,1340" size="540,6" backgroundColor="green" zPosition="4" />
+    <widget position="696,1276" size="540,60" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" source="key_green" render="Label" zPosition="4" />
+    <eLabel position="1264,1340" size="540,6" backgroundColor="yellow" zPosition="4" />
+    <widget position="1264,1276" size="540,60" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" source="key_yellow" render="Label" zPosition="4" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen position="0,0" size="2560,1440" name="InputDeviceManagement" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
+    <panel name="UmbraMenuHeader" />
+    <widget position="48,180" size="2464,896" source="list" render="Listbox" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
+      <template name="inputdevice" fonts="Regular;38,Regular;32" itemHeight="128">
+        <text position="28,6" size="1700,55" index="0" font="0" verticalAlignment="center" horizontalAlignment="left" wrap="ellipsis" foregroundColor="foreground" />
+        <text position="1804,6" size="612,55" index="4" font="1" verticalAlignment="center" horizontalAlignment="right" wrap="ellipsis" foregroundColor="secondary" />
+        <text position="28,67" size="620,48" index="2" font="1" verticalAlignment="center" horizontalAlignment="left" wrap="ellipsis" foregroundColor="secondary" />
+        <text position="676,67" size="1260,48" index="1" font="1" verticalAlignment="center" horizontalAlignment="left" wrap="ellipsis" foregroundColor="secondary" />
+        <text position="1964,67" size="452,48" index="3" font="1" verticalAlignment="center" horizontalAlignment="right" wrap="ellipsis" foregroundColor="secondary" />
+      </template>
+    </widget>
+    <widget position="72,1180" size="2416,128" font="Regular;44" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=3000,repeat=-1" source="description" render="Label" />
+    <panel name="UmbraButtonKeys" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen position="0,0" size="2560,1440" name="DVDPlayer" flags="wfNoBorder" backgroundColor="transparent" resolution="2560,1440">
+    <eLabel position="0,1016" size="2560,424" backgroundColor="UmbraInfoShade" zPosition="-1" />
+    <widget position="72,1052" size="2416,84" font="Regular;54" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" source="session.CurrentService" render="Label">
+      <convert type="ServiceName">Name</convert>
+    </widget>
+    <widget position="72,1156" size="1480,68" font="Regular;44" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" name="chapterLabel" />
+    <widget position="1644,1156" size="844,68" font="Regular;42" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" noWrap="1" name="audioLabel" />
+    <widget position="72,1236" size="1820,60" font="Regular;40" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" name="subtitleLabel" />
+    <widget position="1964,1236" size="524,60" font="Regular;40" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" noWrap="1" name="angleLabel" />
+    <widget position="0,0" size="0,0" name="anglePix" />
+    <widget position="72,1320" size="2416,10" source="session.CurrentService" render="Progress" foregroundColor="accent" backgroundColor="selection" borderWidth="0">
+      <convert type="ServicePosition">Position</convert>
+    </widget>
+    <widget position="72,1352" size="560,60" font="Regular;42" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="left" source="session.CurrentService" render="Label">
+      <convert type="ServicePosition">Position,ShowHours</convert>
+    </widget>
+    <widget position="1928,1352" size="560,60" font="Regular;42" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="session.CurrentService" render="Label">
+      <convert type="ServicePosition">Remaining,Negate,ShowHours</convert>
+    </widget>
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen position="0,0" size="2560,1440" name="OSCamInfo" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
+    <panel name="UmbraMenuHeader" />
+    <widget position="72,172" size="2416,60" font="Regular;40" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="buildinfos" render="Label" />
+    <widget position="72,236" size="2416,60" font="Regular;40" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="extrainfos" render="Label" />
+    <widget position="72,300" size="2416,60" font="Regular;40" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="timerinfos" render="Label" />
+    <widget position="48,388" size="2464,537" source="outlist" render="Listbox" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
+      <template name="Default" fonts="Regular;32,Regular;27" itemHeight="179">
+        <rectangle position="0,10" size="8,160" backgroundColor="+0" />
+        <text position="28,3" size="72,90" index="1" font="0" verticalAlignment="center" wrap="ellipsis" foregroundColor="foreground" />
+        <text position="112,3" size="476,90" index="2" font="0" verticalAlignment="center" wrap="ellipsis" foregroundColor="foreground" />
+        <text position="620,3" size="948,90" index="8" font="0" verticalAlignment="center" wrap="ellipsis" foregroundColor="foreground" />
+        <text position="1600,3" size="816,90" index="11" font="0" verticalAlignment="center" wrap="ellipsis" foregroundColor="foreground" />
+        <text position="28,99" size="116,74" index="3" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
+        <text position="172,99" size="432,74" index="4" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
+        <text position="632,99" size="156,74" index="5" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
+        <text position="816,99" size="360,74" index="6" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
+        <text position="1204,99" size="480,74" index="7" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
+        <text position="1712,99" size="328,74" index="9" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
+        <text position="2068,99" size="348,74" index="10" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
+      </template>
+    </widget>
+    <widget position="72,1036" size="2416,144" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollbarMode="showOnDemand" name="logtext" />
+    <widget position="72,1200" size="580,56" font="Regular;34" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="total" render="Label" />
+    <widget position="676,1200" size="580,56" font="Regular;34" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="used" render="Label" />
+    <widget position="1280,1200" size="580,56" font="Regular;34" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="free" render="Label" />
+    <widget position="1884,1200" size="580,56" font="Regular;34" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="buffer" render="Label" />
+    <widget position="72,1260" size="580,56" font="Regular;34" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="camname" render="Label" />
+    <widget position="676,1260" size="580,56" font="Regular;34" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="virtuell" render="Label" />
+    <widget position="1280,1260" size="580,56" font="Regular;34" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="resident" render="Label" />
+    <panel name="UmbraKeys" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen position="0,0" size="2560,1440" name="OSCamInfoLog" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
+    <panel name="UmbraMenuHeader" />
+    <widget position="72,180" size="2416,1100" font="Regular;44" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollbarMode="showOnDemand" name="logtext" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen position="0,0" size="2560,1440" name="OSCamInfoCapability" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
+    <panel name="UmbraMenuHeader" />
+    <widget position="72,180" size="2416,1100" font="Regular;44" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollbarMode="showOnDemand" name="captext" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
   <screen position="380,60" size="1800,1320" name="MovieSelectionSlim" flags="wfNoBorder" backgroundColor="transparent" resolution="2560,1440">
     <eLabel position="0,0" size="1800,1320" backgroundColor="surface" zPosition="-1" />
     <eLabel position="0,0" size="1800,132" backgroundColor="UmbraPanel" zPosition="-1" />
@@ -2830,7 +2935,7 @@ install(self)</applet>
   </screen>
   <screen position="0,0" size="2560,1440" name="AmlFRQ" flags="wfNoBorder" backgroundColor="UmbraScreen" title="CPU Frequency Setup" resolution="2560,1440">
     <panel name="UmbraHeader" />
-    <widget position="48,180" size="2464,402" name="config" font="Regular;37" itemHeight="67" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" />
+    <widget position="48,180" size="2464,402" name="config" font="Regular;37" valueFont="Regular;35" itemHeight="67" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" />
     <widget position="72,640" size="2416,60" font="Regular;40" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" conditional="tempc" noWrap="1" name="tempc" />
     <widget position="72,704" size="2416,60" font="Regular;40" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" conditional="voltc" noWrap="1" name="voltc" />
     <widget position="72,768" size="2416,60" font="Regular;40" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" conditional="ramtempc" noWrap="1" name="ramtempc" />
@@ -2844,7 +2949,7 @@ install(self)</applet>
     <eLabel position="12,1352" size="616,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" text="Cancel" />
     <panel name="UmbraPart_3585a554f2" />
     <eLabel position="652,1352" size="616,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" text="Save" />
-    <panel name="UmbraPart_eb48490d72" />
+    <eLabel position="1280,1430" size="640,10" backgroundColor="yellow" zPosition="-1" />
     <eLabel position="1292,1352" size="616,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" text="Test" />
     <eLabel position="1920,1430" size="640,10" backgroundColor="blue" zPosition="-1" />
     <eLabel position="1932,1352" size="616,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" text="" />
@@ -3065,12 +3170,12 @@ install(self)</applet>
     <widget position="72,180" size="1736,216" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" name="text" />
     <widget position="0,0" size="60,54" name="icons" pixmaps="icons/installable.png,icons/lock_off.png,icons/lock_on.png" alphatest="blend" />
     <widget position="48,436" size="1760,664" source="locales" render="Listbox" enableWrapAround="1" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
-      <template name="Default" fonts="Regular;37,Regular;29" itemHeight="83">
+      <template name="Default" fonts="Regular;37,Regular;29,Regular;35" itemHeight="83">
         <pixmap position="24,16" size="112,51" index="Flag" alpha="blend" scale="centerScaled" />
         <text position="168,0" size="1116,45" index="Native" font="0" verticalAlignment="center" />
-        <text position="168,45" size="1420,38" index="Name" font="1" verticalAlignment="center" foregroundColor="secondary" foregroundColorSelected="foreground" />
-        <text position="1308,0" size="308,45" index="Locale" font="1" horizontalAlignment="right" verticalAlignment="center" foregroundColor="secondary" foregroundColorSelected="foreground" />
-        <pixmap position="1652,18" size="60,48" index="Status" alpha="blend" scale="centerScaled" />
+        <text position="168,45" size="1116,38" index="Name" font="1" verticalAlignment="center" foregroundColor="secondary" foregroundColorSelected="foreground" />
+        <text position="1308,0" size="308,83" index="Locale" font="2" horizontalAlignment="right" verticalAlignment="center" foregroundColor="secondary" foregroundColorSelected="foreground" />
+        <pixmap position="1640,13" size="72,57" index="Status" alpha="blend" scale="centerScaled" />
       </template>
     </widget>
     <widget position="72,1196" size="1736,120" font="Regular;42" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" source="description" render="Label" />
@@ -3082,15 +3187,15 @@ install(self)</applet>
     <panel name="UmbraMenuHeader" />
     <widget position="0,0" size="60,54" name="icons" pixmaps="icons/installable.png,icons/lock_off.png,icons/lock_on.png" alphatest="blend" />
     <widget position="48,180" size="2464,996" source="locales" render="Listbox" enableWrapAround="1" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
-      <template name="Default" fonts="Regular;37,Regular;29" itemHeight="83">
+      <template name="Default" fonts="Regular;37,Regular;29,Regular;35" itemHeight="83">
         <pixmap position="24,16" size="112,51" index="Flag" alpha="blend" scale="centerScaled" />
         <text position="168,0" size="1820,45" index="Native" font="0" verticalAlignment="center" />
-        <text position="168,45" size="2124,38" index="Name" font="1" verticalAlignment="center" foregroundColor="secondary" foregroundColorSelected="foreground" />
-        <text position="2012,0" size="308,45" index="Locale" font="1" horizontalAlignment="right" verticalAlignment="center" foregroundColor="secondary" foregroundColorSelected="foreground" />
-        <pixmap position="2356,18" size="60,48" index="Status" alpha="blend" scale="centerScaled" />
+        <text position="168,45" size="1820,38" index="Name" font="1" verticalAlignment="center" foregroundColor="secondary" foregroundColorSelected="foreground" />
+        <text position="2012,0" size="308,83" index="Locale" font="2" horizontalAlignment="right" verticalAlignment="center" foregroundColor="secondary" foregroundColorSelected="foreground" />
+        <pixmap position="2344,13" size="72,57" index="Status" alpha="blend" scale="centerScaled" />
       </template>
     </widget>
-    <widget position="72,1244" size="2416,84" font="Regular;42" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="description" render="Label" />
+    <widget position="72,1216" size="2416,124" font="Regular;42" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=3000,repeat=-1" source="description" render="Label" />
     <panel name="UmbraKeys" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
@@ -3624,7 +3729,7 @@ install(self)</applet>
     <widget position="16,1352" size="608,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" name="ButtonRedText" />
     <panel name="UmbraPart_3585a554f2" />
     <widget position="656,1352" size="608,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" name="ButtonGreenText" />
-    <panel name="UmbraPart_eb48490d72" />
+    <eLabel position="1280,1430" size="640,10" backgroundColor="yellow" zPosition="-1" />
     <widget position="1296,1352" size="608,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" name="Manage Cover" />
     <widget position="2000,1352" size="488,68" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" name="Single search" />
     <eLabel position="1940,1352" size="60,68" font="Regular;34" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" text="OK" />
@@ -3673,8 +3778,8 @@ install(self)</applet>
     <panel name="UmbraHeader" />
     <panel name="UmbraPart_f51362ef22" />
     <widget position="72,872" size="2416,60" font="Regular;36" foregroundColor="muted" transparent="1" alphatest="blend" valign="center" source="footnote" render="Label" />
-    <eLabel position="48,1080" size="2464,222" backgroundColor="UmbraPanel" cornerRadius="16" zPosition="-1" />
-    <widget position="84,1102" size="2392,176" font="Regular;42" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="description" render="Label" />
+    <eLabel position="48,984" size="2464,336" backgroundColor="UmbraPanel" cornerRadius="16" zPosition="-1" />
+    <widget position="84,1008" size="2392,288" font="Regular;42" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=3000,repeat=-1" source="description" render="Label" />
     <widget position="48,948" size="0,0" name="HelpWindow" conditional="HelpWindow" />
     <widget position="0,0" size="0,0" name="Image" conditional="Image" />
     <panel name="UmbraKeys" />
@@ -3979,7 +4084,7 @@ install(self)</applet>
     <widget name="playlist" position="48,280" size="1620,900" posFont="Regular;40" nameFont="Regular;40" itemHeight="60" posWidth="50" nameWidth="650" scrollbarMode="showOnDemand" posColor="foreground" posColorSel="foreground" nameColor="foreground" nameColorSel="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" backgroundColor="surface" foregroundColor="foreground" transparent="1" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" />
     <panel name="UmbraPart_29407c0ccf" />
     <widget name="delete" position="1296,1352" size="608,68" noWrap="1" zPosition="1" valign="center" font="Regular;36" halign="center" backgroundColor="surface" foregroundColor="foreground" transparent="1" />
-    <panel name="UmbraPart_eb48490d72" />
+    <eLabel position="1280,1430" size="640,10" backgroundColor="yellow" zPosition="-1" />
     <widget name="deleteall" position="1936,1352" size="608,68" noWrap="1" zPosition="1" valign="center" font="Regular;36" halign="center" backgroundColor="surface" foregroundColor="foreground" transparent="1" />
     <eLabel position="1920,1430" size="640,10" backgroundColor="blue" zPosition="-1" />
     <panel name="UmbraPluginKeys" />
@@ -4071,16 +4176,6 @@ install(self)</applet>
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
   </screen>
-  <screen name="VideoEnhancementSetup" position="0,0" size="2560,1440" title="Setup" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
-    <panel name="UmbraHeader" />
-    <panel name="UmbraPart_24c7fef2a9" />
-    <panel name="UmbraPart_e401955c3a" />
-    <panel name="UmbraPart_554ee2b732" />
-    <widget name="footnote" position="48,1200" size="1620,50" font="Regular;36" halign="right" valign="center" backgroundColor="surface" foregroundColor="foreground" transparent="1" />
-    <panel name="UmbraPluginKeys" />
-    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
-install(self)</applet>
-  </screen>
   <screen name="VideoEnhancementPreview" position="440,960" size="1680,448" title="VideoEnhancementPreview" flags="wfNoBorder,wfModal" backgroundColor="transparent" resolution="2560,1440">
     <eLabel position="0,0" size="1680,448" backgroundColor="surface" cornerRadius="16" zPosition="-2" />
     <panel name="UmbraPart_d15ed04c52" />
@@ -4117,7 +4212,7 @@ install(self)</applet>
     <widget name="btt_green" position="656,1352" size="608,68" zPosition="1" valign="center" font="Regular;36" halign="center" noWrap="1" foregroundColor="foreground" backgroundColor="surface" transparent="1" />
     <panel name="UmbraPart_3585a554f2" />
     <widget name="btt_yellow" position="1296,1352" size="608,68" zPosition="1" valign="center" font="Regular;36" halign="center" noWrap="1" foregroundColor="foreground" backgroundColor="surface" transparent="1" />
-    <panel name="UmbraPart_eb48490d72" />
+    <eLabel position="1280,1430" size="640,10" backgroundColor="yellow" zPosition="-1" />
     <widget name="btt_blue" position="1936,1352" size="608,68" zPosition="1" valign="center" font="Regular;36" halign="center" noWrap="1" foregroundColor="foreground" backgroundColor="surface" transparent="1" />
     <eLabel position="1920,1430" size="640,10" backgroundColor="blue" zPosition="-1" />
     <panel name="UmbraPluginKeys" />
@@ -4652,7 +4747,7 @@ install(self)</applet>
     <panel name="UmbraHeader" />
     <panel name="UmbraPart_24c7fef2a9" />
     <panel name="UmbraPart_cce93e49ca" />
-    <panel name="UmbraPart_554ee2b732" />
+    <widget name="HelpWindow" position="0,0" size="0,0" zPosition="1" transparent="1" alphatest="blend" />
     <panel name="UmbraPluginKeys" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
@@ -4810,7 +4905,7 @@ install(self)</applet>
     <eLabel text="Rename" position="656,1352" size="608,68" zPosition="1" valign="center" font="Regular;36" halign="center" backgroundColor="surface" foregroundColor="foreground" transparent="1" />
     <panel name="UmbraPart_3585a554f2" />
     <eLabel text="Move/Copy" position="1296,1352" size="608,68" zPosition="1" valign="center" font="Regular;36" halign="center" backgroundColor="surface" foregroundColor="foreground" transparent="1" />
-    <panel name="UmbraPart_eb48490d72" />
+    <eLabel position="1280,1430" size="640,10" backgroundColor="yellow" zPosition="-1" />
     <eLabel text="Bookmarks" position="1936,1352" size="608,68" zPosition="1" valign="center" font="Regular;36" halign="center" backgroundColor="surface" foregroundColor="foreground" transparent="1" />
     <eLabel position="1920,1430" size="640,10" backgroundColor="blue" zPosition="-1" />
     <panel name="UmbraPluginKeys" />
@@ -4840,7 +4935,7 @@ install(self)</applet>
     <eLabel text="MOVE" position="16,1352" size="608,68" zPosition="1" valign="center" font="Regular;36" halign="center" backgroundColor="surface" foregroundColor="foreground" transparent="1" />
     <eLabel position="0,1430" size="640,10" backgroundColor="red" zPosition="-1" />
     <eLabel text="COPY" position="1296,1352" size="608,68" zPosition="1" valign="center" font="Regular;36" halign="center" backgroundColor="surface" foregroundColor="foreground" transparent="1" />
-    <panel name="UmbraPart_eb48490d72" />
+    <eLabel position="1280,1430" size="640,10" backgroundColor="yellow" zPosition="-1" />
     <panel name="UmbraPluginKeys" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
@@ -4852,7 +4947,7 @@ install(self)</applet>
     <eLabel text="Set name" position="16,1352" size="608,68" zPosition="1" valign="center" font="Regular;36" halign="center" backgroundColor="surface" foregroundColor="foreground" transparent="1" />
     <eLabel position="0,1430" size="640,10" backgroundColor="red" zPosition="-1" />
     <eLabel text="Make a softlink" position="1296,1352" size="608,68" zPosition="1" valign="center" font="Regular;36" halign="center" backgroundColor="surface" foregroundColor="foreground" transparent="1" />
-    <panel name="UmbraPart_eb48490d72" />
+    <eLabel position="1280,1430" size="640,10" backgroundColor="yellow" zPosition="-1" />
     <panel name="UmbraPluginKeys" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
@@ -5483,7 +5578,7 @@ install(self)</applet>
   </screen>
   <screen name="StalkerEdit" position="center,center" size="2560,1440" title="Stalker Setup" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
     <panel name="UmbraHeader" />
-    <panel name="UmbraPart_554ee2b732" />
+    <widget name="HelpWindow" position="0,0" size="0,0" zPosition="1" transparent="1" alphatest="blend" />
     <panel name="UmbraPart_24c7fef2a9" />
     <widget source="mac" render="Label" position="1728,810" size="784,380" font="Regular;40" foregroundColor="foreground" halign="center" backgroundColor="surface" valign="center" transparent="1" />
     <panel name="UmbraPluginKeys" />
@@ -5570,7 +5665,7 @@ install(self)</applet>
   </screen>
   <screen name="RemoteTimerSetup" position="0,0" size="2560,1440" title="Settings" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
     <panel name="UmbraHeader" />
-    <panel name="UmbraPart_554ee2b732" />
+    <widget name="HelpWindow" position="0,0" size="0,0" zPosition="1" transparent="1" alphatest="blend" />
     <panel name="UmbraPart_1e609eb8ac" />
     <panel name="UmbraPluginKeys" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
@@ -5720,7 +5815,7 @@ install(self)</applet>
     <widget source="green" render="Label" position="656,1352" size="608,68" noWrap="1" zPosition="1" valign="center" font="Regular;36" halign="center" backgroundColor="surface" foregroundColor="foreground" transparent="1" />
     <panel name="UmbraPart_3585a554f2" />
     <widget source="yellow" render="Label" position="1296,1352" size="608,68" noWrap="1" zPosition="1" valign="center" font="Regular;36" halign="center" backgroundColor="surface" foregroundColor="foreground" transparent="1" />
-    <panel name="UmbraPart_eb48490d72" />
+    <eLabel position="1280,1430" size="640,10" backgroundColor="yellow" zPosition="-1" />
     <widget source="blue" render="Label" position="1936,1352" size="608,68" noWrap="1" zPosition="1" valign="center" font="Regular;36" halign="center" backgroundColor="surface" foregroundColor="foreground" transparent="1" />
     <eLabel position="1920,1430" size="640,10" backgroundColor="blue" zPosition="-1" />
     <panel name="UmbraPluginKeys" />
@@ -5774,7 +5869,7 @@ install(self)</applet>
     <panel name="UmbraHeader" />
     <panel name="UmbraPart_24c7fef2a9" />
     <panel name="UmbraPart_e401955c3a" />
-    <panel name="UmbraPart_554ee2b732" />
+    <widget name="HelpWindow" position="0,0" size="0,0" zPosition="1" transparent="1" alphatest="blend" />
     <widget source="VKeyIcon" render="FixedLabel" text="Keyboard" position="1936,1352" size="608,68" noWrap="1" zPosition="1" valign="center" font="Regular;36" halign="center" backgroundColor="surface" foregroundColor="foreground" transparent="1">
       <convert type="ConditionalShowHide" />
     </widget>
@@ -5785,7 +5880,7 @@ install(self)</applet>
   </screen>
   <screen name="YouTubeSearch" position="0,0" size="2560,1440" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
     <panel name="UmbraHeader" />
-    <panel name="UmbraPart_554ee2b732" />
+    <widget name="HelpWindow" position="0,0" size="0,0" zPosition="1" transparent="1" alphatest="blend" />
     <panel name="UmbraPart_792b234739" />
     <widget source="list" render="Listbox" position="48,340" size="1620,900" font="Regular;40" itemHeight="60" scrollbarMode="showOnDemand" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" transparent="1" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
       <convert type="TemplatedMultiContent">{'template': [MultiContentEntryText(pos=(20, 2), size=(1160, 60), font=0, flags=RT_HALIGN_LEFT, text=0)], 'fonts': [gFont('Regular', 40)], 'itemHeight': 60}</convert>
@@ -5915,7 +6010,7 @@ install(self)</applet>
     <panel name="UmbraHeader" />
     <panel name="UmbraPart_cb832b31c4" />
     <widget name="footnote" position="48,1200" size="1620,50" font="Regular;32" halign="right" valign="center" backgroundColor="surface" foregroundColor="foreground" transparent="1" />
-    <panel name="UmbraPart_554ee2b732" />
+    <widget name="HelpWindow" position="0,0" size="0,0" zPosition="1" transparent="1" alphatest="blend" />
     <panel name="UmbraPluginKeys" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
@@ -6384,7 +6479,7 @@ install(self)</applet>
     <widget name="green" position="656,1352" size="608,68" zPosition="1" valign="center" font="Regular;36" halign="center" foregroundColor="foreground" backgroundColor="surface" transparent="1" />
     <panel name="UmbraPart_3585a554f2" />
     <widget name="yellow" position="1296,1352" size="608,68" zPosition="1" valign="center" font="Regular;36" halign="center" foregroundColor="foreground" backgroundColor="surface" transparent="1" />
-    <panel name="UmbraPart_eb48490d72" />
+    <eLabel position="1280,1430" size="640,10" backgroundColor="yellow" zPosition="-1" />
     <widget name="blue" position="1936,1352" size="608,68" zPosition="1" valign="center" font="Regular;36" halign="center" foregroundColor="foreground" backgroundColor="surface" transparent="1" />
     <eLabel position="1920,1430" size="640,10" backgroundColor="blue" zPosition="-1" />
     <panel name="UmbraPluginKeys" />
