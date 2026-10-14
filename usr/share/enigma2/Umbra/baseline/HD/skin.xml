@@ -6572,44 +6572,49 @@ install(self)</applet>
   </screen>
   <screen name="PlayerSelectorGrid" position="0,0" size="1280,720" title="E2iPlayer" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="1280,720">
     <panel name="UmbraHeader" />
-    <widget source="grid" render="Listbox" position="24,90" size="1232,525" conditional="grid" listOrientation="grid" scrollbarMode="showOnDemand" itemSpacing="0,0" itemAlignment="center" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="8" itemGradientSelected="UmbraListSelection" scrollbarWidth="4" scrollbarRadius="2" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
+    <widget source="grid" render="Listbox" position="24,156" size="1232,432" conditional="grid" listOrientation="grid" scrollbarMode="showOnDemand" itemSpacing="0,0" itemAlignment="centerTop" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="8" itemGradientSelected="UmbraListSelection" scrollbarWidth="4" scrollbarRadius="2" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
       <templates>
         <template name="Default" fonts="Regular;20">
-          <mode name="default" itemHeight="145" itemWidth="145">
+          <mode name="default" itemHeight="144" itemWidth="144">
+            <pixmap index="0" position="28,28" size="88,88" alpha="blend" scale="centerScaled" />
+          </mode>
+          <mode name="120" itemHeight="144" itemWidth="144">
             <pixmap index="0" position="22,22" size="100,100" alpha="blend" scale="centerScaled" />
           </mode>
-          <mode name="120" itemHeight="165" itemWidth="165">
-            <pixmap index="0" position="22,22" size="120,120" alpha="blend" scale="centerScaled" />
-          </mode>
-          <mode name="135" itemHeight="180" itemWidth="180">
-            <pixmap index="0" position="22,22" size="135,135" alpha="blend" scale="centerScaled" />
+          <mode name="135" itemHeight="144" itemWidth="144">
+            <pixmap index="0" position="16,16" size="112,112" alpha="blend" scale="centerScaled" />
           </mode>
         </template>
       </templates>
     </widget>
     <panel name="UmbraPluginKeys" />
+    <widget name="statustext" position="24,86" size="1232,36" font="Regular;21" halign="center" valign="center" transparent="1" foregroundColor="foreground" />
+    <widget name="categorytext" position="24,124" size="1232,28" font="Regular;18" halign="center" valign="center" transparent="1" foregroundColor="secondary" />
+    <widget name="hostinfo" position="24,606" size="1232,30" font="Regular;18" halign="center" valign="center" noWrap="1" transparent="1" foregroundColor="secondary" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
   </screen>
   <screen name="PlayerSelectorScreen" position="0,0" size="1280,720" title="E2iPlayer" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="1280,720">
     <panel name="UmbraHeader" />
     <panel name="UmbraPluginKeys" />
-    <widget name="statustext" position="24,86" size="1232,42" font="Regular;21" valign="center" halign="center" foregroundColor="foreground" zPosition="8" backgroundColor="surface" transparent="1" />
-    <widget source="grid" render="Listbox" position="24,156" size="1232,486" conditional="grid" listOrientation="grid" scrollbarMode="showOnDemand" itemSpacing="0,0" itemAlignment="center" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="8" itemGradientSelected="UmbraListSelection" scrollbarWidth="4" scrollbarRadius="2" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
+    <widget name="statustext" position="24,86" size="1232,36" font="Regular;21" valign="center" halign="center" foregroundColor="foreground" zPosition="8" backgroundColor="surface" transparent="1" />
+    <widget source="grid" render="Listbox" position="24,156" size="1232,432" conditional="grid" listOrientation="grid" scrollbarMode="showOnDemand" itemSpacing="0,0" itemAlignment="centerTop" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="8" itemGradientSelected="UmbraListSelection" scrollbarWidth="4" scrollbarRadius="2" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
       <templates>
         <template name="Default" fonts="Regular;20">
-          <mode name="default" itemHeight="145" itemWidth="145">
+          <mode name="default" itemHeight="144" itemWidth="144">
+            <pixmap index="0" position="28,28" size="88,88" alpha="blend" scale="centerScaled" />
+          </mode>
+          <mode name="120" itemHeight="144" itemWidth="144">
             <pixmap index="0" position="22,22" size="100,100" alpha="blend" scale="centerScaled" />
           </mode>
-          <mode name="120" itemHeight="165" itemWidth="165">
-            <pixmap index="0" position="22,22" size="120,120" alpha="blend" scale="centerScaled" />
-          </mode>
-          <mode name="135" itemHeight="180" itemWidth="180">
-            <pixmap index="0" position="22,22" size="135,135" alpha="blend" scale="centerScaled" />
+          <mode name="135" itemHeight="144" itemWidth="144">
+            <pixmap index="0" position="16,16" size="112,112" alpha="blend" scale="centerScaled" />
           </mode>
         </template>
       </templates>
     </widget>
+    <widget name="categorytext" position="24,124" size="1232,28" font="Regular;18" halign="center" valign="center" transparent="1" foregroundColor="secondary" />
+    <widget name="hostinfo" position="24,606" size="1232,30" font="Regular;18" halign="center" valign="center" noWrap="1" transparent="1" foregroundColor="secondary" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
   </screen>
@@ -6642,17 +6647,17 @@ install(self)</applet>
   </screen>
   <screen name="SearchResultGridScreen" position="0,0" size="1280,720" title="E2iPlayer" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="1280,720">
     <panel name="UmbraHeader" />
-    <widget source="grid" render="Listbox" position="24,90" size="1232,500" conditional="grid" listOrientation="grid" scrollbarMode="showOnDemand" itemSpacing="0,0" itemAlignment="center" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="8" itemGradientSelected="UmbraListSelection" scrollbarWidth="4" scrollbarRadius="2" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
+    <widget source="grid" render="Listbox" position="24,156" size="1232,432" conditional="grid" listOrientation="grid" scrollbarMode="showOnDemand" itemSpacing="0,0" itemAlignment="centerTop" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="8" itemGradientSelected="UmbraListSelection" scrollbarWidth="4" scrollbarRadius="2" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
       <templates>
         <template name="Default" fonts="Regular;20">
-          <mode name="default" itemHeight="145" itemWidth="145">
+          <mode name="default" itemHeight="144" itemWidth="144">
+            <pixmap index="0" position="28,28" size="88,88" alpha="blend" scale="centerScaled" />
+          </mode>
+          <mode name="120" itemHeight="144" itemWidth="144">
             <pixmap index="0" position="22,22" size="100,100" alpha="blend" scale="centerScaled" />
           </mode>
-          <mode name="120" itemHeight="165" itemWidth="165">
-            <pixmap index="0" position="22,22" size="120,120" alpha="blend" scale="centerScaled" />
-          </mode>
-          <mode name="135" itemHeight="180" itemWidth="180">
-            <pixmap index="0" position="22,22" size="135,135" alpha="blend" scale="centerScaled" />
+          <mode name="135" itemHeight="144" itemWidth="144">
+            <pixmap index="0" position="16,16" size="112,112" alpha="blend" scale="centerScaled" />
           </mode>
         </template>
       </templates>
@@ -7368,6 +7373,30 @@ install(self)</applet>
     <widget position="24,378" size="372,34" font="Regular;18" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" objectTypes="key_red,StaticText" source="key_red" render="Label" />
     <eLabel position="444,374" size="372,3" backgroundColor="green" objectTypes="key_green,StaticText" zPosition="-1" />
     <widget position="444,378" size="372,34" font="Regular;18" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" objectTypes="key_green,StaticText" source="key_green" render="Label" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen name="PlayerSelectorGridScreen" position="0,0" size="1280,720" title="E2iPlayer" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="1280,720">
+    <panel name="UmbraHeader" />
+    <panel name="UmbraPluginKeys" />
+    <widget name="statustext" position="24,86" size="1232,36" font="Regular;21" valign="center" halign="center" foregroundColor="foreground" zPosition="8" backgroundColor="surface" transparent="1" />
+    <widget source="grid" render="Listbox" position="24,156" size="1232,432" conditional="grid" listOrientation="grid" scrollbarMode="showOnDemand" itemSpacing="0,0" itemAlignment="centerTop" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="8" itemGradientSelected="UmbraListSelection" scrollbarWidth="4" scrollbarRadius="2" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
+      <templates>
+        <template name="Default" fonts="Regular;20">
+          <mode name="default" itemHeight="144" itemWidth="144">
+            <pixmap index="0" position="28,28" size="88,88" alpha="blend" scale="centerScaled" />
+          </mode>
+          <mode name="120" itemHeight="144" itemWidth="144">
+            <pixmap index="0" position="22,22" size="100,100" alpha="blend" scale="centerScaled" />
+          </mode>
+          <mode name="135" itemHeight="144" itemWidth="144">
+            <pixmap index="0" position="16,16" size="112,112" alpha="blend" scale="centerScaled" />
+          </mode>
+        </template>
+      </templates>
+    </widget>
+    <widget name="categorytext" position="24,124" size="1232,28" font="Regular;18" halign="center" valign="center" transparent="1" foregroundColor="secondary" />
+    <widget name="hostinfo" position="24,606" size="1232,30" font="Regular;18" halign="center" valign="center" noWrap="1" transparent="1" foregroundColor="secondary" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
   </screen>
