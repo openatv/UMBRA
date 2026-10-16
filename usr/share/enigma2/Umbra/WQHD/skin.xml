@@ -1123,8 +1123,8 @@ prime_picons(self)</applet>
     <widget position="916,1354" size="360,54" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="session.Event_Now" render="Label">
       <convert type="EventInfo">Genre</convert>
     </widget>
-    <widget position="1484,1354" size="84,54" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" halign="right" source="session.Event_Now" render="Label">
-      <convert type="EventInfo">RatingCode</convert>
+    <widget position="1476,1352" size="92,56" font="Regular;32" foregroundColor="foreground" transparent="0" alphatest="blend" valign="center" noWrap="1" halign="center" backgroundColor="transparent" alphaBlend="1" widgetBorderWidth="2" widgetBorderColor="foreground" padding="6,0,6,0" fontScale="width" source="session.Event_Now" render="UmbraRatingLabel">
+      <convert type="EventInfo">RatingTextAndColor</convert>
     </widget>
     <panel name="UmbraServiceStatus" />
     <widget position="2484,1364" size="28,28" source="session.RecordState" render="FixedLabel" text="" backgroundColor="red" cornerRadius="16">
@@ -1623,7 +1623,7 @@ install(self)</applet>
     <widget position="0,0" size="0,0" name="DescriptionBorder" />
     <widget position="920,420" size="720,300" font="Regular;180" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" zPosition="5" name="chosenletter" />
     <widget position="420,560" size="1720,140" font="Regular;52" foregroundColor="foreground" transparent="0" alphatest="blend" valign="center" halign="center" zPosition="6" backgroundColor="surface" name="waitingtext" />
-    <widget position="60,1116" size="2440,172" font="Regular;40" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Service" render="Label">
+    <widget position="60,1100" size="2440,192" font="Regular;40" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=4000,repeat=-1" source="Service" render="Label">
       <convert type="EventName">ExtendedDescription</convert>
     </widget>
     <panel name="UmbraKeys" />
@@ -2931,7 +2931,7 @@ install(self)</applet>
     <widget position="0,0" size="0,0" name="DescriptionBorder" />
     <widget position="560,420" size="680,300" font="Regular;180" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" zPosition="5" name="chosenletter" />
     <widget position="120,560" size="1560,140" font="Regular;48" foregroundColor="foreground" transparent="0" alphatest="blend" valign="center" halign="center" zPosition="6" backgroundColor="surface" name="waitingtext" />
-    <widget position="48,1096" size="1704,88" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" source="Service" render="Label">
+    <widget position="48,1096" size="1704,88" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=4000,repeat=-1" source="Service" render="Label">
       <convert type="EventName">ExtendedDescription</convert>
     </widget>
     <widget position="48,1184" size="1704,48" font="Regular;32" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" name="freeDiskSpace" />
