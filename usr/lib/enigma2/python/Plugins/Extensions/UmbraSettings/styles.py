@@ -4,12 +4,13 @@ Shared by builder and receiver; packs are validated JSON data, never Python.
 Resolution is deliberately a receiver setting, not part of a transferable pack.
 """
 
-import ast
+from ast import Call, Constant, Name, parse as parseAst, unparse, walk
 from copy import deepcopy
-import json
+from json import dumps, loads
+from os.path import join
 from pathlib import Path
-import re
-import xml.etree.ElementTree as ET
+from re import fullmatch, sub
+from xml.etree.ElementTree import Element, ParseError, SubElement, indent, iterparse, parse, tostring
 
 from .compact import compact_screens
 from .i18n import N_, _
@@ -79,7 +80,7 @@ def validate_options(options, overrides=False):
         choices = OPTIONS[key][3]
         if choices is not None and value not in choices:
             raise ValueError(_("%s: invalid value %r") % (key, value))
-        if choices is None and value and not re.fullmatch(r"#?[0-9a-fA-F]{6}", value):
+        if choices is None and value and not fullmatch(r"#?[0-9a-fA-F]{6}", value):
             raise ValueError(_("%s: expected six RGB hexadecimal digits") % key)
         result[key] = value.lower().removeprefix("#") if choices is None else value
     return result
@@ -92,7 +93,7 @@ def load_packs(directory=None):
             try:
                 if path.stat().st_size > 65536:
                     raise ValueError(_("File too large"))
-                data = json.loads(path.read_text(encoding="utf-8"))
+                data = loads(path.read_text(encoding="utf-8"))
                 if data.get("version") != 1 or not isinstance(data.get("name"), str) or not 1 <= len(data["name"]) <= 80:
                     raise ValueError(_("Invalid style format or name"))
                 options = validate_options(data.get("options"))
@@ -126,14 +127,14 @@ def reconcile_native(overrides, current, previous, effective):
 
 
 def scale_template_fonts(expression, factor):
-    tree = ast.parse(expression.strip(), mode="eval")
-    for call in ast.walk(tree):
-        if (isinstance(call, ast.Call) and isinstance(call.func, ast.Name) and call.func.id == "gFont"
-                and len(call.args) >= 2 and isinstance(call.args[0], ast.Constant)
-                and call.args[0].value in ("Regular", "Bold") and isinstance(call.args[1], ast.Constant)
+    tree = parseAst(expression.strip(), mode="eval")
+    for call in walk(tree):
+        if (isinstance(call, Call) and isinstance(call.func, Name) and call.func.id == "gFont"
+                and len(call.args) >= 2 and isinstance(call.args[0], Constant)
+                and call.args[0].value in ("Regular", "Bold") and isinstance(call.args[1], Constant)
                 and isinstance(call.args[1].value, (int, float))):
             call.args[1].value = round(call.args[1].value * factor)
-    return ast.unparse(tree)
+    return unparse(tree)
 
 
 def theme_for(options):
@@ -158,16 +159,16 @@ def theme_for(options):
             # Edge fades retain transparency; flat panels and selections remain native fills.
             if first != "transparent":
                 gradients[name] = first + "," + first + ",vertical"
-    root = ET.Element("skin")
-    group = ET.SubElement(root, "colors")
+    root = Element("skin")
+    group = SubElement(root, "colors")
     for name, value in {**data, **gradients}.items():
-        ET.SubElement(group, "color", name=name, value=value)
+        SubElement(group, "color", name=name, value=value)
     return xml_bytes(root)
 
 
 def xml_bytes(root):
-    ET.indent(root)
-    return ET.tostring(root, encoding="utf-8", xml_declaration=True)
+    indent(root)
+    return tostring(root, encoding="utf-8", xml_declaration=True)
 
 
 def apply_layout(root, options, width):
@@ -181,7 +182,7 @@ def apply_layout(root, options, width):
             element.set("cornerRadius", str(round(int(options["corners"]) * factor)))
         for key in list(element.attrib):
             if key in ("font", "fonts") or "Font" in key:
-                element.set(key, re.sub(r"(Regular|Bold);(\d+)", lambda m: m[1] + ";" + str(round(int(m[2]) * int(options["fontScale"]) / 100)), element.get(key)))
+                element.set(key, sub(r"(Regular|Bold);(\d+)", lambda m: m[1] + ";" + str(round(int(m[2]) * int(options["fontScale"]) / 100)), element.get(key)))
         if element.tag == "alias" and element.get("font") in ("Regular", "Bold") and element.get("size"):
             element.set("size", str(round(int(element.get("size")) * int(options["fontScale"]) / 100)))
         if element.tag == "parameter" and element.get("name") == "VirtualKeyboardNativeGeometry":
@@ -226,7 +227,7 @@ def apply_layout(root, options, width):
         extra = round((int(options["menuWidth"]) - 470) * factor)
         for element in menu.iter():
             size = element.get("size", "")
-            if re.fullmatch(r"\d+,\d+", size):
+            if fullmatch(r"\d+,\d+", size):
                 w, h = map(int, size.split(","))
                 if w >= round(300 * factor):
                     element.set("size", f"{w + extra},{h}")
@@ -238,46 +239,56 @@ def apply_layout(root, options, width):
 
 
 def prepare_skin(target, options, resolution):
-    """Prepare the chosen resolution transactionally; retain inactive variants unchanged."""
-    if resolution not in RESOLUTIONS:
-        raise ValueError(_("Unknown resolution"))
-    writes = {target / "theme.xml": theme_for(options)}
-    native = target / "baseline/native.xml"
-    if native.exists():
-        writes[target / "native.xml"] = xml_bytes(apply_layout(ET.parse(native).getroot(), options, 1280))
-    width, height = RESOLUTIONS[resolution]
-    for filename in ("skin.xml", "skinTemplates.xml"):
-        baseline = target / "baseline" / resolution / filename
-        try:
-            root = ET.parse(baseline).getroot()
-        except ET.ParseError as error:
-            raise ValueError(_("Invalid skin baseline %s/%s: %s") % (resolution, filename, error)) from error
-        styled = apply_layout(root, options, width)
-        if filename == "skin.xml":
-            screens = ET.Element("skin")
-            for element in list(styled):
-                if element.tag == "screen":
-                    screens.append(element)
-                    styled.remove(element)
-            screens, compact_report = compact_screens(screens, "UmbraPart_")
-            styled.extend(screens)
-        writes[target / resolution / filename] = xml_bytes(styled)
-        # The top-level skin remains the FHD entry point, never an alias to HD/WQHD.
-        if resolution == "FHD":
-            writes[target / filename] = writes[target / resolution / filename]
-    previous = {path: path.read_bytes() if path.exists() else None for path in writes}
-    completed = []
-    try:
-        for path, data in writes.items():
-            atomic_write(path, data)
-            completed.append(path)
-    except OSError:
-        for path in reversed(completed):
-            if previous[path] is not None:
-                atomic_write(path, previous[path])
-            else:
-                path.unlink(missing_ok=True)
-        raise
+	"""Prepare the chosen resolution transactionally; retain inactive variants unchanged."""
+	if resolution not in RESOLUTIONS:
+		raise ValueError(_("Unknown resolution"))
+	writes = {Path(join(target, "theme.xml")): theme_for(options)}
+	native = Path(join(target, "baseline", "native.xml"))
+	if native.exists():
+		writes[Path(join(target, "native.xml"))] = xml_bytes(apply_layout(parse(native).getroot(), options, 1280))
+	width = RESOLUTIONS[resolution][0]
+	for fileName in ("skin.xml", "skinTemplates.xml"):
+		baseline = join(target, "baseline", resolution, fileName)
+		try:
+			root = parse(baseline).getroot()
+		except ParseError as error:
+			raise ValueError(_("Invalid skin baseline %s/%s: %s") % (resolution, fileName, error)) from error
+		styled = apply_layout(root, options, width)
+		if fileName == "skin.xml":
+			# Package updates overwrite this marker with the shipped default layout.
+			styled.set("umbraOptions", dumps(options, sort_keys=True))
+			screens = Element("skin")
+			for element in list(styled):
+				if element.tag == "screen":
+					screens.append(element)
+					styled.remove(element)
+			styled.extend(compact_screens(screens, "UmbraPart_")[0])
+		writes[Path(join(target, resolution, fileName))] = xml_bytes(styled)
+		# The top-level skin remains the FHD entry point, never an alias to HD/WQHD.
+		if resolution == "FHD":
+			writes[Path(join(target, fileName))] = writes[Path(join(target, resolution, fileName))]
+	previous = {x: x.read_bytes() if x.exists() else None for x in writes}
+	completed = []
+	try:
+		for path, data in writes.items():
+			atomic_write(path, data)
+			completed.append(path)
+	except OSError:
+		for path in reversed(completed):
+			if previous[path] is not None:
+				atomic_write(path, previous[path])
+			else:
+				path.unlink(missing_ok=True)
+		raise
+
+
+def skinMatchesOptions(target, options, resolution):
+	try:
+		with open(join(target, resolution, "skin.xml"), "rb") as source:
+			root = next(iterparse(source, events=("start",)))[1]
+			return root.get("umbraOptions") == dumps(options, sort_keys=True)
+	except (OSError, ParseError, StopIteration):
+		return False
 
 
 def skin_resolution(primary_skin, fallback):
@@ -306,4 +317,4 @@ def export_pack(path, name, options):
     if not isinstance(name, str) or not 1 <= len(name.strip()) <= 80:
         raise ValueError(_("Style names must contain 1 to 80 characters"))
     data = {"version": 1, "name": name.strip(), "options": {**BASE, **validate_options(options)}}
-    atomic_write(path, json.dumps(data, indent=2, ensure_ascii=True).encode())
+    atomic_write(path, dumps(data, indent=2, ensure_ascii=True).encode())
