@@ -278,7 +278,7 @@
   <screen name="UmbraHeader">
     <eLabel position="0,0" size="1920,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="99,21" size="1440,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="99,21" size="1440,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="Title" render="Label" />
     <widget position="1575,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
@@ -712,7 +712,7 @@ install(self)</applet>
   <screen position="240,120" size="1440,840" name="ChoiceBox" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="1920,1080">
     <eLabel position="0,0" size="1440,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="99,21" size="960,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="99,21" size="960,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="Title" render="Label" />
     <widget position="1095,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
@@ -724,7 +724,7 @@ install(self)</applet>
   <screen position="240,180" size="1440,720" name="ExtensionsList" flags="wfNoBorder" backgroundColor="surface" ignoreWidgets="text" resolution="1920,1080">
     <eLabel position="0,0" size="1440,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="99,21" size="960,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="99,21" size="960,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="Title" render="Label" />
     <widget position="1095,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
@@ -735,7 +735,7 @@ install(self)</applet>
   <screen position="240,180" size="1440,720" name="EPGExtensionsList" flags="wfNoBorder" backgroundColor="surface" ignoreWidgets="text" resolution="1920,1080">
     <eLabel position="0,0" size="1440,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="99,21" size="960,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="99,21" size="960,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="Title" render="Label" />
     <widget position="1095,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
@@ -746,7 +746,7 @@ install(self)</applet>
   <screen position="240,60" size="1440,960" name="ChannelContextMenu" flags="wfNoBorder" backgroundColor="surface" resolution="1920,1080">
     <eLabel position="0,0" size="1440,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="99,21" size="960,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="99,21" size="960,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="Title" render="Label" />
     <widget position="1095,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
@@ -1196,7 +1196,7 @@ install(self)</applet>
   <screen position="240,60" size="1440,960" name="BouquetSelector" flags="wfNoBorder" backgroundColor="surface" resolution="1920,1080">
     <eLabel position="0,0" size="1440,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="99,21" size="960,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="99,21" size="960,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="Title" render="Label" />
     <widget position="1095,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
@@ -1223,7 +1223,7 @@ install(self)</applet>
   <screen position="240,60" size="1440,960" name="EPGBouquetSelector" flags="wfNoBorder" backgroundColor="surface" resolution="1920,1080">
     <eLabel position="0,0" size="1440,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="99,21" size="960,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="99,21" size="960,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="Title" render="Label" />
     <widget position="1095,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
@@ -1333,7 +1333,7 @@ install(self)</applet>
   <screen name="UmbraMenuHeader">
     <eLabel position="0,0" size="1920,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="99,21" size="1056,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="99,21" size="1056,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="Title" render="Label" />
     <widget position="1575,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
@@ -2054,7 +2054,7 @@ install(self)</applet>
   <screen position="330,180" size="1260,720" name="MessageBox" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="1920,1080">
     <eLabel position="0,0" size="1260,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="99,21" size="780,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="99,21" size="780,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="Title" render="Label" />
     <widget position="915,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
@@ -2067,7 +2067,7 @@ fit(self)</applet>
   <screen position="330,180" size="1260,720" name="MessageBoxModal" flags="wfNoBorder,wfModalFull" backgroundColor="UmbraScreen" zPosition="99" resolution="1920,1080">
     <eLabel position="0,0" size="1260,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="99,21" size="780,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="99,21" size="780,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="Title" render="Label" />
     <widget position="915,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
@@ -2080,7 +2080,7 @@ fit(self)</applet>
   <screen position="330,180" size="1260,720" name="MessageBoxExt" flags="wfNoBorder" backgroundColor="UmbraScreen" zPosition="10" resolution="1920,1080">
     <eLabel position="0,0" size="1260,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="99,21" size="780,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="99,21" size="780,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="Title" render="Label" />
     <widget position="915,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
@@ -2093,7 +2093,7 @@ fit(self)</applet>
   <screen position="330,180" size="1260,720" name="MessageBoxSimple" flags="wfNoBorder" backgroundColor="UmbraScreen" zPosition="10" resolution="1920,1080">
     <eLabel position="0,0" size="1260,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="99,21" size="780,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="99,21" size="780,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="Title" render="Label" />
     <widget position="915,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
@@ -2164,7 +2164,7 @@ install(self)</applet>
   <screen position="240,240" size="1440,600" name="InputBox" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="1920,1080">
     <eLabel position="0,0" size="1440,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="99,21" size="960,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="99,21" size="960,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="Title" render="Label" />
     <widget position="1095,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
@@ -2176,7 +2176,7 @@ install(self)</applet>
   <screen position="240,240" size="1440,600" name="PinInput" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="1920,1080">
     <eLabel position="0,0" size="1440,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="99,21" size="960,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="99,21" size="960,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="Title" render="Label" />
     <widget position="1095,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
@@ -2190,7 +2190,7 @@ install(self)</applet>
   <screen position="240,240" size="1440,600" name="PinInputPopup" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="1920,1080">
     <eLabel position="0,0" size="1440,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="99,21" size="960,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="99,21" size="960,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="Title" render="Label" />
     <widget position="1095,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
@@ -2457,7 +2457,7 @@ install(self)</applet>
   <screen position="0,0" size="1920,1080" name="IMDB" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="1920,1080">
     <eLabel position="0,0" size="1920,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <eLabel position="99,21" size="1440,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" text="IMDb" />
+    <eLabel position="99,21" size="1440,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" text="IMDb" />
     <widget position="1575,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
@@ -3584,7 +3584,7 @@ install(self)</applet>
     <eLabel position="0,0" size="1380,870" backgroundColor="surface" cornerRadius="12" zPosition="-1" />
     <eLabel position="0,0" size="1380,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="99,21" size="900,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="99,21" size="900,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="Title" render="Label" />
     <widget position="1035,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
@@ -4056,7 +4056,7 @@ install(self)</applet>
     <widget position="0,0" size="1680,570" name="background" conditional="background" backgroundColor="surface" zPosition="-2" />
     <eLabel position="0,0" size="1680,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="99,21" size="1200,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="99,21" size="1200,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="Title" render="Label" />
     <widget position="1335,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
@@ -7488,7 +7488,7 @@ install(self)</applet>
   <screen position="0,0" size="1920,1080" name="OAWeatherOverview" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="1920,1080">
     <eLabel position="0,0" size="1920,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="99,21" size="1440,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="99,21" size="1440,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="Title" render="Label" />
     <widget position="1575,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
@@ -7604,7 +7604,7 @@ install(self)</applet>
   <screen position="0,0" size="1920,1080" name="OAWeatherDetailview" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="1920,1080">
     <eLabel position="0,0" size="1920,99" backgroundColor="UmbraPanel" zPosition="-1" />
     <eLabel position="30,28" size="45,46" text="" font="enigma2icons;39" foregroundColor="secondary" transparent="1" alphatest="blend" halign="center" valign="center" />
-    <widget position="99,21" size="1440,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="Title" render="Label" />
+    <widget position="99,21" size="1440,57" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="Title" render="Label" />
     <widget position="1575,27" size="306,45" font="Regular;30" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
