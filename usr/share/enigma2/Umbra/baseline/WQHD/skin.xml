@@ -2848,33 +2848,71 @@ install(self)</applet>
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
   </screen>
-  <screen position="1700,180" size="800,224" name="BitrateViewerExtraCompact" flags="wfNoBorder" backgroundColor="UmbraPanel" zPosition="5" resolution="2560,1440">
-    <widget position="36,36" size="200,68" font="Regular;44" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" source="video_caption" render="Label" />
-    <widget position="248,36" size="516,68" font="Regular;44" foregroundColor="accent" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" source="video" render="Label" />
-    <widget position="36,120" size="200,68" font="Regular;44" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" source="audio_caption" render="Label" />
-    <widget position="248,120" size="516,68" font="Regular;44" foregroundColor="accent" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" source="audio" render="Label" />
+  <screen position="1700,180" size="800,224" name="BitrateViewerExtraCompact" flags="wfNoBorder" backgroundColor="transparent" zPosition="5" transparent="1" animationMode="off" resolution="2560,1440">
+    <panel size="800,224" condition="!config.plugins.bitrate.show_in_menu.value == 'infobar' and getattr(screen, 'infobar_mode', False)" position="0,0">
+      <eLabel position="0,0" size="800,224" backgroundColor="UmbraPanel" zPosition="-1" />
+      <widget position="36,36" size="200,68" font="Regular;44" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" source="video_caption" render="Label" />
+      <widget position="248,36" size="516,68" font="Regular;44" foregroundColor="accent" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" source="video" render="Label" />
+      <widget position="36,120" size="200,68" font="Regular;44" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" source="audio_caption" render="Label" />
+      <widget position="248,120" size="516,68" font="Regular;44" foregroundColor="accent" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" source="audio" render="Label" />
+    </panel>
+    <panel size="2560,64" condition="config.plugins.bitrate.show_in_menu.value == 'infobar' and getattr(screen, 'infobar_mode', False)" position="0,0">
+      <eLabel position="0,0" size="2560,64" backgroundColor="UmbraPanel" zPosition="-1" />
+      <widget position="48,0" size="240,64" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" source="video_caption" render="Label" />
+      <widget position="308,0" size="880,64" font="Regular;36" foregroundColor="accent" transparent="1" alphatest="blend" valign="center" noWrap="1" source="video" render="Label" />
+      <widget position="1328,0" size="240,64" font="Regular;36" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" source="audio_caption" render="Label" />
+      <widget position="1588,0" size="880,64" font="Regular;36" foregroundColor="accent" transparent="1" alphatest="blend" valign="center" noWrap="1" source="audio" render="Label" />
+    </panel>
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.plugin_dialog_layout import BitrateLayout
+BitrateLayout.dock(self)</applet>
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
   </screen>
-  <screen position="992,180" size="1520,536" name="BitrateViewerExtra" flags="wfNoBorder" backgroundColor="UmbraPanel" zPosition="5" resolution="2560,1440">
-    <eLabel position="40,36" size="1440,60" font="Regular;44" foregroundColor="accent" transparent="1" alphatest="blend" valign="center" text="Video (kbit/s)" />
-    <eLabel position="40,104" size="348,56" font="Regular;36" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" halign="right" text="Min" />
-    <widget position="40,164" size="348,68" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" name="vmin" />
-    <eLabel position="404,104" size="348,56" font="Regular;36" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" halign="right" text="Max" />
-    <widget position="404,164" size="348,68" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" name="vmax" />
-    <eLabel position="768,104" size="348,56" font="Regular;36" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" halign="right" text="Average" />
-    <widget position="768,164" size="348,68" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" name="vavg" />
-    <eLabel position="1132,104" size="348,56" font="Regular;36" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" halign="right" text="Current" />
-    <widget position="1132,164" size="348,68" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" name="vcur" />
-    <eLabel position="40,284" size="1440,60" font="Regular;44" foregroundColor="accent" transparent="1" alphatest="blend" valign="center" text="Audio (kbit/s)" />
-    <eLabel position="40,352" size="348,56" font="Regular;36" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" halign="right" text="Min" />
-    <widget position="40,412" size="348,68" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" name="amin" />
-    <eLabel position="404,352" size="348,56" font="Regular;36" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" halign="right" text="Max" />
-    <widget position="404,412" size="348,68" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" name="amax" />
-    <eLabel position="768,352" size="348,56" font="Regular;36" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" halign="right" text="Average" />
-    <widget position="768,412" size="348,68" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" name="aavg" />
-    <eLabel position="1132,352" size="348,56" font="Regular;36" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" halign="right" text="Current" />
-    <widget position="1132,412" size="348,68" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" name="acur" />
+  <screen position="992,180" size="1520,536" name="BitrateViewerExtra" flags="wfNoBorder" backgroundColor="transparent" transparent="1" animationMode="off" zPosition="5" resolution="2560,1440">
+    <panel size="1520,536" condition="!config.plugins.bitrate.show_in_menu.value == 'infobar' and getattr(screen, 'infobar_mode', False)" position="0,0">
+      <eLabel position="0,0" size="1520,536" backgroundColor="UmbraPanel" zPosition="-1" />
+      <eLabel position="40,36" size="1440,60" font="Regular;44" foregroundColor="accent" transparent="1" alphatest="blend" valign="center" text="Video (kbit/s)" />
+      <eLabel position="40,104" size="348,56" font="Regular;36" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" halign="right" text="Min" />
+      <widget position="40,164" size="348,68" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" name="vmin" />
+      <eLabel position="404,104" size="348,56" font="Regular;36" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" halign="right" text="Max" />
+      <widget position="404,164" size="348,68" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" name="vmax" />
+      <eLabel position="768,104" size="348,56" font="Regular;36" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" halign="right" text="Average" />
+      <widget position="768,164" size="348,68" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" name="vavg" />
+      <eLabel position="1132,104" size="348,56" font="Regular;36" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" halign="right" text="Current" />
+      <widget position="1132,164" size="348,68" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" name="vcur" />
+      <eLabel position="40,284" size="1440,60" font="Regular;44" foregroundColor="accent" transparent="1" alphatest="blend" valign="center" text="Audio (kbit/s)" />
+      <eLabel position="40,352" size="348,56" font="Regular;36" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" halign="right" text="Min" />
+      <widget position="40,412" size="348,68" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" name="amin" />
+      <eLabel position="404,352" size="348,56" font="Regular;36" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" halign="right" text="Max" />
+      <widget position="404,412" size="348,68" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" name="amax" />
+      <eLabel position="768,352" size="348,56" font="Regular;36" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" halign="right" text="Average" />
+      <widget position="768,412" size="348,68" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" name="aavg" />
+      <eLabel position="1132,352" size="348,56" font="Regular;36" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" halign="right" text="Current" />
+      <widget position="1132,412" size="348,68" font="Regular;46" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" name="acur" />
+    </panel>
+    <panel size="2560,64" condition="config.plugins.bitrate.show_in_menu.value == 'infobar' and getattr(screen, 'infobar_mode', False)" position="0,0">
+      <eLabel position="0,0" size="2560,64" backgroundColor="UmbraPanel" zPosition="-1" />
+      <eLabel position="48,0" size="248,64" font="Regular;32" foregroundColor="accent" transparent="1" alphatest="blend" valign="center" noWrap="1" text="Video (kbit/s)" />
+      <eLabel position="308,0" size="104,64" font="Regular;28" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" text="Min" />
+      <widget position="412,0" size="112,64" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" fontScale="width" name="vmin" />
+      <eLabel position="532,0" size="104,64" font="Regular;28" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" text="Max" />
+      <widget position="636,0" size="112,64" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" fontScale="width" name="vmax" />
+      <eLabel position="756,0" size="104,64" font="Regular;28" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" text="Ø" />
+      <widget position="860,0" size="112,64" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" fontScale="width" name="vavg" />
+      <eLabel position="980,0" size="104,64" font="Regular;28" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" text="Current" />
+      <widget position="1084,0" size="112,64" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" fontScale="width" name="vcur" />
+      <eLabel position="1328,0" size="248,64" font="Regular;32" foregroundColor="accent" transparent="1" alphatest="blend" valign="center" noWrap="1" text="Audio (kbit/s)" />
+      <eLabel position="1588,0" size="104,64" font="Regular;28" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" text="Min" />
+      <widget position="1692,0" size="112,64" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" fontScale="width" name="amin" />
+      <eLabel position="1812,0" size="104,64" font="Regular;28" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" text="Max" />
+      <widget position="1916,0" size="112,64" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" fontScale="width" name="amax" />
+      <eLabel position="2036,0" size="104,64" font="Regular;28" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" text="Ø" />
+      <widget position="2140,0" size="112,64" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" fontScale="width" name="aavg" />
+      <eLabel position="2260,0" size="104,64" font="Regular;28" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" text="Current" />
+      <widget position="2364,0" size="112,64" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" halign="right" fontScale="width" name="acur" />
+    </panel>
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.plugin_dialog_layout import BitrateLayout
+BitrateLayout.dock(self)</applet>
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
   </screen>

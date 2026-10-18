@@ -1,5 +1,31 @@
 """Umbra-only dialog geometry and display-text preparation."""
 
+from enigma import ePoint, eSize, eWindow
+
+
+class BitrateLayout:
+	@staticmethod
+	def dock(screen):
+		if not getattr(screen, "infobar_mode", False):
+			return
+		from Screens.InfoBar import InfoBar  # InfoBar imports plugins during startup.
+
+		width = screen.desktop.size().width()
+		factor = width / 1280
+		top = round(440 * factor)
+		infoBar = InfoBar.instance
+		for widget in getattr(infoBar, "additionalWidgets", ()):
+			if dict(widget.skinAttributes).get("backgroundColor") == "UmbraInfoFade":
+				top = widget.instance.position().y() + round(26 * factor)
+				break
+		# Modal composition preserves the infobar underneath this overlay.
+		# Older images without wfModal still only cover the reserved row.
+		if hasattr(eWindow, "wfModal"):
+			screen.instance.setFlag(eWindow.wfModal)
+		screen.setAnimationMode(0)
+		screen.instance.resize(eSize(width, round(32 * factor)))
+		screen.instance.move(ePoint(0, top))
+
 
 def history_labels(screen):
     """Keep EPG line breaks out of the single-line History Zap text fields."""
