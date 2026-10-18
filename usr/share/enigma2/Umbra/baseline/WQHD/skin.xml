@@ -332,46 +332,49 @@
       <convert type="ServiceInfo">SubtitlesAvailable</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <eLabel position="2072,1348" size="72,64" font="Regular;28" foregroundColor="#005b6064" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="1" text="16:9" />
-    <widget position="2072,1348" size="72,64" font="Regular;28" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="2" source="session.CurrentService" render="FixedLabel" text="16:9">
+    <eLabel position="2068,1348" size="64,64" font="Regular;28" foregroundColor="#005b6064" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="1" text="16:9" />
+    <widget position="2068,1348" size="64,64" font="Regular;28" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="2" source="session.CurrentService" render="FixedLabel" text="16:9">
       <convert type="ServiceInfo">IsWidescreen</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <eLabel position="2156,1348" size="60,64" font="enigma2icons;48" foregroundColor="#005b6064" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="1" text="" />
-    <widget position="2156,1348" size="60,64" font="enigma2icons;48" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="2" source="session.CurrentService" render="FixedLabel" text="">
+    <widget position="2144,1348" size="96,64" font="enigma2icons;48" foregroundColor="#005b6064" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="1" text="" source="session.CurrentService" render="FixedLabel">
+      <convert type="ServiceInfo">IsSoftCSA</convert>
+      <convert type="ConditionalShowHide">Invert</convert>
+    </widget>
+    <widget position="2144,1348" size="96,64" font="enigma2icons;48" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="2" source="session.CurrentService" render="FixedLabel" text="">
       <convert type="ServiceInfo">IsCrypted</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <eLabel position="2240,1348" size="60,64" font="enigma2icons;48" foregroundColor="#005b6064" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="1" text="" />
-    <widget position="2240,1348" size="60,64" font="enigma2icons;48" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="2" source="session.CurrentService" render="FixedLabel" text="">
+    <eLabel position="2256,1348" size="68,64" font="enigma2icons;66" foregroundColor="#005b6064" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="1" text="" />
+    <widget position="2256,1348" size="68,64" font="enigma2icons;66" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="2" source="session.CurrentService" render="FixedLabel" text="">
       <convert type="ServiceInfo">AudioTracksAvailable</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <eLabel position="2324,1348" size="60,64" font="enigma2icons;48" foregroundColor="#005b6064" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="1" text="" />
-    <widget position="2324,1348" size="60,64" font="enigma2icons;48" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="2" source="session.CurrentService" render="FixedLabel" text="">
+    <eLabel position="2340,1348" size="64,64" font="enigma2icons;60" foregroundColor="#005b6064" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="1" text="" />
+    <widget position="2340,1348" size="64,64" font="enigma2icons;60" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="2" source="session.CurrentService" render="FixedLabel" text="">
       <convert type="ServiceInfo">SubservicesAvailable</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <eLabel position="2408,1348" size="60,64" font="enigma2icons;48" foregroundColor="#005b6064" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="1" text="" />
-    <widget position="2408,1348" size="60,64" font="enigma2icons;48" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="2" source="session.CurrentService" render="FixedLabel" text="">
+    <eLabel position="2416,1348" size="60,64" font="enigma2icons;48" foregroundColor="#005b6064" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="1" text="" />
+    <widget position="2416,1348" size="60,64" font="enigma2icons;48" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" zPosition="2" source="session.CurrentService" render="FixedLabel" text="">
       <convert type="ServiceInfo">IsStream</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget position="2156,1348" size="56,56" text="" font="enigma2icons;48" foregroundColor="foreground" transparent="1" alphatest="blend" halign="center" valign="center" source="session.CurrentService" render="FixedLabel">
+    <widget position="2144,1348" size="96,64" font="enigma2icons;96" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" source="session.CurrentService" render="FixedLabel" text="">
       <convert type="ServiceInfo">IsSoftCSA</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget position="1580,1348" size="64,64" text="" font="enigma2icons;56" foregroundColor="foreground" transparent="1" alphatest="blend" halign="center" valign="center" source="session.CurrentService" render="FixedLabel">
+    <widget position="1580,1348" size="64,64" font="enigma2icons;62" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" source="session.CurrentService" render="FixedLabel" text="">
       <convert type="ServiceInfo">VideoHeight</convert>
       <convert type="ValueRange">1,719</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget position="1580,1348" size="64,64" text="" font="enigma2icons;56" foregroundColor="foreground" transparent="1" alphatest="blend" halign="center" valign="center" source="session.CurrentService" render="FixedLabel">
+    <widget position="1580,1348" size="64,64" font="enigma2icons;62" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" source="session.CurrentService" render="FixedLabel" text="">
       <convert type="ServiceInfo">VideoHeight</convert>
       <convert type="ValueRange">720,1080</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget position="1580,1348" size="64,64" text="" font="enigma2icons;56" foregroundColor="foreground" transparent="1" alphatest="blend" halign="center" valign="center" source="session.CurrentService" render="FixedLabel">
+    <widget position="1580,1348" size="64,64" font="enigma2icons;48" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="center" noWrap="1" source="session.CurrentService" render="FixedLabel" text="">
       <convert type="ServiceInfo">VideoHeight</convert>
       <convert type="ValueRange">1081,10000</convert>
       <convert type="ConditionalShowHide" />
@@ -440,10 +443,10 @@ prime_picons(self)</applet>
     <widget position="48,1354" size="376,54" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" source="session.CurrentService" render="Label">
       <convert type="ServiceInfo">VideoInfo</convert>
     </widget>
-    <widget position="444,1354" size="452,54" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" source="session.CurrentService" render="Label">
+    <widget position="444,1354" size="344,54" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" scrollText="direction=left,startDelay=3000,stepDelay=60,stepSize=1,endDelay=3000,repeat=-1" source="session.CurrentService" render="Label">
       <convert type="VAudioInfo">AudioCodec</convert>
     </widget>
-    <widget position="916,1354" size="360,54" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" wrap="ellipsis" source="session.Event_Now" render="Label">
+    <widget position="808,1354" size="476,54" font="Regular;32" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" scrollText="direction=left,startDelay=3000,stepDelay=60,stepSize=1,endDelay=3000,repeat=-1" source="session.Event_Now" render="Label">
       <convert type="EventInfo">Genre</convert>
     </widget>
     <widget position="1476,1352" size="92,56" font="Regular;32" foregroundColor="foreground" transparent="0" alphatest="blend" valign="center" noWrap="1" halign="center" backgroundColor="transparent" alphaBlend="1" widgetBorderWidth="2" widgetBorderColor="foreground" padding="6,0,6,0" fontScale="width" source="session.Event_Now" render="UmbraRatingLabel">

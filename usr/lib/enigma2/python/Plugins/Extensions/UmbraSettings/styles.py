@@ -172,70 +172,70 @@ def xml_bytes(root):
 
 
 def apply_layout(root, options, width):
-    result = apply_media(deepcopy(root), options, width)
-    result = apply_diagnostics(result, options, width)
-    factor = width / 1280
-    for element in result.iter():
-        if element.get("itemCornerRadiusSelected") is not None and element.get("itemCornerRadiusSelected") != "0":
-            element.set("itemCornerRadiusSelected", str(round(int(options["corners"]) * factor)))
-        if element.tag == "rectangle" and element.get("cornerRadius") is not None:
-            element.set("cornerRadius", str(round(int(options["corners"]) * factor)))
-        for key in list(element.attrib):
-            if key in ("font", "fonts") or "Font" in key:
-                element.set(key, sub(r"(Regular|Bold);(\d+)", lambda m: m[1] + ";" + str(round(int(m[2]) * int(options["fontScale"]) / 100)), element.get(key)))
-        if element.tag == "alias" and element.get("font") in ("Regular", "Bold") and element.get("size"):
-            element.set("size", str(round(int(element.get("size")) * int(options["fontScale"]) / 100)))
-        if element.tag == "parameter" and element.get("name") == "VirtualKeyboardNativeGeometry":
-            gap, _, border = element.get("value").split(",")
-            element.set("value", f"{gap},{round(int(options['corners']) * factor)},{border}")
-        if element.tag == "convert" and element.get("type") == "TemplatedMultiContent" and options["fontScale"] != "100":
-            element.text = scale_template_fonts(element.text, int(options["fontScale"]) / 100)
-        if options["gradients"] == "off":
-            for key in ("foregroundColor", "backgroundColor"):
-                value = element.get(key, "").split(",")
-                if len(value) >= 3 and value[-1] in ("horizontal", "vertical") and value[0] != "transparent":
-                    element.set(key, value[0])
-        if element.get("render") == "Progress" and element.get("size"):
-            w, h = element.get("size").split(",")
-            if h.isdecimal() and int(h) <= round(12 * factor):
-                element.set("size", f"{w},{round(int(options['progressHeight']) * factor)}")
-    if options["showClock"] == "off":
-        for page in result.findall("screen"):
-            if page.get("name") not in ("InfoBar", "UmbraBase_InfoBar", "UmbraMedia_InfoBar"):
-                for clock in page.findall(".//widget[@source='global.CurrentTime']"):
-                    clock.set("size", "0,0")
-    infobars = [page for page in result.findall("screen") if page.get("name") in ("InfoBar", "UmbraBase_InfoBar", "UmbraMedia_InfoBar")]
-    status = result.find("screen[@name='UmbraServiceStatus']")
-    if status is not None:
-        mode = options.get("serviceIcons", "all")
-        for element in status:
-            if mode == "off" or mode == "active" and element.tag == "eLabel":
-                element.set("size", "0,0")
-    for infobar in infobars:
-        if options.get("infobarPiconBackground", "on") == "off":
-            for element in list(infobar):
-                if element.tag == "eLabel" and element.get("backgroundColor") == "selection":
-                    infobar.remove(element)
-        for element in list(infobar.findall("widget")):
-            types = [(c.get("type"), (c.text or "").strip()) for c in element.findall("convert")]
-            if options["eventDescription"] == "off" and any(x in types for x in (("EventName", "ExtendedDescription"), ("EventInfo", "ExtendedDescription"))):
-                infobar.remove(element)
-            elif options["technicalInfo"] == "off" and any(t in ("VAudioInfo", "ServiceInfo") and v in ("AudioCodec", "VideoInfo") for t, v in types):
-                infobar.remove(element)
-    menu = result.find("screen[@name='Menu']")
-    if menu is not None and options["menuWidth"] != "470":
-        extra = round((int(options["menuWidth"]) - 470) * factor)
-        for element in menu.iter():
-            size = element.get("size", "")
-            if fullmatch(r"\d+,\d+", size):
-                w, h = map(int, size.split(","))
-                if w >= round(300 * factor):
-                    element.set("size", f"{w + extra},{h}")
-                elif element.get("backgroundColor") in ("red", "green", "yellow", "blue") or element.get("source", "").startswith("key_"):
-                    x, y = map(int, element.get("position").split(","))
-                    element.set("position", f"{x + (extra // 2 if x >= round(235 * factor) else 0)},{y}")
-                    element.set("size", f"{w + extra // 2},{h}")
-    return apply_weather(result, options)
+	result = apply_media(deepcopy(root), options, width)
+	result = apply_diagnostics(result, options, width)
+	factor = width / 1280
+	for element in result.iter():
+		if element.get("itemCornerRadiusSelected") is not None and element.get("itemCornerRadiusSelected") != "0":
+			element.set("itemCornerRadiusSelected", str(round(int(options["corners"]) * factor)))
+		if element.tag == "rectangle" and element.get("cornerRadius") is not None:
+			element.set("cornerRadius", str(round(int(options["corners"]) * factor)))
+		for key in list(element.attrib):
+			if key in ("font", "fonts") or "Font" in key:
+				element.set(key, sub(r"(Regular|Bold);(\d+)", lambda m: m[1] + ";" + str(round(int(m[2]) * int(options["fontScale"]) / 100)), element.get(key)))
+		if element.tag == "alias" and element.get("font") in ("Regular", "Bold") and element.get("size"):
+			element.set("size", str(round(int(element.get("size")) * int(options["fontScale"]) / 100)))
+		if element.tag == "parameter" and element.get("name") == "VirtualKeyboardNativeGeometry":
+			gap, _, border = element.get("value").split(",")
+			element.set("value", f"{gap},{round(int(options['corners']) * factor)},{border}")
+		if element.tag == "convert" and element.get("type") == "TemplatedMultiContent" and options["fontScale"] != "100":
+			element.text = scale_template_fonts(element.text, int(options["fontScale"]) / 100)
+		if options["gradients"] == "off":
+			for key in ("foregroundColor", "backgroundColor"):
+				value = element.get(key, "").split(",")
+				if len(value) >= 3 and value[-1] in ("horizontal", "vertical") and value[0] != "transparent":
+					element.set(key, value[0])
+		if element.get("render") == "Progress" and element.get("size"):
+			w, h = element.get("size").split(",")
+			if h.isdecimal() and int(h) <= round(12 * factor):
+				element.set("size", f"{w},{round(int(options['progressHeight']) * factor)}")
+	if options["showClock"] == "off":
+		for page in result.findall("screen"):
+			if page.get("name") not in ("InfoBar", "UmbraBase_InfoBar", "UmbraMedia_InfoBar"):
+				for clock in page.findall(".//widget[@source='global.CurrentTime']"):
+					clock.set("size", "0,0")
+	infobars = [page for page in result.findall("screen") if page.get("name") in ("InfoBar", "UmbraBase_InfoBar", "UmbraMedia_InfoBar")]
+	status = result.find("screen[@name='UmbraServiceStatus']")
+	if status is not None:
+		mode = options.get("serviceIcons", "all")
+		for element in status:
+			if mode == "off" or mode == "active" and (element.tag == "eLabel" or element.get("zPosition") == "1"):
+				element.set("size", "0,0")
+	for infobar in infobars:
+		if options.get("infobarPiconBackground", "on") == "off":
+			for element in list(infobar):
+				if element.tag == "eLabel" and element.get("backgroundColor") == "selection":
+					infobar.remove(element)
+		for element in list(infobar.findall("widget")):
+			types = [(c.get("type"), (c.text or "").strip()) for c in element.findall("convert")]
+			if options["eventDescription"] == "off" and any(x in types for x in (("EventName", "ExtendedDescription"), ("EventInfo", "ExtendedDescription"))):
+				infobar.remove(element)
+			elif options["technicalInfo"] == "off" and any(t in ("VAudioInfo", "ServiceInfo") and v in ("AudioCodec", "VideoInfo") for t, v in types):
+				infobar.remove(element)
+	menu = result.find("screen[@name='Menu']")
+	if menu is not None and options["menuWidth"] != "470":
+		extra = round((int(options["menuWidth"]) - 470) * factor)
+		for element in menu.iter():
+			size = element.get("size", "")
+			if fullmatch(r"\d+,\d+", size):
+				w, h = map(int, size.split(","))
+				if w >= round(300 * factor):
+					element.set("size", f"{w + extra},{h}")
+				elif element.get("backgroundColor") in ("red", "green", "yellow", "blue") or element.get("source", "").startswith("key_"):
+					x, y = map(int, element.get("position").split(","))
+					element.set("position", f"{x + (extra // 2 if x >= round(235 * factor) else 0)},{y}")
+					element.set("size", f"{w + extra // 2},{h}")
+	return apply_weather(result, options)
 
 
 def prepare_skin(target, options, resolution):
