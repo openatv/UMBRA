@@ -719,8 +719,8 @@ install(self)</applet>
     <widget position="1460,36" size="408,60" font="Regular;40" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" halign="right" source="global.CurrentTime" render="Label">
       <convert type="ClockToText">Format:%a %d.%m.  %H:%M</convert>
     </widget>
-    <widget position="48,168" size="1824,164" font="Regular;44" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" name="text" />
-    <widget position="48,368" size="1824,684" name="list" enableWrapAround="1" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" />
+    <widget position="48,168" size="1824,288" font="Regular;44" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" name="text" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=3000,repeat=-1" />
+    <widget position="48,492" size="1824,560" name="list" enableWrapAround="1" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
   </screen>
@@ -1757,7 +1757,7 @@ install(self)</applet>
     <widget name="package_text" position="1190,180" size="640,60" font="Regular;50" transparent="1" verticalAlignment="center" foregroundColor="foreground" />
     <widget name="package_count" position="1850,180" size="180,60" font="Regular;50" horizontalAlignment="right" transparent="1" verticalAlignment="center" foregroundColor="foreground" />
     <widget name="feedmessage" position="1190,260" size="840,80" font="Regular;40" transparent="1" verticalAlignment="center" foregroundColor="foreground" />
-    <widget name="activity" position="1190,364" size="840,10" />
+    <widget name="activity" position="1190,364" size="840,10" foregroundColor="UmbraProgress" backgroundColor="selection" borderWidth="0" />
     <widget source="list" render="Listbox" position="530,400" size="1500,800" scrollbarMode="showOnDemand" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
       <templates>
         <template name="Default" fonts="Regular;44,Regular;30" itemHeight="100" itemWidth="1500">
@@ -7725,6 +7725,44 @@ install(self)</applet>
     <widget position="1652,836" size="376,68" font="Regular;42" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" source="uvindex" render="Label" />
     <widget position="508,948" size="1544,68" font="Regular;44" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" noWrap="1" source="shortdesc" render="Label" />
     <widget position="508,1040" size="1544,136" font="Regular;40" foregroundColor="foreground" transparent="1" alphatest="blend" valign="center" source="longdesc" render="Label" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen position="0,0" size="2560,1440" name="InputDeviceSettings" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
+    <panel name="UmbraMenuHeader" />
+    <widget position="48,180" size="2464,737" name="config" font="Regular;37" valueFont="Regular;34" headerFont="Bold;37" itemHeight="67" padding="28,0" enableWrapAround="1" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" />
+    <widget position="72,1008" size="2416,288" font="Regular;44" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=3000,repeat=-1" source="description" render="Label" />
+    <widget position="0,0" size="0,0" name="HelpWindow" />
+    <panel name="UmbraKeys" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen position="0,0" size="2560,1440" name="InputDeviceIRProg" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
+    <panel name="UmbraMenuHeader" />
+    <widget position="48,180" size="2464,896" source="list" render="Listbox" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
+      <template name="Default" fonts="Regular;38,Regular;32" itemHeight="128">
+        <pixmap position="28,26" size="96,76" index="1" alpha="blend" scale="centerScaled" />
+        <text position="160,6" size="2256,55" index="3" font="0" verticalAlignment="center" wrap="ellipsis" />
+        <text position="160,67" size="2256,48" index="2" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
+      </template>
+    </widget>
+    <widget position="72,1180" size="2416,128" font="Regular;44" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=3000,repeat=-1" source="status" render="Label" />
+    <panel name="UmbraKeys" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen position="0,0" size="2560,1440" name="DfuFlashGuard" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
+    <panel name="UmbraMenuHeader" />
+    <widget position="72,180" size="2416,80" font="Regular;40" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" halign="right" noWrap="1" name="log" />
+    <widget position="72,340" size="2416,560" font="Regular;48" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=3000,repeat=-1" name="text" />
+    <widget position="72,1080" size="2416,128" font="Regular;44" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=3000,repeat=-1" name="bytes" />
+    <widget position="72,1260" size="2416,16" source="progress" render="Progress" foregroundColor="UmbraProgress" backgroundColor="selection" borderWidth="0" />
+    <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
+install(self)</applet>
+  </screen>
+  <screen position="0,0" size="2560,1440" name="DfuLog" flags="wfNoBorder" backgroundColor="UmbraScreen" resolution="2560,1440">
+    <panel name="UmbraMenuHeader" />
+    <widget position="72,180" size="2416,1116" font="Regular;44" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=3000,repeat=-1" name="log" />
     <applet type="onLayoutFinish">from Plugins.Extensions.UmbraSettings.fit_lists import install
 install(self)</applet>
   </screen>
