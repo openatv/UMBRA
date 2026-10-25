@@ -36,14 +36,14 @@ OPTIONS = {
     "technicalInfo": (N_("Video and audio information"), "infobar", "on", {"on": N_("On"), "off": N_("Off")}),
     "tunerInfo": (N_("Tuner and signal information"), "infobar", "off", {"off": N_("Off"), "signal": N_("Tuner / SNR / AGC / BER"), "details": N_("With transponder details")}),
     "cryptoInfo": (N_("Encryption / ECM information"), "infobar", "off", {"off": N_("Off"), "on": N_("On")}),
-	"systemInfo": (N_("CPU / RAM / temperature"), "infobar", "off", {"off": N_("Off"), "on": N_("On")}),
+    "systemInfo": (N_("CPU / RAM / temperature"), "infobar", "off", {"off": N_("Off"), "on": N_("On")}),
     "weatherInfo": (N_("Weather at top left"), "infobar", "off", {"off": N_("Off"), "current": N_("Current"), "details": N_("With daily values"), "forecast": N_("With five-day forecast")}),
     "serviceIcons": (N_("Status icons"), "infobar", "all", {"all": N_("All, inactive dimmed"), "active": N_("Active only"), "off": N_("Off")}),
     "infobarLayout": (N_("Infobar layout"), "infobar", "classic", {"classic": N_("Classic"), "cover": N_("Cover"), "backdrop": N_("Panorama")}),
     "infobarPiconBackground": (N_("Picon background"), "infobar", "on", {"on": N_("Style color"), "off": N_("Transparent")}),
     "epgArtwork": (N_("EPG artwork"), "infobar", "none", {"none": N_("Off"), "cover": N_("Cover"), "backdrop": N_("Panorama")}),
     "channelArtwork": (N_("Artwork in details"), "channels", "none", {"none": N_("Off"), "cover": N_("Cover"), "backdrop": N_("Panorama")}),
-	"channelScreen": (N_("View"), "channels", "ChannelSelectionDefault", {"legacy": N_("Legacy mode"), "ChannelSelectionDefault": N_("Details"), "ChannelSelectionPIG": N_("Live TV preview"), "ChannelSelectionFull": N_("Full screen"), "ChannelSelectionGrid": N_("Gallery"), "ChannelSelectionColumns": N_("Columns")}),
+    "channelScreen": (N_("View"), "channels", "ChannelSelectionDefault", {"legacy": N_("Legacy mode"), "ChannelSelectionDefault": N_("Details"), "ChannelSelectionPIG": N_("Live TV preview"), "ChannelSelectionFull": N_("Full screen"), "ChannelSelectionGrid": N_("Gallery"), "ChannelSelectionColumns": N_("Columns")}),
     "channelRows": (N_("Rows"), "channels", "Default", {"Default": N_("Standard"), "Compact": N_("Compact"), "Extended": N_("Extended"), "Gallery": N_("Gallery"), "Columns": N_("Columns")}),
     "showPicon": (N_("Picons"), "channels", "on", {"on": N_("On"), "off": N_("Off")}),
     "showNumber": (N_("Channel numbers"), "channels", "on", {"on": N_("On"), "off": N_("Off")}),
@@ -143,8 +143,9 @@ def theme_for(options):
         value = options["color_" + key]
         if value:
             data[key] = "#00" + value
+
     def blend(a, b, weight):
-        return "#00" + "".join(f"{round(int(data[a][i:i+2], 16) * weight + int(data[b][i:i+2], 16) * (1-weight)):02x}" for i in (3, 5, 7))
+        return "#00" + "".join(f"{round(int(data[a][i:i + 2], 16) * weight + int(data[b][i:i + 2], 16) * (1 - weight)):02x}" for i in (3, 5, 7))
     data["rowShade"] = blend("background", "surface", .75)
     data["selectionShade"] = blend("selection", "background", .5)
     for key in ("overlay", "channelShadeStrong", "channelShadeLight"):
@@ -172,123 +173,123 @@ def xml_bytes(root):
 
 
 def apply_layout(root, options, width):
-	result = apply_media(deepcopy(root), options, width)
-	result = apply_diagnostics(result, options, width)
-	factor = width / 1280
-	for element in result.iter():
-		if element.get("itemCornerRadiusSelected") is not None and element.get("itemCornerRadiusSelected") != "0":
-			element.set("itemCornerRadiusSelected", str(round(int(options["corners"]) * factor)))
-		if element.tag == "rectangle" and element.get("cornerRadius") is not None:
-			element.set("cornerRadius", str(round(int(options["corners"]) * factor)))
-		for key in list(element.attrib):
-			if key in ("font", "fonts") or "Font" in key:
-				element.set(key, sub(r"(Regular|Bold);(\d+)", lambda m: m[1] + ";" + str(round(int(m[2]) * int(options["fontScale"]) / 100)), element.get(key)))
-		if element.tag == "alias" and element.get("font") in ("Regular", "Bold") and element.get("size"):
-			element.set("size", str(round(int(element.get("size")) * int(options["fontScale"]) / 100)))
-		if element.tag == "parameter" and element.get("name") == "VirtualKeyboardNativeGeometry":
-			gap, _, border = element.get("value").split(",")
-			element.set("value", f"{gap},{round(int(options['corners']) * factor)},{border}")
-		if element.tag == "convert" and element.get("type") == "TemplatedMultiContent" and options["fontScale"] != "100":
-			element.text = scale_template_fonts(element.text, int(options["fontScale"]) / 100)
-		if options["gradients"] == "off":
-			for key in ("foregroundColor", "backgroundColor"):
-				value = element.get(key, "").split(",")
-				if len(value) >= 3 and value[-1] in ("horizontal", "vertical") and value[0] != "transparent":
-					element.set(key, value[0])
-		if element.get("render") == "Progress" and element.get("size"):
-			w, h = element.get("size").split(",")
-			if h.isdecimal() and int(h) <= round(12 * factor):
-				element.set("size", f"{w},{round(int(options['progressHeight']) * factor)}")
-	if options["showClock"] == "off":
-		for page in result.findall("screen"):
-			if page.get("name") not in ("InfoBar", "UmbraBase_InfoBar", "UmbraMedia_InfoBar"):
-				for clock in page.findall(".//widget[@source='global.CurrentTime']"):
-					clock.set("size", "0,0")
-	infobars = [page for page in result.findall("screen") if page.get("name") in ("InfoBar", "UmbraBase_InfoBar", "UmbraMedia_InfoBar")]
-	status = result.find("screen[@name='UmbraServiceStatus']")
-	if status is not None:
-		mode = options.get("serviceIcons", "all")
-		for element in status:
-			if mode == "off" or mode == "active" and (element.tag == "eLabel" or element.get("zPosition") == "1"):
-				element.set("size", "0,0")
-	for infobar in infobars:
-		if options.get("infobarPiconBackground", "on") == "off":
-			for element in list(infobar):
-				if element.tag == "eLabel" and element.get("backgroundColor") == "selection":
-					infobar.remove(element)
-		for element in list(infobar.findall("widget")):
-			types = [(c.get("type"), (c.text or "").strip()) for c in element.findall("convert")]
-			if options["eventDescription"] == "off" and any(x in types for x in (("EventName", "ExtendedDescription"), ("EventInfo", "ExtendedDescription"))):
-				infobar.remove(element)
-			elif options["technicalInfo"] == "off" and any(t in ("VAudioInfo", "ServiceInfo") and v in ("AudioCodec", "VideoInfo") for t, v in types):
-				infobar.remove(element)
-	menu = result.find("screen[@name='Menu']")
-	if menu is not None and options["menuWidth"] != "470":
-		extra = round((int(options["menuWidth"]) - 470) * factor)
-		for element in menu.iter():
-			size = element.get("size", "")
-			if fullmatch(r"\d+,\d+", size):
-				w, h = map(int, size.split(","))
-				if w >= round(300 * factor):
-					element.set("size", f"{w + extra},{h}")
-				elif element.get("backgroundColor") in ("red", "green", "yellow", "blue") or element.get("source", "").startswith("key_"):
-					x, y = map(int, element.get("position").split(","))
-					element.set("position", f"{x + (extra // 2 if x >= round(235 * factor) else 0)},{y}")
-					element.set("size", f"{w + extra // 2},{h}")
-	return apply_weather(result, options)
+    result = apply_media(deepcopy(root), options, width)
+    result = apply_diagnostics(result, options, width)
+    factor = width / 1280
+    for element in result.iter():
+        if element.get("itemCornerRadiusSelected") is not None and element.get("itemCornerRadiusSelected") != "0":
+            element.set("itemCornerRadiusSelected", str(round(int(options["corners"]) * factor)))
+        if element.tag == "rectangle" and element.get("cornerRadius") is not None:
+            element.set("cornerRadius", str(round(int(options["corners"]) * factor)))
+        for key in list(element.attrib):
+            if key in ("font", "fonts") or "Font" in key:
+                element.set(key, sub(r"(Regular|Bold);(\d+)", lambda m: m[1] + ";" + str(round(int(m[2]) * int(options["fontScale"]) / 100)), element.get(key)))
+        if element.tag == "alias" and element.get("font") in ("Regular", "Bold") and element.get("size"):
+            element.set("size", str(round(int(element.get("size")) * int(options["fontScale"]) / 100)))
+        if element.tag == "parameter" and element.get("name") == "VirtualKeyboardNativeGeometry":
+            gap, _, border = element.get("value").split(",")
+            element.set("value", f"{gap},{round(int(options['corners']) * factor)},{border}")
+        if element.tag == "convert" and element.get("type") == "TemplatedMultiContent" and options["fontScale"] != "100":
+            element.text = scale_template_fonts(element.text, int(options["fontScale"]) / 100)
+        if options["gradients"] == "off":
+            for key in ("foregroundColor", "backgroundColor"):
+                value = element.get(key, "").split(",")
+                if len(value) >= 3 and value[-1] in ("horizontal", "vertical") and value[0] != "transparent":
+                    element.set(key, value[0])
+        if element.get("render") == "Progress" and element.get("size"):
+            w, h = element.get("size").split(",")
+            if h.isdecimal() and int(h) <= round(12 * factor):
+                element.set("size", f"{w},{round(int(options['progressHeight']) * factor)}")
+    if options["showClock"] == "off":
+        for page in result.findall("screen"):
+            if page.get("name") not in ("InfoBar", "UmbraBase_InfoBar", "UmbraMedia_InfoBar"):
+                for clock in page.findall(".//widget[@source='global.CurrentTime']"):
+                    clock.set("size", "0,0")
+    infobars = [page for page in result.findall("screen") if page.get("name") in ("InfoBar", "UmbraBase_InfoBar", "UmbraMedia_InfoBar")]
+    status = result.find("screen[@name='UmbraServiceStatus']")
+    if status is not None:
+        mode = options.get("serviceIcons", "all")
+        for element in status:
+            if mode == "off" or mode == "active" and (element.tag == "eLabel" or element.get("zPosition") == "1"):
+                element.set("size", "0,0")
+    for infobar in infobars:
+        if options.get("infobarPiconBackground", "on") == "off":
+            for element in list(infobar):
+                if element.tag == "eLabel" and element.get("backgroundColor") == "selection":
+                    infobar.remove(element)
+        for element in list(infobar.findall("widget")):
+            types = [(c.get("type"), (c.text or "").strip()) for c in element.findall("convert")]
+            if options["eventDescription"] == "off" and any(x in types for x in (("EventName", "ExtendedDescription"), ("EventInfo", "ExtendedDescription"))):
+                infobar.remove(element)
+            elif options["technicalInfo"] == "off" and any(t in ("VAudioInfo", "ServiceInfo") and v in ("AudioCodec", "VideoInfo") for t, v in types):
+                infobar.remove(element)
+    menu = result.find("screen[@name='Menu']")
+    if menu is not None and options["menuWidth"] != "470":
+        extra = round((int(options["menuWidth"]) - 470) * factor)
+        for element in menu.iter():
+            size = element.get("size", "")
+            if fullmatch(r"\d+,\d+", size):
+                w, h = map(int, size.split(","))
+                if w >= round(300 * factor):
+                    element.set("size", f"{w + extra},{h}")
+                elif element.get("backgroundColor") in ("red", "green", "yellow", "blue") or element.get("source", "").startswith("key_"):
+                    x, y = map(int, element.get("position").split(","))
+                    element.set("position", f"{x + (extra // 2 if x >= round(235 * factor) else 0)},{y}")
+                    element.set("size", f"{w + extra // 2},{h}")
+    return apply_weather(result, options)
 
 
 def prepare_skin(target, options, resolution):
-	"""Prepare the chosen resolution transactionally; retain inactive variants unchanged."""
-	if resolution not in RESOLUTIONS:
-		raise ValueError(_("Unknown resolution"))
-	writes = {Path(join(target, "theme.xml")): theme_for(options)}
-	native = Path(join(target, "baseline", "native.xml"))
-	if native.exists():
-		writes[Path(join(target, "native.xml"))] = xml_bytes(apply_layout(parse(native).getroot(), options, 1280))
-	width = RESOLUTIONS[resolution][0]
-	for fileName in ("skin.xml", "skinTemplates.xml"):
-		baseline = join(target, "baseline", resolution, fileName)
-		try:
-			root = parse(baseline).getroot()
-		except ParseError as error:
-			raise ValueError(_("Invalid skin baseline %s/%s: %s") % (resolution, fileName, error)) from error
-		styled = apply_layout(root, options, width)
-		if fileName == "skin.xml":
-			# Package updates overwrite this marker with the shipped default layout.
-			styled.set("umbraOptions", dumps(options, sort_keys=True))
-			screens = Element("skin")
-			for element in list(styled):
-				if element.tag == "screen":
-					screens.append(element)
-					styled.remove(element)
-			styled.extend(compact_screens(screens, "UmbraPart_")[0])
-		writes[Path(join(target, resolution, fileName))] = xml_bytes(styled)
-		# The top-level skin remains the FHD entry point, never an alias to HD/WQHD.
-		if resolution == "FHD":
-			writes[Path(join(target, fileName))] = writes[Path(join(target, resolution, fileName))]
-	previous = {x: x.read_bytes() if x.exists() else None for x in writes}
-	completed = []
-	try:
-		for path, data in writes.items():
-			atomic_write(path, data)
-			completed.append(path)
-	except OSError:
-		for path in reversed(completed):
-			if previous[path] is not None:
-				atomic_write(path, previous[path])
-			else:
-				path.unlink(missing_ok=True)
-		raise
+    """Prepare the chosen resolution transactionally; retain inactive variants unchanged."""
+    if resolution not in RESOLUTIONS:
+        raise ValueError(_("Unknown resolution"))
+    writes = {Path(join(target, "theme.xml")): theme_for(options)}
+    native = Path(join(target, "baseline", "native.xml"))
+    if native.exists():
+        writes[Path(join(target, "native.xml"))] = xml_bytes(apply_layout(parse(native).getroot(), options, 1280))
+    width = RESOLUTIONS[resolution][0]
+    for fileName in ("skin.xml", "skinTemplates.xml"):
+        baseline = join(target, "baseline", resolution, fileName)
+        try:
+            root = parse(baseline).getroot()
+        except ParseError as error:
+            raise ValueError(_("Invalid skin baseline %s/%s: %s") % (resolution, fileName, error)) from error
+        styled = apply_layout(root, options, width)
+        if fileName == "skin.xml":
+            # Package updates overwrite this marker with the shipped default layout.
+            styled.set("umbraOptions", dumps(options, sort_keys=True))
+            screens = Element("skin")
+            for element in list(styled):
+                if element.tag == "screen":
+                    screens.append(element)
+                    styled.remove(element)
+            styled.extend(compact_screens(screens, "UmbraPart_")[0])
+        writes[Path(join(target, resolution, fileName))] = xml_bytes(styled)
+        # The top-level skin remains the FHD entry point, never an alias to HD/WQHD.
+        if resolution == "FHD":
+            writes[Path(join(target, fileName))] = writes[Path(join(target, resolution, fileName))]
+    previous = {x: x.read_bytes() if x.exists() else None for x in writes}
+    completed = []
+    try:
+        for path, data in writes.items():
+            atomic_write(path, data)
+            completed.append(path)
+    except OSError:
+        for path in reversed(completed):
+            if previous[path] is not None:
+                atomic_write(path, previous[path])
+            else:
+                path.unlink(missing_ok=True)
+        raise
 
 
 def skinMatchesOptions(target, options, resolution):
-	try:
-		with open(join(target, resolution, "skin.xml"), "rb") as source:
-			root = next(iterparse(source, events=("start",)))[1]
-			return root.get("umbraOptions") == dumps(options, sort_keys=True)
-	except (OSError, ParseError, StopIteration):
-		return False
+    try:
+        with open(join(target, resolution, "skin.xml"), "rb") as source:
+            root = next(iterparse(source, events=("start",)))[1]
+            return root.get("umbraOptions") == dumps(options, sort_keys=True)
+    except (OSError, ParseError, StopIteration):
+        return False
 
 
 def skin_resolution(primary_skin, fallback):

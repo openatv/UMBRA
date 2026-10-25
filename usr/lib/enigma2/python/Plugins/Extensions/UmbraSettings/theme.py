@@ -55,9 +55,9 @@ def colors(palette="graphite", accent="theme", tv_visibility="balanced"):
               "blue": "00588eda", "black": "00000000", "white": "00ffffff"}
     alpha = TV_ALPHA[tv_visibility]
     result["rowShade"] = "00" + "".join(f"{(3 * int(background[i:i + 2], 16) + int(surface[i:i + 2], 16)) // 4:02x}"
-                                      for i in (0, 2, 4))
+                                        for i in (0, 2, 4))
     result["selectionShade"] = "00" + "".join(f"{(int(selected[i:i + 2], 16) + int(background[i:i + 2], 16)) // 2:02x}"
-                                            for i in (0, 2, 4))
+                                              for i in (0, 2, 4))
     result.update(channelShadeStrong=f"{alpha // 2:02x}{surface}", channelShadeLight=f"{alpha:02x}{surface}")
     for key in ("red", "green", "yellow", "blue"):
         result["key_" + key] = result[key]
