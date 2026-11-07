@@ -12,7 +12,7 @@ from pathlib import Path
 from re import fullmatch, sub
 from xml.etree.ElementTree import Element, ParseError, SubElement, indent, iterparse, parse, tostring
 
-from .compact import compact_screens
+from .compact import compact_screens, expand_screen
 from .i18n import N_, _
 from .infobar import apply_diagnostics
 from .media import apply_media
@@ -172,9 +172,35 @@ def xml_bytes(root):
 
 
 def apply_layout(root, options, width):
-	result = apply_media(deepcopy(root), options, width)
+	result = deepcopy(root)
+	if options.get("epgArtwork", "none") != "none":
+		screens = {x.get("name"): x for x in result.findall("screen")}
+		for name in ("EPGSelection", "EPGSearch"):
+			page = screens.get(name)
+			if page is not None:
+				index = list(result).index(page)
+				result.remove(page)
+				result.insert(index, expand_screen(page, screens))
+	result = apply_media(result, options, width)
 	result = apply_diagnostics(result, options, width)
 	factor = width / 1280
+	# Artwork variants must start below the complete event title as well.
+	for page in result.findall("screen"):
+		if page.get("name") not in ("UmbraMedia_EPGSelection", "UmbraMedia_EPGSearch"):
+			continue
+		title = next(x for x in page.findall("widget[@source='Event']") if x.find("convert[@type='EventName']") is not None and x.find("convert[@type='EventName']").text == "Name")
+		titleBottom = int(title.get("position").split(",")[1]) + int(title.get("size").split(",")[1])
+		artworkTop = round(190 * factor)
+		offset = max(0, titleBottom + round(20 * factor) - artworkTop)
+		for widget in page:
+			if not widget.get("position") or not widget.get("size"):
+				continue
+			x, y = map(int, widget.get("position").split(","))
+			if x >= round(794 * factor) and artworkTop <= y < round(632 * factor):
+				widget.set("position", f"{x},{y + offset}")
+				if any(x.text == "FullDescription" for x in widget.findall("convert")):
+					widgetWidth, height = map(int, widget.get("size").split(","))
+					widget.set("size", f"{widgetWidth},{height - offset}")
 	for element in result.iter():
 		if element.get("itemCornerRadiusSelected") is not None and element.get("itemCornerRadiusSelected") != "0":
 			element.set("itemCornerRadiusSelected", str(round(int(options["corners"]) * factor)))

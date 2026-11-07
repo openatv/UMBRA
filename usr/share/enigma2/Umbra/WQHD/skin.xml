@@ -551,10 +551,10 @@
   </screen>
   <screen name="UmbraPart_d663b29ba4">
     <widget position="48,176" size="1468,1120" name="list" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0" MinimumItemHeight="67" ServiceFontGraphical="Regular;34" EntryFontGraphical="Regular;34" ServiceFontInfobar="Regular;34" EventFontInfobar="Regular;34" EventFontSingle="Regular;34" EventFontMulti="Regular;34" EventFontVertical="Regular;34" TimeFontVertical="Regular;29" ServiceForegroundColor="foreground" ServiceForegroundColorNow="foreground" EntryForegroundColor="foreground" EntryForegroundColorSelected="foreground" EntryForegroundColorNow="foreground" EntryForegroundColorNowSelected="foreground" EntryForegroundColorPastSelected="foreground" TimeForegroundColor="foreground" ServiceBackgroundColor="surface" EntryBackgroundColor="surface" EntryBackgroundColorPast="surface" TimeBackgroundColor="surface" ServiceBackgroundColorNow="selection" EntryBackgroundColorNow="selection" EntryBackgroundColorSelected="selection" EntryBackgroundColorNowSelected="selection" EntryBackgroundColorPastSelected="selection" EntryForegroundColorPast="secondary" ServiceBorderColor="background" EntryBorderColor="background" ServiceBorderWidth="4" EventBorderWidth="4" EventNamePadding="16" ServiceNamePadding="16" RecordForegroundColor="red" RecordForegroundColorSelected="foreground" RecordBackgroundColor="surface" RecordBackgroundColorSelected="selection" ZapForegroundColor="yellow" ZapForegroundColorSelected="foreground" ZapBackgroundColor="surface" ZapBackgroundColorSelected="selection" />
-    <widget position="1588,200" size="900,164" font="Regular;52" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" source="Event" render="Label">
+    <widget position="1588,200" size="900,224" font="Regular;52" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" source="Event" render="Label" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=3000,repeat=-1">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget position="1588,414" size="900,802" font="Regular;42" foregroundColor="secondary" transparent="1" alphatest="blend" valign="top" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=3000,repeat=-1" source="Event" render="Label">
+    <widget position="1588,464" size="900,752" font="Regular;42" foregroundColor="secondary" transparent="1" alphatest="blend" valign="top" scrollText="direction=top,startDelay=4000,stepDelay=80,stepSize=1,endDelay=3000,repeat=-1" source="Event" render="Label">
       <convert type="EventName">FullDescription</convert>
     </widget>
     <widget position="72,190" size="1400,100" font="Regular;48" foregroundColor="foreground" transparent="0" alphatest="blend" valign="center" conditional="lab1" backgroundColor="surface" zPosition="4" name="lab1" />
@@ -2902,20 +2902,24 @@ install(self)</applet>
     <widget position="72,236" size="2416,60" font="Regular;40" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="extrainfos" render="Label" />
     <widget position="72,300" size="2416,60" font="Regular;40" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="timerinfos" render="Label" />
     <widget position="48,388" size="2464,537" source="outlist" render="Listbox" backgroundColor="surface" foregroundColor="foreground" backgroundColorSelected="selection" foregroundColorSelected="foreground" itemCornerRadius="0" itemCornerRadiusSelected="16" itemGradientSelected="UmbraListSelection" itemSpacing="0,0" scrollbarMode="showOnDemand" scrollbarWidth="8" scrollbarRadius="4" scrollbarForegroundColor="accent" scrollbarBackgroundColor="surface" scrollbarBorderWidth="0">
-      <template name="Default" fonts="Regular;32,Regular;27" itemHeight="179">
-        <rectangle position="0,10" size="8,160" backgroundColor="+0" />
-        <text position="28,3" size="72,90" index="1" font="0" verticalAlignment="center" wrap="ellipsis" foregroundColor="foreground" />
-        <text position="112,3" size="476,90" index="2" font="0" verticalAlignment="center" wrap="ellipsis" foregroundColor="foreground" />
-        <text position="620,3" size="948,90" index="8" font="0" verticalAlignment="center" wrap="ellipsis" foregroundColor="foreground" />
-        <text position="1600,3" size="816,90" index="11" font="0" verticalAlignment="center" wrap="ellipsis" foregroundColor="foreground" />
-        <text position="28,99" size="116,74" index="3" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
-        <text position="172,99" size="432,74" index="4" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
-        <text position="632,99" size="156,74" index="5" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
-        <text position="816,99" size="360,74" index="6" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
-        <text position="1204,99" size="480,74" index="7" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
-        <text position="1712,99" size="328,74" index="9" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
-        <text position="2068,99" size="348,74" index="10" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
-      </template>
+      <templates>
+        <template name="Default" fonts="Regular;32,Regular;27">
+          <mode name="default" itemHeight="179">
+            <rectangle position="0,10" size="8,160" index="-1" backgroundColor="+0" />
+            <text position="28,3" size="72,90" index="1" font="0" verticalAlignment="center" wrap="ellipsis" foregroundColor="foreground" />
+            <text position="112,3" size="476,90" index="2" font="0" verticalAlignment="center" wrap="ellipsis" foregroundColor="foreground" />
+            <text position="620,3" size="948,90" index="8" font="0" verticalAlignment="center" wrap="ellipsis" foregroundColor="foreground" />
+            <text position="1600,3" size="816,90" index="11" font="0" verticalAlignment="center" wrap="ellipsis" foregroundColor="foreground" />
+            <text position="28,99" size="116,74" index="3" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
+            <text position="172,99" size="432,74" index="4" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
+            <text position="632,99" size="156,74" index="5" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
+            <text position="816,99" size="360,74" index="6" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
+            <text position="1204,99" size="480,74" index="7" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
+            <text position="1712,99" size="328,74" index="9" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
+            <text position="2068,99" size="348,74" index="10" font="1" verticalAlignment="center" wrap="ellipsis" foregroundColor="secondary" />
+          </mode>
+        </template>
+      </templates>
     </widget>
     <widget position="72,1036" size="2416,144" font="Regular;38" foregroundColor="foreground" transparent="1" alphatest="blend" valign="top" scrollbarMode="showOnDemand" name="logtext" />
     <widget position="72,1200" size="580,56" font="Regular;34" foregroundColor="secondary" transparent="1" alphatest="blend" valign="center" noWrap="1" source="total" render="Label" />
